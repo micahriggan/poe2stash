@@ -26,12 +26,16 @@ export class PriceCheckAllItems extends Job<Estimate> {
           data: cached[item.id],
         };
       } else {
-        const price = await PriceChecker.estimateItemPrice(item);
-        yield {
-          total: this.filteredItems.length,
-          current: i + 1,
-          data: price,
-        };
+        try {
+          const price = await PriceChecker.estimateItemPrice(item);
+          yield {
+            total: this.filteredItems.length,
+            current: i + 1,
+            data: price,
+          };
+        } catch (error) {
+          console.error("Failed to price check item", item, error);
+        }
       }
     }
   }
