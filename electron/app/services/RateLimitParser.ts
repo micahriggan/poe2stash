@@ -145,12 +145,12 @@ export class RateLimitParser {
     return waitTimes;
   }
 
-  getWaitTime() {
-    return Math.max(...this.getWaitTimes(), 0);
+  getWaitTime(minTime = 0) {
+    return Math.max(...this.getWaitTimes(), minTime);
   }
 
-  async waitForLimit() {
-    const waitTime = this.getWaitTime();
+  async waitForLimit(minTime = 0) {
+    const waitTime = this.getWaitTime(minTime);
     console.log(`Waiting for ${waitTime}ms`);
     await wait(waitTime);
   }

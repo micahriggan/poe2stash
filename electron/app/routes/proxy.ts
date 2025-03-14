@@ -4,8 +4,18 @@ import WebSocket from "ws";
 import { RateLimits } from "../services/RateLimitParser";
 
 const hosts = [{ url: "www.pathofexile.com" }];
+let blocked = false;
+const blockedMsg = "This application is being blocked by pathofexile.com";
 
 export const proxy = async (req: Request, res: Response) => {
+
+  if(blocked) {
+    console.log(blockedMsg);
+    res.writeHead(500);
+    res.end(blockedMsg)
+    return;
+  }
+
   const proxyTo = req.url.split("/")[1];
   console.log({ proxyTo });
   const host = hosts.find((host) => proxyTo.includes(host.url));
@@ -43,7 +53,9 @@ export const proxy = async (req: Request, res: Response) => {
       referrerPolicy: "no-referrer-when-downgrade",
     };
     console.log(params);
-    await RateLimits.waitForLimit();
+
+    // always wait at least 2500 seconds
+    await RateLimits.waitForLimit(2500);
     const proxyReq = net.request(params);
 
     const proxyReqStream = proxyReq as unknown as NodeJS.WritableStream;
@@ -54,6 +66,10 @@ export const proxy = async (req: Request, res: Response) => {
 
       if (proxyRes.statusCode === 401) {
         openAuthWindow();
+      }
+
+      if (proxyRes.statusCode === 403) {
+        blocked = true;
       }
 
       RateLimits.parse(proxyRes.headers);

@@ -48,7 +48,6 @@ export class Poe2TradeClient {
     const url = `${this.apiUrl}/search/poe2/Standard`;
     console.log("Requesting", url, "searchParams", searchParams);
 
-    await wait(3000);
     const payload = {
       query: {
         type: searchParams.baseType,

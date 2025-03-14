@@ -74,6 +74,7 @@ export const JobQueue: React.FC<JobQueueProps> = ({
                 </button>
               </div>
               <p className="text-gray-300 text-sm mb-2">{job.description}</p>
+              <p className="text-red-200 text-sm mb-2">{job.error}</p>
               <div className="flex justify-between items-center">
                 <span className="text-gray-400">Status: {job.status}</span>
                 {job.currentProgress && (

@@ -11,6 +11,7 @@ export abstract class Job<T> {
   cancelling = false;
   currentProgress: Progress<T> | null = null;
   status = "idle" as JobStatus;
+  error = "";
 
   constructor(
     public id: string,

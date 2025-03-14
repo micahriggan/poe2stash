@@ -33,8 +33,12 @@ export class PriceCheckAllItems extends Job<Estimate> {
             current: i + 1,
             data: price,
           };
-        } catch (error) {
-          console.error("Failed to price check item", item, error);
+        } catch (error: any) {
+          console.error(error);
+          if(error?.response?.data) {
+            console.log("setting desc")
+            this.error = error.response.data;
+          }
         }
       }
     }
