@@ -5,7 +5,6 @@ import {
   Poe2FetchItems,
   Poe2ItemSearch,
 } from "./types";
-import { wait } from "../utils/wait";
 
 export class Poe2TradeClient {
   port = 7555;
