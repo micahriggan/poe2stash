@@ -3,6 +3,7 @@ import { Poe2WebsocketClient } from "../services/Poe2WebsocketClient";
 import { Poe2Item } from "../services/types";
 import { Poe2Trade } from "../services/poe2trade";
 import { wait } from "../utils/wait";
+import { Eye, EyeOff } from "lucide-react";
 
 interface LiveMonitorButtonProps {
   accountName: string;
@@ -13,6 +14,7 @@ interface LiveMonitorButtonProps {
   setLiveSearchItems: React.Dispatch<React.SetStateAction<Poe2Item[]>>;
   setItems: React.Dispatch<React.SetStateAction<Poe2Item[]>>;
   onPriceCheck: (item: Poe2Item) => Promise<void>;
+  selectedLeague: string;
 }
 
 export const LiveMonitorButton: React.FC<LiveMonitorButtonProps> = ({
@@ -24,6 +26,7 @@ export const LiveMonitorButton: React.FC<LiveMonitorButtonProps> = ({
   setLiveSearchItems,
   setItems,
   onPriceCheck,
+  selectedLeague,
 }: LiveMonitorButtonProps) => {
   const wsRef = useRef<Poe2WebsocketClient | null>(null);
 
@@ -32,7 +35,7 @@ export const LiveMonitorButton: React.FC<LiveMonitorButtonProps> = ({
       wsRef.current.close();
     }
 
-    const ws = new Poe2WebsocketClient(`/live/poe2/Standard/${id}`);
+    const ws = new Poe2WebsocketClient(`/live/poe2/${selectedLeague}/${id}`);
 
     let newItemsBatch = [] as string[];
     ws.onMessage = async (event: MessageEvent) => {
@@ -118,7 +121,7 @@ export const LiveMonitorButton: React.FC<LiveMonitorButtonProps> = ({
     }
 
     setIsLiveMonitoring(true);
-    const accountSearch = await Poe2Trade.getAccountItems(accountName);
+    const accountSearch = await Poe2Trade.getAccountItems(accountName, 1, "exalted", selectedLeague);
     setupWebSocket(accountSearch.id);
   };
 
@@ -131,9 +134,23 @@ export const LiveMonitorButton: React.FC<LiveMonitorButtonProps> = ({
   return (
     <button
       onClick={liveMonitor}
-      className="bg-blue-500 text-white p-2 rounded"
+      className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
+        isLiveMonitoring 
+          ? 'bg-red-600 hover:bg-red-700 text-white' 
+          : 'bg-blue-600 hover:bg-blue-700 text-white'
+      }`}
     >
-      Live Monitor
+      {isLiveMonitoring ? (
+        <>
+          <EyeOff size={16} />
+          Stop Monitor
+        </>
+      ) : (
+        <>
+          <Eye size={16} />
+          Live Monitor
+        </>
+      )}
     </button>
   );
 };

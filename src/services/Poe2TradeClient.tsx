@@ -12,9 +12,9 @@ export class Poe2TradeClient {
   tradeUrl = "www.pathofexile.com/api/trade2";
   apiUrl = `${this.baseUrl}/proxy/${this.tradeUrl}`;
 
-  async getAccountItems(account: string, price = 1, currency = "exalted") {
-    const url = `${this.apiUrl}/search/poe2/Standard`;
-    console.log("Requesting", url, "account", account, "price", price);
+  async getAccountItems(account: string, price = 1, currency = "exalted", league = "Rise of the Abyssal") {
+    const url = `${this.apiUrl}/search/poe2/${league}`;
+    console.log("Requesting", url, "account", account, "price", price, "league", league);
     const response = await axios.post(url, {
       query: {
         filters: {
@@ -43,9 +43,9 @@ export class Poe2TradeClient {
     return min || max ? params : undefined;
   }
 
-  async getItemByAttributes(searchParams: Poe2ItemSearch) {
-    const url = `${this.apiUrl}/search/poe2/Standard`;
-    console.log("Requesting", url, "searchParams", searchParams);
+  async getItemByAttributes(searchParams: Poe2ItemSearch, league = "Rise of the Abyssal") {
+    const url = `${this.apiUrl}/search/poe2/${league}`;
+    console.log("Requesting", url, "searchParams", searchParams, "league", league);
 
     const payload = {
       query: {
@@ -155,9 +155,10 @@ export class Poe2TradeClient {
     currency = "exalted",
     minItemLevel?: number,
     maxItemLevel?: number,
+    league = "Rise of the Abyssal",
   ) {
-    const url = `${this.apiUrl}/search/poe2/Standard`;
-    console.log("Requesting", url, "account", account, "price", price);
+    const url = `${this.apiUrl}/search/poe2/${league}`;
+    console.log("Requesting", url, "account", account, "price", price, "league", league);
     const response = await axios.post(url, {
       query: {
         filters: {
@@ -196,8 +197,8 @@ export class Poe2TradeClient {
     return response.data as Poe2FetchItems;
   }
 
-  async getCurrencySwaps(iWant: string, iHave: string) {
-    const url = `${this.apiUrl}/exchange/poe2/Standard`;
+  async getCurrencySwaps(iWant: string, iHave: string, league = "Rise of the Abyssal") {
+    const url = `${this.apiUrl}/exchange/poe2/${league}`;
     const payload = {
       query: {
         status: { option: "online" },

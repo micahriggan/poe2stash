@@ -40,11 +40,17 @@ class CacheService {
     return Date.now() + when;
   }
 
+  remove(key: string): void {
+    localStorage.removeItem(key);
+    localStorage.removeItem(`${key}_expiry`);
+  }
+
   times = {
     second: 1000,
     minute: 1000 * 60,
     hour: 1000 * 60 * 60,
     day: 1000 * 60 * 60 * 24,
+    week: 1000 * 60 * 60 * 24 * 7,
   };
 }
 
