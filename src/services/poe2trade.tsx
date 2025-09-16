@@ -1,6 +1,8 @@
 import { Poe2Item, Poe2ItemSearch } from "./types";
 import { Cache } from "../services/Cache";
 import { Poe2TradeClient } from "./Poe2TradeClient";
+import { RequestManager } from "./RequestManager";
+import { CachePriority } from "./IntelligentCache";
 
 class Poe2TradeService {
   client = new Poe2TradeClient();
@@ -9,19 +11,38 @@ class Poe2TradeService {
     return [...new Set(items)];
   }
 
-  async getAccountItems(account: string, price = 1, currency = "exalted") {
-    return this.client.getAccountItems(account, price, currency);
+  async getAccountItems(account: string, price = 1, currency = "exalted", league = "Rise of the Abyssal") {
+    const cacheKey = `account_items_${account}_${price}_${currency}_${league}`;
+    
+    return RequestManager.request(
+      cacheKey,
+      () => this.client.getAccountItems(account, price, currency, league),
+      {
+        cache: true,
+        cacheTTL: 5 * 60 * 1000, // 5 minutes
+        cacheTags: ['account_items', account, league],
+        priority: CachePriority.HIGH,
+        batchSize: 3,
+        batchDelay: 200,
+        retries: 2,
+        retryDelay: 1000,
+      }
+    );
   }
 
   async getAllAccountItemsByItemLevel(
     account: string,
     price: number,
     currency: string,
+    league = "Rise of the Abyssal",
   ) {
     const initial = await this.getAccountItemsByItemLevel(
       account,
       price,
       currency,
+      undefined,
+      undefined,
+      league,
     );
 
     const itemsAtSamePrice = initial.total;
@@ -48,6 +69,7 @@ class Poe2TradeService {
         currency,
         minItemLevel,
         maxItemLevel,
+        league,
       );
 
       const fetches = await this.fetchAllItems(
@@ -174,8 +196,23 @@ class Poe2TradeService {
     return min || max ? params : undefined;
   }
 
-  async getItemByAttributes(searchParams: Poe2ItemSearch) {
-    return this.client.getItemByAttributes(searchParams);
+  async getItemByAttributes(searchParams: Poe2ItemSearch, league = "Standard") {
+    const cacheKey = `item_search_${JSON.stringify(searchParams)}_${league}`;
+    
+    return RequestManager.request(
+      cacheKey,
+      () => this.client.getItemByAttributes(searchParams, league),
+      {
+        cache: true,
+        cacheTTL: 2 * 60 * 1000, // 2 minutes
+        cacheTags: ['item_search', league],
+        priority: CachePriority.NORMAL,
+        batchSize: 5,
+        batchDelay: 100,
+        retries: 1,
+        retryDelay: 500,
+      }
+    );
   }
 
   async getAccountItemsByItemLevel(
@@ -184,6 +221,7 @@ class Poe2TradeService {
     currency = "exalted",
     minItemLevel?: number,
     maxItemLevel?: number,
+    league = "Rise of the Abyssal",
   ) {
     return this.client.getAccountItemsByItemLevel(
       account,
@@ -191,6 +229,7 @@ class Poe2TradeService {
       currency,
       minItemLevel,
       maxItemLevel,
+      league,
     );
   }
 

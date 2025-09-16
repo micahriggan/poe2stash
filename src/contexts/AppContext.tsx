@@ -11,9 +11,11 @@ import { PriceChecker, Estimate } from "../services/PriceEstimator";
 import { Poe2Item } from "../services/types";
 import { SyncAccount } from "../jobs/SyncAccount";
 import { RefreshAllItems } from "../jobs/RefreshAllItems";
-import { PriceCheckAllItems } from "../jobs/PriceCheckAllItems";
+import { PriceCheckAllItems, PriceCheckProgress } from "../jobs/PriceCheckAllItems";
 import { Job } from "../jobs/Job";
 import { handleJob } from "../components/JobQueue";
+import { PriceCheckSettings, DEFAULT_PRICE_CHECK_SETTINGS } from "../types/PriceCheckSettings";
+import { EnhancedPriceChecker } from "../services/EnhancedPriceEstimator";
 
 interface AppContextType {
   accountName: string;
@@ -35,6 +37,12 @@ interface AppContextType {
   setErrorMessage: Dispatch<SetStateAction<string | null>>;
   jobs: Job<any>[];
   setJobs: Dispatch<SetStateAction<Job<any>[]>>;
+  selectedLeague: string;
+  setSelectedLeague: Dispatch<SetStateAction<string>>;
+  availableLeagues: string[];
+  setAvailableLeagues: Dispatch<SetStateAction<string[]>>;
+  priceCheckSettings: PriceCheckSettings;
+  setPriceCheckSettings: Dispatch<SetStateAction<PriceCheckSettings>>;
   getItems: (name: string) => Promise<void>;
   filterByStash: (stash: string) => void;
   priceCheckItem: (item: Poe2Item) => Promise<void>;
@@ -42,6 +50,7 @@ interface AppContextType {
   refreshAllItems: () => Promise<void>;
   priceCheckAllItems: () => Promise<void>;
   filteredItems: Poe2Item[];
+  fetchLeagues: () => Promise<void>;
 }
 
 const AppContext = createContext<AppContextType | undefined>(
@@ -72,6 +81,32 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({
   >({});
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [jobs, setJobs] = useState<Job<any>[]>([]);
+  const [selectedLeague, setSelectedLeague] = useState<string>(
+    localStorage.getItem("selectedLeague") || "Rise of the Abyssal"
+  );
+  const [availableLeagues, setAvailableLeagues] = useState<string[]>([
+    "Rise of the Abyssal",
+    "Standard",
+    "Hardcore",
+    "Rise of the Abyssal Hardcore"
+  ]);
+  const [priceCheckSettings, setPriceCheckSettings] = useState<PriceCheckSettings>(
+    JSON.parse(localStorage.getItem("priceCheckSettings") || JSON.stringify(DEFAULT_PRICE_CHECK_SETTINGS))
+  );
+
+  // Load saved league on mount
+  useEffect(() => {
+    const savedLeague = localStorage.getItem("selectedLeague");
+    if (savedLeague) {
+      setSelectedLeague(savedLeague);
+    }
+    fetchLeagues();
+  }, []);
+
+  // Persist price check settings
+  useEffect(() => {
+    localStorage.setItem("priceCheckSettings", JSON.stringify(priceCheckSettings));
+  }, [priceCheckSettings]);
 
   const updateStashTabs = (items: Poe2Item[]) => {
     const stashes = Poe2Trade.getStashTabs(items);
@@ -79,10 +114,29 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({
     setSelectedStash("All");
   };
 
+  const fetchLeagues = async () => {
+    // Use hardcoded list of current POE2 leagues since API might not be reliable
+    const leagues = [
+      "Rise of the Abyssal",
+      "Standard", 
+      "Hardcore",
+      "Rise of the Abyssal Hardcore"
+    ];
+    
+    setAvailableLeagues(leagues);
+    
+    // Set default league to "Rise of the Abyssal" if no saved league
+    const savedLeague = localStorage.getItem("selectedLeague");
+    if (!savedLeague) {
+      setSelectedLeague("Rise of the Abyssal");
+      localStorage.setItem("selectedLeague", "Rise of the Abyssal");
+    }
+  };
+
   const getItems = async (name: string) => {
     setErrorMessage("");
 
-    const sync = new SyncAccount(name);
+    const sync = new SyncAccount(name, selectedLeague);
 
     sync.onStep = async (progress) => {
       console.log("Sync step", progress);
@@ -99,9 +153,30 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   const priceCheckItem = async (item: Poe2Item) => {
-    const price = await PriceChecker.estimateItemPrice(item);
-    setPriceEstimates(PriceChecker.getCachedEstimates());
-    console.log(price);
+    // Update the enhanced price checker with current settings
+    EnhancedPriceChecker.updateSettings(priceCheckSettings);
+    
+    try {
+      const result = await EnhancedPriceChecker.estimateItemPrice(item);
+      
+      // Convert to legacy format for compatibility
+      const legacyEstimate: Estimate = {
+        price: result.estimate.price,
+        stdDev: { amount: 0, currency: result.estimate.price.currency }, // TODO: Calculate stdDev
+      };
+      
+      setPriceEstimates(prev => ({
+        ...prev,
+        [item.id]: legacyEstimate,
+      }));
+      
+      console.log('Enhanced price check result:', result);
+    } catch (error) {
+      console.error('Price check failed:', error);
+      // Fallback to original price checker
+      await PriceChecker.estimateItemPrice(item);
+      setPriceEstimates(PriceChecker.getCachedEstimates());
+    }
   };
 
   const refreshItem = async (item: Poe2Item) => {
@@ -122,14 +197,32 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const priceCheckAllItems = async () => {
     setIsPriceChecking(true);
-    const priceCheck = new PriceCheckAllItems(filteredItems, true);
+    const priceCheck = new PriceCheckAllItems(filteredItems, true, priceCheckSettings);
 
     priceCheck.onStep = async (progress) => {
-      console.log("price check", progress);
-      setPriceEstimates(PriceChecker.getCachedEstimates());
+      console.log("price check progress", progress);
+      
+      // Cast to PriceCheckProgress to access extended properties
+      const priceCheckProgress = progress as PriceCheckProgress;
+      
+      // If we have an itemId and data, update that specific item immediately
+      if (priceCheckProgress.itemId && priceCheckProgress.data) {
+        setPriceEstimates(prev => ({
+          ...prev,
+          [priceCheckProgress.itemId!]: priceCheckProgress.data,
+        }));
+      } else if (priceCheckProgress.itemId && priceCheckProgress.error) {
+        // Handle failed price checks - you could set a special error state here
+        console.warn(`Price check failed for item ${priceCheckProgress.itemId}:`, priceCheckProgress.error);
+      } else {
+        // Fallback to updating all cached estimates
+        setPriceEstimates(PriceChecker.getCachedEstimates());
+      }
     };
 
     await handleJob(priceCheck, setJobs, setErrorMessage);
+    
+    // Final update to ensure all estimates are current
     setPriceEstimates(PriceChecker.getCachedEstimates());
 
     setIsPriceChecking(false);
@@ -194,6 +287,12 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({
     setErrorMessage,
     jobs,
     setJobs,
+    selectedLeague,
+    setSelectedLeague,
+    availableLeagues,
+    setAvailableLeagues,
+    priceCheckSettings,
+    setPriceCheckSettings,
     getItems,
     filterByStash,
     priceCheckItem,
@@ -201,6 +300,7 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({
     refreshAllItems,
     priceCheckAllItems,
     filteredItems,
+    fetchLeagues,
   };
 
   return (
