@@ -11,7 +11,7 @@ import { PriceChecker, Estimate } from "../services/PriceEstimator";
 import { Poe2Item } from "../services/types";
 import { SyncAccount } from "../jobs/SyncAccount";
 import { RefreshAllItems } from "../jobs/RefreshAllItems";
-import { PriceCheckAllItems } from "../jobs/PriceCheckAllItems";
+import { PriceCheckAllItems, PriceCheckProgress } from "../jobs/PriceCheckAllItems";
 import { Job } from "../jobs/Job";
 import { handleJob } from "../components/JobQueue";
 import { PriceCheckSettings, DEFAULT_PRICE_CHECK_SETTINGS } from "../types/PriceCheckSettings";
@@ -197,14 +197,32 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const priceCheckAllItems = async () => {
     setIsPriceChecking(true);
-    const priceCheck = new PriceCheckAllItems(filteredItems, true);
+    const priceCheck = new PriceCheckAllItems(filteredItems, true, priceCheckSettings);
 
     priceCheck.onStep = async (progress) => {
-      console.log("price check", progress);
-      setPriceEstimates(PriceChecker.getCachedEstimates());
+      console.log("price check progress", progress);
+      
+      // Cast to PriceCheckProgress to access extended properties
+      const priceCheckProgress = progress as PriceCheckProgress;
+      
+      // If we have an itemId and data, update that specific item immediately
+      if (priceCheckProgress.itemId && priceCheckProgress.data) {
+        setPriceEstimates(prev => ({
+          ...prev,
+          [priceCheckProgress.itemId!]: priceCheckProgress.data,
+        }));
+      } else if (priceCheckProgress.itemId && priceCheckProgress.error) {
+        // Handle failed price checks - you could set a special error state here
+        console.warn(`Price check failed for item ${priceCheckProgress.itemId}:`, priceCheckProgress.error);
+      } else {
+        // Fallback to updating all cached estimates
+        setPriceEstimates(PriceChecker.getCachedEstimates());
+      }
     };
 
     await handleJob(priceCheck, setJobs, setErrorMessage);
+    
+    // Final update to ensure all estimates are current
     setPriceEstimates(PriceChecker.getCachedEstimates());
 
     setIsPriceChecking(false);

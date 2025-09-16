@@ -17,7 +17,22 @@ class EnhancedPriceEstimator {
   }
 
   updateSettings(newSettings: Partial<PriceCheckSettings>) {
-    this.settings = { ...this.settings, ...newSettings };
+    this.settings = {
+      ...this.settings,
+      ...newSettings,
+      rollTolerance: { ...this.settings.rollTolerance, ...newSettings.rollTolerance },
+      searchSettings: { ...this.settings.searchSettings, ...newSettings.searchSettings },
+      confidence: {
+        ...this.settings.confidence,
+        ...newSettings.confidence,
+        confidenceFactors: {
+          ...this.settings.confidence.confidenceFactors,
+          ...newSettings.confidence?.confidenceFactors,
+        },
+      },
+      priceEstimation: { ...this.settings.priceEstimation, ...newSettings.priceEstimation },
+      advanced: { ...this.settings.advanced, ...newSettings.advanced },
+    };
   }
 
   getSettings(): PriceCheckSettings {
@@ -475,19 +490,29 @@ class EnhancedPriceEstimator {
   private async executeFallbackSearches(item: Poe2Item, parsedMods: any) {
     // Implement broader search strategies when exact matches fail
     const fallbackResults = [];
+    const maxSteps = this.settings.searchSettings.fallbackSteps;
     
-    // Try with fewer rolls
-    for (let rolls = Math.max(1, this.settings.rollTolerance.minRolls - 1); rolls >= 1; rolls--) {
+    // Try with fewer rolls, limited by fallbackSteps setting
+    for (let step = 0; step < maxSteps; step++) {
+      const rolls = Math.max(1, this.settings.rollTolerance.minRolls - step);
+      const tolerance = this.settings.rollTolerance.percentage * (1 + step * 0.5); // Increase tolerance with each step
+      
       try {
-        const strategy = { type: 'fallback', rolls, tolerance: this.settings.rollTolerance.percentage * 1.5 };
+        const strategy = { type: 'fallback', rolls, tolerance };
         const searchResult = await this.executeSearchStrategy(strategy, item);
         const similarItems = await this.processSearchResults(searchResult, item, parsedMods);
         fallbackResults.push(...similarItems);
+        
+        // Rate limiting between fallback attempts
+        if (this.settings.advanced.rateLimitDelay > 0) {
+          await this.delay(this.settings.advanced.rateLimitDelay);
+        }
         
         if (fallbackResults.length >= this.settings.searchSettings.minResults) {
           break;
         }
       } catch (error) {
+        console.warn(`Fallback search step ${step + 1} failed:`, error);
         continue;
       }
     }
