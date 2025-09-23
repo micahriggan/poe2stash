@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { app, net, session, BrowserWindow } from "electron";
 import WebSocket from "ws";
 import { RateLimits } from "../services/RateLimitParser";
+import { LEAGUE_PATH } from "../config/league";
 
 const hosts = [{ url: "www.pathofexile.com" }];
 let blocked = false;
@@ -107,7 +108,7 @@ export const openAuthWindow = () => {
     width: 800,
     height: 600,
   });
-  authwin.loadURL("https://www.pathofexile.com/trade2/search/poe2/Standard/");
+  authwin.loadURL("https://www.pathofexile.com/trade2/search/poe2/${LEAGUE_PATH}");
   return authwin;
 };
 
@@ -167,7 +168,7 @@ export const wsProxy = async (clientSocket: WebSocket, req: Request) => {
         height: 600,
       });
       authwin.loadURL(
-        "https://www.pathofexile.com/trade2/search/poe2/Standard/",
+        "https://www.pathofexile.com/trade2/search/poe2/${LEAGUE_PATH}",
       );
 
       clientSocket.close(1008, "Unauthorized");

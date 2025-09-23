@@ -1,6 +1,7 @@
 import { Poe2Item } from "../services/types";
 import { useState } from "react";
 import { PriceChecker } from "../services/PriceEstimator";
+import { LEAGUE_PATH } from "../config/league";
 
 const ItemNameWithRarity: React.FC<{ item: Poe2Item }> = ({ item }) => {
   const getRarityColor = (rarity: string = "magic") => {
@@ -46,13 +47,13 @@ export function PoeListItem(props: {
       if (matchingItem && matchingItem.id) {
         setSearchId(matchingItem.id);
         window.open(
-          `https://www.pathofexile.com/trade2/search/poe2/Standard/${matchingItem.id}`,
+          `https://www.pathofexile.com/trade2/search/poe2/${LEAGUE_PATH}${matchingItem.id}`,
           "_blank",
         );
       }
     } else {
       window.open(
-        `https://www.pathofexile.com/trade2/search/poe2/Standard/${searchId}`,
+        `https://www.pathofexile.com/trade2/search/poe2/${LEAGUE_PATH}${searchId}`,
         "_blank",
       );
     }

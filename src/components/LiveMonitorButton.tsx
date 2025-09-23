@@ -3,6 +3,7 @@ import { Poe2WebsocketClient } from "../services/Poe2WebsocketClient";
 import { Poe2Item } from "../services/types";
 import { Poe2Trade } from "../services/poe2trade";
 import { wait } from "../utils/wait";
+import { LEAGUE_PATH } from "../config/league";
 
 interface LiveMonitorButtonProps {
   accountName: string;
@@ -32,7 +33,7 @@ export const LiveMonitorButton: React.FC<LiveMonitorButtonProps> = ({
       wsRef.current.close();
     }
 
-    const ws = new Poe2WebsocketClient(`/live/poe2/Standard/${id}`);
+    const ws = new Poe2WebsocketClient(`/live/poe2/${LEAGUE_PATH}${id}`);
 
     let newItemsBatch = [] as string[];
     ws.onMessage = async (event: MessageEvent) => {
