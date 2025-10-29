@@ -14,10 +14,13 @@ import { RefreshAllItems } from "../jobs/RefreshAllItems";
 import { PriceCheckAllItems } from "../jobs/PriceCheckAllItems";
 import { Job } from "../jobs/Job";
 import { handleJob } from "../components/JobQueue";
+import { Leagues, League } from "../data/leagues";
 
 interface AppContextType {
   accountName: string;
   setAccountName: Dispatch<SetStateAction<string>>;
+  selectedLeague: League;
+  setSelectedLeague: Dispatch<SetStateAction<League>>;
   items: Poe2Item[];
   setItems: Dispatch<SetStateAction<Poe2Item[]>>;
   liveSearchItems: Poe2Item[];
@@ -60,6 +63,7 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [accountName, setAccountName] = useState("");
+  const [selectedLeague, setSelectedLeague] = useState<League>(Leagues[0]);
   const [items, setItems] = useState<Poe2Item[]>([]);
   const [liveSearchItems, setLiveSearchItems] = useState<Poe2Item[]>([]);
   const [stashTabs, setStashTabs] = useState<string[]>([]);
@@ -82,7 +86,7 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({
   const getItems = async (name: string) => {
     setErrorMessage("");
 
-    const sync = new SyncAccount(name);
+    const sync = new SyncAccount(name, selectedLeague);
 
     sync.onStep = async (progress) => {
       console.log("Sync step", progress);
@@ -99,7 +103,7 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   const priceCheckItem = async (item: Poe2Item) => {
-    const price = await PriceChecker.estimateItemPrice(item);
+    const price = await PriceChecker.estimateItemPrice(item, selectedLeague);
     setPriceEstimates(PriceChecker.getCachedEstimates());
     console.log(price);
   };
@@ -122,7 +126,7 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const priceCheckAllItems = async () => {
     setIsPriceChecking(true);
-    const priceCheck = new PriceCheckAllItems(filteredItems, true);
+    const priceCheck = new PriceCheckAllItems(filteredItems, true, selectedLeague);
 
     priceCheck.onStep = async (progress) => {
       console.log("price check", progress);
@@ -177,6 +181,8 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({
   const value: AppContextType = {
     accountName,
     setAccountName,
+    selectedLeague,
+    setSelectedLeague,
     items,
     setItems,
     liveSearchItems,

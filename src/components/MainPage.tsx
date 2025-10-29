@@ -4,11 +4,14 @@ import { PoeListItem } from "./PoeListItem";
 import { LiveMonitorButton } from "./LiveMonitorButton";
 import LiveMonitor from "./LiveMonitor";
 import { JobQueue } from "./JobQueue";
+import { Leagues, League } from "../data/leagues";
 
 const MainPageContent: React.FC = () => {
   const {
     accountName,
     setAccountName,
+    selectedLeague,
+    setSelectedLeague,
     items,
     setItems,
     liveSearchItems,
@@ -48,16 +51,27 @@ const MainPageContent: React.FC = () => {
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4 mt-8">Welcome to Poe2Stash</h1>
       <form onSubmit={handleSubmit} className="mb-4">
-        <input
-          type="text"
-          value={accountName}
-          onChange={(e) => setAccountName(e.target.value)}
-          placeholder="Enter your account name"
-          className="border p-2 mr-2"
-        />
-        <button type="submit" className="bg-blue-500 text-white p-2 rounded">
+        <div className="flex gap-2 items-center">
+          <input
+            type="text"
+            value={accountName}
+            onChange={(e) => setAccountName(e.target.value)}
+            placeholder="Enter your account name"
+            className="border p-2"
+          />
+          <select
+            value={selectedLeague}
+            onChange={(e) => setSelectedLeague(e.target.value as League)}
+            className="border p-2"
+          >
+            {Leagues.map((league) => (
+              <option key={league} value={league}>{league}</option>
+            ))}
+          </select>
+          <button type="submit" className="bg-blue-500 text-white p-2 rounded">
           Submit
         </button>
+        </div>
       </form>
 
       {items.length > 0 && (

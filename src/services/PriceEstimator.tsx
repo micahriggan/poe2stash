@@ -8,7 +8,7 @@ export type Explicit = Poe2Item["item"]["extended"]["mods"]["explicit"][0];
 export type Estimate = { price: Price; stdDev: Price };
 
 class PriceEstimator {
-  async findMatchingItem(item: Poe2Item) {
+  async findMatchingItem(item: Poe2Item, league?: string) {
     const parsedMods = this.parseItemMods(item);
     const topMods = await this.getHighTierMods(
       item,
@@ -29,14 +29,15 @@ class PriceEstimator {
         id: s!.hash,
         ...Poe2Trade.range(s!.value1),
       })),
-      status: "online",
-    });
+      status: "securable",
+    }, league);
 
     return topMatch;
   }
 
-  async estimateItemPrice(item: Poe2Item) {
+  async estimateItemPrice(item: Poe2Item, league?: string) {
     const parsedMods = this.parseItemMods(item);
+    console.log("Estimating price for item in league:", league);
 
     const allPrices: Price[] = [];
     const currency = "exalted";
@@ -57,14 +58,14 @@ class PriceEstimator {
         .filter((p) => p);
 
       const topMatch = await Poe2Trade.getItemByAttributes({
-        status: "online",
+        status: "securable",
         rarity: item.item.rarity,
         baseType: item.item.baseType,
         explicit: topStats.map((s) => ({
           id: s!.hash,
           ...Poe2Trade.range(s!.value1),
         })),
-      });
+      }, league);
       //await wait(1000);
 
       // ignore your own listing
@@ -81,8 +82,8 @@ class PriceEstimator {
       const normal = await Poe2Trade.getItemByAttributes({
         rarity: item.item.rarity,
         baseType: item.item.baseType,
-        status: "online",
-      });
+        status: "securable",
+      }, league);
       //await wait(1000);
       const filtered = normal.result.filter((i) => i != item.id);
       const sampledItems = this.sampleRange(filtered, 10);

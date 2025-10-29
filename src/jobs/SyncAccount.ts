@@ -3,7 +3,7 @@ import { Poe2Trade } from "../services/poe2trade";
 import { PriceChecker } from "../services/PriceEstimator";
 
 export class SyncAccount extends Job<string[]> {
-  constructor(private account: string) {
+  constructor(private account: string, private league: string = "Standard") {
     super(
       "account-sync",
       "Sync Account",
@@ -35,6 +35,7 @@ export class SyncAccount extends Job<string[]> {
           this.account,
           price,
           currency,
+          this.league,
         );
 
         if (count === 1) {
@@ -95,6 +96,7 @@ export class SyncAccount extends Job<string[]> {
             this.account,
             price,
             currency,
+            this.league,
           );
           allItems.push(...itemLevelFetch);
           console.log({ lastItemPrice, price }, "incrementing price");

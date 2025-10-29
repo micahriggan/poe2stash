@@ -9,19 +9,23 @@ class Poe2TradeService {
     return [...new Set(items)];
   }
 
-  async getAccountItems(account: string, price = 1, currency = "exalted") {
-    return this.client.getAccountItems(account, price, currency);
+  async getAccountItems(account: string, price = 1, currency = "exalted", league?: string) {
+    return this.client.getAccountItems(account, price, currency, league);
   }
 
   async getAllAccountItemsByItemLevel(
     account: string,
     price: number,
     currency: string,
+    league?: string,
   ) {
     const initial = await this.getAccountItemsByItemLevel(
       account,
       price,
       currency,
+      undefined,
+      undefined,
+      league,
     );
 
     const itemsAtSamePrice = initial.total;
@@ -48,6 +52,7 @@ class Poe2TradeService {
         currency,
         minItemLevel,
         maxItemLevel,
+        league,
       );
 
       const fetches = await this.fetchAllItems(
@@ -174,8 +179,8 @@ class Poe2TradeService {
     return min || max ? params : undefined;
   }
 
-  async getItemByAttributes(searchParams: Poe2ItemSearch) {
-    return this.client.getItemByAttributes(searchParams);
+  async getItemByAttributes(searchParams: Poe2ItemSearch, league?: string) {
+    return this.client.getItemByAttributes(searchParams, league);
   }
 
   async getAccountItemsByItemLevel(
@@ -184,6 +189,7 @@ class Poe2TradeService {
     currency = "exalted",
     minItemLevel?: number,
     maxItemLevel?: number,
+    league?: string,
   ) {
     return this.client.getAccountItemsByItemLevel(
       account,
@@ -191,6 +197,7 @@ class Poe2TradeService {
       currency,
       minItemLevel,
       maxItemLevel,
+      league,
     );
   }
 

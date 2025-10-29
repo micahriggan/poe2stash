@@ -6,6 +6,7 @@ export class PriceCheckAllItems extends Job<Estimate> {
   constructor(
     private filteredItems: Poe2Item[],
     private skipAlreadyChecked = true,
+    private league?: string,
   ) {
     super(
       "price-check-items",
@@ -27,7 +28,7 @@ export class PriceCheckAllItems extends Job<Estimate> {
         };
       } else {
         try {
-          const price = await PriceChecker.estimateItemPrice(item);
+          const price = await PriceChecker.estimateItemPrice(item, this.league);
           yield {
             total: this.filteredItems.length,
             current: i + 1,

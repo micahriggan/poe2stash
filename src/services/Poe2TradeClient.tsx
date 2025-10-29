@@ -11,9 +11,10 @@ export class Poe2TradeClient {
   baseUrl = `http://localhost:${this.port}`;
   tradeUrl = "www.pathofexile.com/api/trade2";
   apiUrl = `${this.baseUrl}/proxy/${this.tradeUrl}`;
+  league = "Standard";
 
-  async getAccountItems(account: string, price = 1, currency = "exalted") {
-    const url = `${this.apiUrl}/search/poe2/Standard`;
+  async getAccountItems(account: string, price = 1, currency = "exalted", league?: string) {
+    const url = `${this.apiUrl}/search/poe2/${league || this.league}`;
     console.log("Requesting", url, "account", account, "price", price);
     const response = await axios.post(url, {
       query: {
@@ -43,8 +44,8 @@ export class Poe2TradeClient {
     return min || max ? params : undefined;
   }
 
-  async getItemByAttributes(searchParams: Poe2ItemSearch) {
-    const url = `${this.apiUrl}/search/poe2/Standard`;
+  async getItemByAttributes(searchParams: Poe2ItemSearch, league?: string) {
+    const url = `${this.apiUrl}/search/poe2/${league || this.league}`;
     console.log("Requesting", url, "searchParams", searchParams);
 
     const payload = {
@@ -155,8 +156,9 @@ export class Poe2TradeClient {
     currency = "exalted",
     minItemLevel?: number,
     maxItemLevel?: number,
+    league?: string
   ) {
-    const url = `${this.apiUrl}/search/poe2/Standard`;
+    const url = `${this.apiUrl}/search/poe2/${league || this.league}`;
     console.log("Requesting", url, "account", account, "price", price);
     const response = await axios.post(url, {
       query: {
@@ -196,8 +198,8 @@ export class Poe2TradeClient {
     return response.data as Poe2FetchItems;
   }
 
-  async getCurrencySwaps(iWant: string, iHave: string) {
-    const url = `${this.apiUrl}/exchange/poe2/Standard`;
+  async getCurrencySwaps(iWant: string, iHave: string, league?: string) {
+    const url = `${this.apiUrl}/exchange/poe2/${league || this.league}`;
     const payload = {
       query: {
         status: { option: "online" },
