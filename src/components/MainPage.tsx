@@ -113,6 +113,7 @@ const MainPage: React.FC = () => {
           </button>
           <LiveMonitorButton
             accountName={accountName}
+            league={selectedLeague}
             items={items}
             liveSearchItems={liveSearchItems}
             isLiveMonitoring={isLiveMonitoring}
@@ -154,6 +155,7 @@ const MainPage: React.FC = () => {
         <PoeListItem
           key={item.id}
           item={item}
+          league={selectedLeague}
           onPriceClick={priceCheckItem}
           onRefreshClick={refreshItem}
           priceSuggestion={priceEstimates[item.id]?.price}

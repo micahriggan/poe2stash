@@ -6,6 +6,7 @@ import { wait } from "../utils/wait";
 
 interface LiveMonitorButtonProps {
   accountName: string;
+  league: string;
   items: Poe2Item[];
   liveSearchItems: Poe2Item[];
   isLiveMonitoring: boolean;
@@ -17,6 +18,7 @@ interface LiveMonitorButtonProps {
 
 export const LiveMonitorButton: React.FC<LiveMonitorButtonProps> = ({
   accountName,
+  league,
   items,
   liveSearchItems,
   isLiveMonitoring,
@@ -32,7 +34,7 @@ export const LiveMonitorButton: React.FC<LiveMonitorButtonProps> = ({
       wsRef.current.close();
     }
 
-    const ws = new Poe2WebsocketClient(`/live/poe2/Standard/${id}`);
+    const ws = new Poe2WebsocketClient(`/live/poe2/${league}/${id}`);
 
     let newItemsBatch = [] as string[];
     ws.onMessage = async (event: MessageEvent) => {
@@ -118,7 +120,7 @@ export const LiveMonitorButton: React.FC<LiveMonitorButtonProps> = ({
     }
 
     setIsLiveMonitoring(true);
-    const accountSearch = await Poe2Trade.getAccountItems(accountName);
+    const accountSearch = await Poe2Trade.getAccountItems(accountName, 1, "exalted", league);
     setupWebSocket(accountSearch.id);
   };
 

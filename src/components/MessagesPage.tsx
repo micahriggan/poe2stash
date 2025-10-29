@@ -16,6 +16,7 @@ const MessagesPage: React.FC = () => {
 
   const {
     priceCheckItem,
+    selectedLeague,
     refreshItem,
     priceEstimates,
     jobs,
@@ -202,6 +203,7 @@ const MessagesPage: React.FC = () => {
             {o.found && (
               <PoeListItem
                 item={o.found}
+                league={selectedLeague}
                 key={o.found.id}
                 onPriceClick={priceCheckItem}
                 onRefreshClick={refreshItem}

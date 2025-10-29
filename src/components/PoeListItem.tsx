@@ -29,6 +29,7 @@ const ItemNameWithRarity: React.FC<{ item: Poe2Item }> = ({ item }) => {
 
 export function PoeListItem(props: {
   item: Poe2Item;
+  league: string;
   priceSuggestion?: { amount: number; currency: string };
   onPriceClick?: (item: Poe2Item) => void;
   onRefreshClick?: (item: Poe2Item) => void;
@@ -42,17 +43,17 @@ export function PoeListItem(props: {
 
   const openSearchInNewWindow = async () => {
     if (!searchId) {
-      const matchingItem = await PriceChecker.findMatchingItem(item);
+      const matchingItem = await PriceChecker.findMatchingItem(item, props.league);
       if (matchingItem && matchingItem.id) {
         setSearchId(matchingItem.id);
         window.open(
-          `https://www.pathofexile.com/trade2/search/poe2/Standard/${matchingItem.id}`,
+          `https://www.pathofexile.com/trade2/search/poe2/${props.league}/${matchingItem.id}`,
           "_blank",
         );
       }
     } else {
       window.open(
-        `https://www.pathofexile.com/trade2/search/poe2/Standard/${searchId}`,
+        `https://www.pathofexile.com/trade2/search/poe2/${props.league}/${searchId}`,
         "_blank",
       );
     }
