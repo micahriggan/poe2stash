@@ -1,5 +1,33 @@
 export const Filters = [
   {
+    id: "status_filters",
+    filters: [
+      {
+        id: "status",
+        option: {
+          options: [
+            {
+              id: "available",
+              text: "Instant Buyout and In Person Trade",
+            },
+            {
+              id: "securable",
+              text: "Instant Buyout Only",
+            },
+            {
+              id: "online",
+              text: "In Person Trade Only",
+            },
+            {
+              id: "any",
+              text: "Any",
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
     id: "type_filters",
     title: "Type Filters",
     filters: [
@@ -253,6 +281,10 @@ export const Filters = [
               id: "currency.soulcore",
               text: "Soul Core",
             },
+            {
+              id: "currency.talisman",
+              text: "Talisman",
+            },
           ],
         },
       },
@@ -341,6 +373,12 @@ export const Filters = [
         minMax: true,
       },
       {
+        id: "reload_time",
+        text: "Reload Time",
+        minMax: true,
+        halfSpan: true,
+      },
+      {
         id: "ar",
         text: "Armour",
         tip: "Includes base value, local modifiers, and maximum quality",
@@ -406,7 +444,7 @@ export const Filters = [
   },
   {
     id: "map_filters",
-    title: "Waystone Filters",
+    title: "Endgame Filters",
     hidden: true,
     filters: [
       {
@@ -415,9 +453,75 @@ export const Filters = [
         minMax: true,
       },
       {
+        id: "map_packsize",
+        text: "Waystone Packsize",
+        minMax: true,
+      },
+      {
+        id: "map_iiq",
+        text: "Waystone IIQ",
+        tip: "Increased Item Quantity",
+        minMax: true,
+      },
+      {
+        id: "map_iir",
+        text: "Waystone IIR",
+        tip: "Increased Item Rarity",
+        minMax: true,
+      },
+      {
+        id: "map_revives",
+        text: "Waystone Revives",
+        minMax: true,
+      },
+      {
         id: "map_bonus",
         text: "Waystone Drop Chance",
         minMax: true,
+      },
+      {
+        id: "map_gold",
+        text: "Waystone Gold",
+        minMax: true,
+      },
+      {
+        id: "map_experience",
+        text: "Waystone Experience",
+        minMax: true,
+      },
+      {
+        id: "map_magic_monsters",
+        text: "Waystone Magic Monsters",
+        minMax: true,
+      },
+      {
+        id: "map_rare_monsters",
+        text: "Waystone Rare Monsters",
+        minMax: true,
+      },
+      {
+        id: "ultimatum_hint",
+        text: "Ultimatum Trial Hint",
+        option: {
+          options: [
+            {
+              id: null,
+              text: "Any",
+            },
+            {
+              id: "Victorious",
+              text: "Victorious",
+            },
+            {
+              id: "Cowardly",
+              text: "Cowardly",
+            },
+            {
+              id: "Deadly",
+              text: "Deadly",
+            },
+          ],
+        },
       },
     ],
   },
@@ -467,6 +571,26 @@ export const Filters = [
         },
       },
       {
+        id: "fractured_item",
+        text: "Fractured",
+        option: {
+          options: [
+            {
+              id: null,
+              text: "Any",
+            },
+            {
+              id: "true",
+              text: "Yes",
+            },
+            {
+              id: "false",
+              text: "No",
+            },
+          ],
+        },
+      },
+      {
         id: "corrupted",
         text: "Corrupted",
         option: {
@@ -487,8 +611,8 @@ export const Filters = [
         },
       },
       {
-        id: "mirrored",
-        text: "Mirrored",
+        id: "sanctified",
+        text: "Sanctified",
         option: {
           options: [
             {
@@ -507,8 +631,68 @@ export const Filters = [
         },
       },
       {
-        id: "alternate_art",
-        text: "Alternate Art",
+        id: "veiled",
+        text: "Unrevealed",
+        option: {
+          options: [
+            {
+              id: null,
+              text: "Any",
+            },
+            {
+              id: "true",
+              text: "Yes",
+            },
+            {
+              id: "false",
+              text: "No",
+            },
+          ],
+        },
+      },
+      {
+        id: "desecrated",
+        text: "Desecrated",
+        option: {
+          options: [
+            {
+              id: null,
+              text: "Any",
+            },
+            {
+              id: "true",
+              text: "Yes",
+            },
+            {
+              id: "false",
+              text: "No",
+            },
+          ],
+        },
+      },
+      {
+        id: "foreseeing",
+        text: "Foreseeing",
+        option: {
+          options: [
+            {
+              id: null,
+              text: "Any",
+            },
+            {
+              id: "true",
+              text: "Yes",
+            },
+            {
+              id: "false",
+              text: "No",
+            },
+          ],
+        },
+      },
+      {
+        id: "mirrored",
+        text: "Mirrored",
         option: {
           options: [
             {
@@ -641,6 +825,12 @@ export const Filters = [
             },
           ],
         },
+      },
+      {
+        id: "fee",
+        text: "Gold Fee",
+        fullSpan: true,
+        minMax: true,
       },
       {
         id: "price",

@@ -10,6 +10,9 @@ export const Items = [
         type: "Gold Amulet",
       },
       {
+        type: "Pearlescent Amulet",
+      },
+      {
         type: "Azure Amulet",
       },
       {
@@ -32,6 +35,18 @@ export const Items = [
       },
       {
         type: "Solar Amulet",
+      },
+      {
+        type: "Dusk Amulet",
+      },
+      {
+        type: "Gloam Amulet",
+      },
+      {
+        type: "Penumbra Amulet",
+      },
+      {
+        type: "Tenebrous Amulet",
       },
       {
         type: "Rawhide Belt",
@@ -76,6 +91,9 @@ export const Items = [
         type: "Unset Ring",
       },
       {
+        type: "Abyssal Signet",
+      },
+      {
         type: "Lazuli Ring",
       },
       {
@@ -106,6 +124,18 @@ export const Items = [
         type: "Breach Ring",
       },
       {
+        type: "Dusk Ring",
+      },
+      {
+        type: "Gloam Ring",
+      },
+      {
+        type: "Penumbra Ring",
+      },
+      {
+        type: "Tenebrous Ring",
+      },
+      {
         type: "Gold Ring",
         text: "Andvarius Gold Ring",
         name: "Andvarius",
@@ -125,6 +155,14 @@ export const Items = [
         type: "Solar Amulet",
         text: "Beacon of Azis Solar Amulet",
         name: "Beacon of Azis",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Double Belt",
+        text: "Bijouborne Double Belt",
+        name: "Bijouborne",
         flags: {
           unique: true,
         },
@@ -163,8 +201,16 @@ export const Items = [
       },
       {
         type: "Wide Belt",
-        text: "Brynabas Wide Belt",
-        name: "Brynabas",
+        text: "Byrnabas Wide Belt",
+        name: "Byrnabas",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Unset Ring",
+        text: "Bursting Decay Unset Ring",
+        name: "Bursting Decay",
         flags: {
           unique: true,
         },
@@ -210,6 +256,14 @@ export const Items = [
         },
       },
       {
+        type: "Fine Belt",
+        text: "Darkness Enthroned Fine Belt",
+        name: "Darkness Enthroned",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Emerald Ring",
         text: "Death Rush Emerald Ring",
         name: "Death Rush",
@@ -242,6 +296,14 @@ export const Items = [
         },
       },
       {
+        type: "Pearl Ring",
+        text: "Evergrasping Ring Pearl Ring",
+        name: "Evergrasping Ring",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Gold Amulet",
         text: "Eye of Chayula Gold Amulet",
         name: "Eye of Chayula",
@@ -266,9 +328,33 @@ export const Items = [
         },
       },
       {
+        type: "Prismatic Ring",
+        text: "Gifts from Above Prismatic Ring",
+        name: "Gifts from Above",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Lazuli Ring",
         text: "Glowswarm Lazuli Ring",
         name: "Glowswarm",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Plate Belt",
+        text: "Goregirdle Plate Belt",
+        name: "Goregirdle",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Abyssal Signet",
+        text: "Grip of Kulemak Abyssal Signet",
+        name: "Grip of Kulemak",
         flags: {
           unique: true,
         },
@@ -285,6 +371,22 @@ export const Items = [
         type: "Pearl Ring",
         text: "Heartbound Loop Pearl Ring",
         name: "Heartbound Loop",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Stellar Amulet",
+        text: "Hinekora's Sight Stellar Amulet",
+        name: "Hinekora's Sight",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Iron Ring",
+        text: "Icefang Orbit Iron Ring",
+        name: "Icefang Orbit",
         flags: {
           unique: true,
         },
@@ -402,6 +504,14 @@ export const Items = [
         },
       },
       {
+        type: "Iron Ring",
+        text: "Prized Pain Iron Ring",
+        name: "Prized Pain",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Amber Amulet",
         text: "Revered Resin Amber Amulet",
         name: "Revered Resin",
@@ -474,6 +584,14 @@ export const Items = [
         },
       },
       {
+        type: "Lapis Amulet",
+        text: "Stone of Lazhwar Lapis Amulet",
+        name: "Stone of Lazhwar",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Stellar Amulet",
         text: "Strugglescream Stellar Amulet",
         name: "Strugglescream",
@@ -514,6 +632,14 @@ export const Items = [
         },
       },
       {
+        type: "Wide Belt",
+        text: "The Gnashing Sash Wide Belt",
+        name: "The Gnashing Sash",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Lapis Amulet",
         text: "The Pandemonius Lapis Amulet",
         name: "The Pandemonius",
@@ -530,6 +656,14 @@ export const Items = [
         },
       },
       {
+        type: "Linen Belt",
+        text: "Umbilicus Immortalis Linen Belt",
+        name: "Umbilicus Immortalis",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Azure Amulet",
         text: "Ungil's Harmony Azure Amulet",
         name: "Ungil's Harmony",
@@ -538,9 +672,33 @@ export const Items = [
         },
       },
       {
+        type: "Iron Ring",
+        text: "Venopuncture Iron Ring",
+        name: "Venopuncture",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Gold Ring",
         text: "Ventor's Gamble Gold Ring",
         name: "Ventor's Gamble",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Emerald Ring",
+        text: "Vigilant View Emerald Ring",
+        name: "Vigilant View",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Heavy Belt",
+        text: "Waistgate Heavy Belt",
+        name: "Waistgate",
         flags: {
           unique: true,
         },
@@ -557,6 +715,14 @@ export const Items = [
         type: "Amber Amulet",
         text: "Xoph's Blood Amber Amulet",
         name: "Xoph's Blood",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Bloodstone Amulet",
+        text: "Yoke of Suffering Bloodstone Amulet",
+        name: "Yoke of Suffering",
         flags: {
           unique: true,
         },
@@ -582,19 +748,28 @@ export const Items = [
         type: "Smuggler Coat",
       },
       {
+        type: "Corsair Coat",
+      },
+      {
+        type: "Strider Vest",
+      },
+      {
+        type: "Armoured Vest",
+      },
+      {
         type: "Quilted Vest",
       },
       {
-        type: "Advanced Quilted Vest",
+        type: "Patchwork Vest",
       },
       {
         type: "Pathfinder Coat",
       },
       {
-        type: "Advanced Pathfinder Coat",
+        type: "Hunting Coat",
       },
       {
-        type: "Expert Pathfinder Coat",
+        type: "Swiftstalker Coat",
       },
       {
         type: "Shrouded Vest",
@@ -603,94 +778,121 @@ export const Items = [
         type: "Rhoahide Coat",
       },
       {
-        type: "Advanced Rhoahide Coat",
+        type: "Riding Coat",
       },
       {
         type: "Studded Vest",
       },
       {
-        type: "Advanced Studded Vest",
+        type: "Layered Vest",
       },
       {
-        type: "Expert Studded Vest",
+        type: "Slipstrike Vest",
       },
       {
         type: "Scout's Vest",
       },
       {
-        type: "Advanced Scout's Vest",
+        type: "Runner Vest",
       },
       {
         type: "Serpentscale Coat",
       },
       {
-        type: "Advanced Serpentscale Coat",
+        type: "Lizardscale Coat",
       },
       {
-        type: "Expert Serpentscale Coat",
+        type: "Wyrmscale Coat",
+      },
+      {
+        type: "Corsair Vest",
       },
       {
         type: "Hermit Garb",
       },
       {
-        type: "Advanced Hermit Garb",
+        type: "Assassin Garb",
+      },
+      {
+        type: "Ascetic Garb",
       },
       {
         type: "Waxed Jacket",
       },
       {
-        type: "Advanced Waxed Jacket",
+        type: "Oiled Jacket",
       },
       {
-        type: "Expert Waxed Jacket",
+        type: "Sleek Jacket",
       },
       {
         type: "Marabout Garb",
       },
       {
-        type: "Advanced Marabout Garb",
+        type: "Evangelist Garb",
       },
       {
         type: "Wayfarer Jacket",
       },
       {
-        type: "Advanced Wayfarer Jacket",
+        type: "Itinerant Jacket",
       },
       {
-        type: "Expert Wayfarer Jacket",
+        type: "Rambler Jacket",
       },
       {
         type: "Anchorite Garb",
       },
       {
-        type: "Advanced Anchorite Garb",
+        type: "Hatungo Garb",
       },
       {
         type: "Scalper's Jacket",
       },
       {
-        type: "Advanced Scalper's Jacket",
+        type: "Hawker's Jacket",
       },
       {
-        type: "Expert Scalper's Jacket",
+        type: "Falconer's Jacket",
+      },
+      {
+        type: "Scoundrel Jacket",
+      },
+      {
+        type: "Austere Garb",
       },
       {
         type: "Tattered Robe",
       },
       {
+        type: "Mystic Raiment",
+      },
+      {
+        type: "Feathered Raiment",
+      },
+      {
+        type: "Plated Raiment",
+      },
+      {
+        type: "Havoc Raiment",
+      },
+      {
+        type: "Enlightened Robe",
+      },
+      {
         type: "Feathered Robe",
       },
       {
-        type: "Advanced Feathered Robe",
+        type: "Avian Robe",
       },
       {
         type: "Hexer's Robe",
       },
       {
-        type: "Advanced Hexer's Robe",
+        type: "Cursespeaker's Robe",
       },
       {
-        type: "Expert Hexer's Robe",
+        type: "Vile Robe",
       },
       {
         type: "Bone Raiment",
@@ -699,34 +901,43 @@ export const Items = [
         type: "Silk Robe",
       },
       {
-        type: "Advanced Silk Robe",
+        type: "Luxurious Robe",
       },
       {
         type: "Keth Raiment",
       },
       {
-        type: "Advanced Keth Raiment",
+        type: "River Raiment",
       },
       {
-        type: "Expert Keth Raiment",
+        type: "Flowing Raiment",
       },
       {
         type: "Votive Raiment",
       },
       {
-        type: "Advanced Votive Raiment",
+        type: "Adherent's Raiment",
       },
       {
         type: "Altar Robe",
       },
       {
-        type: "Advanced Altar Robe",
+        type: "Ceremonial Robe",
       },
       {
-        type: "Expert Altar Robe",
+        type: "Sacramental Robe",
+      },
+      {
+        type: "Elementalist Robe",
       },
       {
         type: "Rusted Cuirass",
+      },
+      {
+        type: "Chieftain Cuirass",
+      },
+      {
+        type: "Warlord Cuirass",
       },
       {
         type: "Champion Cuirass",
@@ -738,16 +949,16 @@ export const Items = [
         type: "Fur Plate",
       },
       {
-        type: "Advanced Fur Plate",
+        type: "Barbarian Plate",
       },
       {
         type: "Iron Cuirass",
       },
       {
-        type: "Advanced Iron Cuirass",
+        type: "Rugged Cuirass",
       },
       {
-        type: "Expert Iron Cuirass",
+        type: "Soldier Cuirass",
       },
       {
         type: "Raider Plate",
@@ -756,79 +967,94 @@ export const Items = [
         type: "Maraketh Cuirass",
       },
       {
-        type: "Advanced Maraketh Cuirass",
+        type: "Sandsworn Cuirass",
       },
       {
         type: "Steel Plate",
       },
       {
-        type: "Advanced Steel Plate",
+        type: "Elegant Plate",
       },
       {
-        type: "Expert Steel Plate",
+        type: "Ornate Plate",
       },
       {
         type: "Full Plate",
       },
       {
-        type: "Advanced Full Plate",
+        type: "Heavy Plate",
       },
       {
         type: "Vaal Cuirass",
       },
       {
-        type: "Advanced Vaal Cuirass",
+        type: "Stone Cuirass",
       },
       {
-        type: "Expert Vaal Cuirass",
+        type: "Utzaal Cuirass",
+      },
+      {
+        type: "Juggernaut Plate",
       },
       {
         type: "Chain Mail",
       },
       {
-        type: "Advanced Chain Mail",
+        type: "Heroic Armour",
+      },
+      {
+        type: "Ring Mail",
       },
       {
         type: "Rogue Armour",
       },
       {
-        type: "Advanced Rogue Armour",
+        type: "Scoundrel Armour",
       },
       {
-        type: "Expert Rogue Armour",
+        type: "Dastard Armour",
       },
       {
         type: "Vagabond Armour",
       },
       {
-        type: "Advanced Vagabond Armour",
+        type: "Wanderer Armour",
       },
       {
         type: "Cloaked Mail",
       },
       {
-        type: "Expert Cloaked Mail",
+        type: "Shrouded Mail",
       },
       {
-        type: "Advanced Cloaked Mail",
+        type: "Mantled Mail",
       },
       {
         type: "Explorer Armour",
       },
       {
-        type: "Advanced Explorer Armour",
+        type: "Trailblazer Armour",
       },
       {
         type: "Scale Mail",
       },
       {
-        type: "Advanced Scale Mail",
+        type: "Golden Mail",
       },
       {
-        type: "Expert Scale Mail",
+        type: "Death Mail",
       },
       {
         type: "Knight Armour",
+      },
+      {
+        type: "Ancestral Mail",
+      },
+      {
+        type: "Thane Mail",
+      },
+      {
+        type: "Lamellar Mail",
       },
       {
         type: "Grand Regalia",
@@ -840,46 +1066,58 @@ export const Items = [
         type: "Pilgrim Vestments",
       },
       {
-        type: "Advanced Pilgrim Vestments",
+        type: "Corvus Mantle",
+      },
+      {
+        type: "Templar Vestments",
       },
       {
         type: "Pelt Mantle",
       },
       {
-        type: "Advanced Pelt Mantle",
+        type: "Bearskin Mantle",
       },
       {
-        type: "Expert Pelt Mantle",
+        type: "Wolfskin Mantle",
       },
       {
         type: "Mail Vestments",
       },
       {
-        type: "Advanced Mail Vestments",
+        type: "Chain Vestments",
       },
       {
         type: "Shaman Mantle",
       },
       {
-        type: "Advanced Shaman Mantle",
+        type: "Occultist Mantle",
       },
       {
-        type: "Expert Shaman Mantle",
+        type: "Conjurer Mantle",
       },
       {
         type: "Ironclad Vestments",
       },
       {
-        type: "Advanced Ironclad Vestments",
+        type: "Plated Vestments",
       },
       {
         type: "Sacrificial Mantle",
       },
       {
-        type: "Advanced Sacrificial Mantle",
+        type: "Heartcarver Mantle",
       },
       {
-        type: "Expert Sacrificial Mantle",
+        type: "Death Mantle",
+      },
+      {
+        type: "Cleric Vestments",
+      },
+      {
+        type: "Tideseer Mantle",
+      },
+      {
+        type: "Seastorm Mantle",
       },
       {
         type: "Gilded Vestments",
@@ -891,61 +1129,73 @@ export const Items = [
         type: "Laced Boots",
       },
       {
-        type: "Advanced Laced Boots",
+        type: "Bound Boots",
       },
       {
-        type: "Expert Laced Boots",
+        type: "Cinched Boots",
       },
       {
         type: "Embossed Boots",
       },
       {
-        type: "Advanced Embossed Boots",
+        type: "Sleek Boots",
       },
       {
         type: "Steeltoe Boots",
       },
       {
-        type: "Advanced Steeltoe Boots",
+        type: "Studded Boots",
       },
       {
-        type: "Expert Steeltoe Boots",
+        type: "Cavalry Boots",
       },
       {
         type: "Lizardscale Boots",
       },
       {
-        type: "Advanced Lizardscale Boots",
+        type: "Serpentscale Boots",
       },
       {
-        type: "Expert Lizardscale Boots",
+        type: "Dragonscale Boots",
+      },
+      {
+        type: "Flared Boots",
+      },
+      {
+        type: "Drakeskin Boots",
       },
       {
         type: "Frayed Shoes",
       },
       {
-        type: "Advanced Frayed Shoes",
+        type: "Wayfarer Shoes",
       },
       {
-        type: "Expert Frayed Shoes",
+        type: "Wanderer Shoes",
       },
       {
         type: "Threaded Shoes",
       },
       {
-        type: "Advanced Threaded Shoes",
+        type: "Silverbuckled Shoes",
       },
       {
-        type: "Expert Threaded Shoes",
+        type: "Charmed Shoes",
       },
       {
         type: "Hunting Shoes",
       },
       {
-        type: "Advanced Hunting Shoes",
+        type: "Treerunner Shoes",
       },
       {
-        type: "Expert Hunting Shoes",
+        type: "Quickslip Shoes",
+      },
+      {
+        type: "Steelpoint Shoes",
+      },
+      {
+        type: "Daggerfoot Shoes",
       },
       {
         type: "Velour Shoes",
@@ -957,34 +1207,40 @@ export const Items = [
         type: "Wrapped Sandals",
       },
       {
-        type: "Advanced Wrapped Sandals",
+        type: "Laced Sandals",
       },
       {
-        type: "Expert Wrapped Sandals",
+        type: "Bound Sandals",
       },
       {
         type: "Lattice Sandals",
       },
       {
-        type: "Advanced Lattice Sandals",
+        type: "Bangled Sandals",
       },
       {
         type: "Silk Slippers",
       },
       {
-        type: "Advanced Silk Slippers",
+        type: "Elegant Slippers",
       },
       {
-        type: "Expert Silk Slippers",
+        type: "Luxurious Slippers",
       },
       {
         type: "Feathered Sandals",
       },
       {
-        type: "Advanced Feathered Sandals",
+        type: "Dunerunner Sandals",
       },
       {
-        type: "Expert Feathered Sandals",
+        type: "Sandsworn Sandals",
+      },
+      {
+        type: "Flax Sandals",
+      },
+      {
+        type: "Sekhema Sandals",
       },
       {
         type: "Rough Greaves",
@@ -993,61 +1249,73 @@ export const Items = [
         type: "Iron Greaves",
       },
       {
-        type: "Advanced Iron Greaves",
+        type: "Plated Greaves",
       },
       {
-        type: "Expert Iron Greaves",
+        type: "Bulwark Greaves",
       },
       {
         type: "Bronze Greaves",
       },
       {
-        type: "Advanced Bronze Greaves",
+        type: "Lionheart Greaves",
       },
       {
         type: "Trimmed Greaves",
       },
       {
-        type: "Advanced Trimmed Greaves",
+        type: "Elegant Greaves",
       },
       {
-        type: "Expert Trimmed Greaves",
+        type: "Ornate Greaves",
       },
       {
         type: "Stone Greaves",
       },
       {
-        type: "Advanced Stone Greaves",
+        type: "Carved Greaves",
       },
       {
-        type: "Expert Stone Greaves",
+        type: "Vaal Greaves",
+      },
+      {
+        type: "Reefsteel Greaves",
+      },
+      {
+        type: "Tasalian Greaves",
       },
       {
         type: "Mail Sabatons",
       },
       {
-        type: "Advanced Mail Sabatons",
+        type: "Soldiering Sabatons",
       },
       {
-        type: "Expert Mail Sabatons",
+        type: "Veteran Sabatons",
       },
       {
         type: "Braced Sabatons",
       },
       {
-        type: "Advanced Braced Sabatons",
+        type: "Goldwork Sabatons",
       },
       {
-        type: "Expert Braced Sabatons",
+        type: "Noble Sabatons",
       },
       {
         type: "Stacked Sabatons",
       },
       {
-        type: "Advanced Stacked Sabatons",
+        type: "Bastion Sabatons",
       },
       {
-        type: "Expert Stacked Sabatons",
+        type: "Fortress Sabatons",
+      },
+      {
+        type: "Covered Sabatons",
+      },
+      {
+        type: "Blacksteel Sabatons",
       },
       {
         type: "Grand Cuisses",
@@ -1056,46 +1324,58 @@ export const Items = [
         type: "Padded Leggings",
       },
       {
-        type: "Advanced Padded Leggings",
+        type: "Adherent Leggings",
       },
       {
-        type: "Expert Padded Leggings",
+        type: "Faithful Leggings",
       },
       {
         type: "Secured Leggings",
       },
       {
-        type: "Advanced Secured Leggings",
+        type: "Bound Leggings",
       },
       {
-        type: "Expert Secured Leggings",
+        type: "Apostle Leggings",
       },
       {
         type: "Pelt Leggings",
       },
       {
-        type: "Advanced Pelt Leggings",
+        type: "Shamanistic Leggings",
       },
       {
-        type: "Expert Pelt Leggings",
+        type: "Warlock Leggings",
+      },
+      {
+        type: "Weaver Leggings",
+      },
+      {
+        type: "Cryptic Leggings",
       },
       {
         type: "Twig Focus",
       },
       {
+        type: "Whorl Focus",
+      },
+      {
+        type: "Tasalian Focus",
+      },
+      {
         type: "Woven Focus",
       },
       {
-        type: "Advanced Woven Focus",
+        type: "Wreath Focus",
       },
       {
         type: "Antler Focus",
       },
       {
-        type: "Advanced Antler Focus",
+        type: "Staghorn Focus",
       },
       {
-        type: "Expert Antler Focus",
+        type: "Druidic Focus",
       },
       {
         type: "Engraved Focus",
@@ -1104,31 +1384,34 @@ export const Items = [
         type: "Tonal Focus",
       },
       {
-        type: "Advanced Tonal Focus",
+        type: "Jingling Focus",
       },
       {
         type: "Crystal Focus",
       },
       {
-        type: "Advanced Crystal Focus",
+        type: "Arrayed Focus",
       },
       {
-        type: "Expert Crystal Focus",
+        type: "Leyline Focus",
       },
       {
         type: "Voodoo Focus",
       },
       {
-        type: "Advanced Voodoo Focus",
+        type: "Cultist Focus",
       },
       {
         type: "Plumed Focus",
       },
       {
-        type: "Advanced Plumed Focus",
+        type: "Hallowed Focus",
       },
       {
-        type: "Expert Plumed Focus",
+        type: "Sacred Focus",
+      },
+      {
+        type: "Runed Focus",
       },
       {
         type: "Suede Bracers",
@@ -1137,67 +1420,79 @@ export const Items = [
         type: "Firm Bracers",
       },
       {
-        type: "Advanced Firm Bracers",
+        type: "Hunting Bracers",
       },
       {
-        type: "Expert Firm Bracers",
+        type: "Stalking Bracers",
       },
       {
         type: "Bound Bracers",
       },
       {
-        type: "Advanced Bound Bracers",
+        type: "Swift Bracers",
       },
       {
         type: "Sectioned Bracers",
       },
       {
-        type: "Advanced Sectioned Bracers",
+        type: "Refined Bracers",
       },
       {
-        type: "Expert Sectioned Bracers",
+        type: "Grand Bracers",
       },
       {
         type: "Spined Bracers",
       },
       {
-        type: "Advanced Spined Bracers",
+        type: "Spiked Bracers",
       },
       {
-        type: "Expert Spined Bracers",
+        type: "Barbed Bracers",
       },
       {
         type: "Fine Bracers",
       },
       {
+        type: "Polished Bracers",
+      },
+      {
         type: "Gauze Wraps",
       },
       {
-        type: "Advanced Gauze Wraps",
+        type: "Bandage Wraps",
       },
       {
-        type: "Expert Gauze Wraps",
+        type: "War Wraps",
       },
       {
         type: "Linen Wraps",
       },
       {
-        type: "Advanced Linen Wraps",
+        type: "Cambric Wraps",
       },
       {
-        type: "Expert Linen Wraps",
+        type: "Elegant Wraps",
       },
       {
         type: "Spiral Wraps",
       },
       {
-        type: "Advanced Spiral Wraps",
+        type: "Adorned Wraps",
       },
       {
-        type: "Expert Spiral Wraps",
+        type: "Vaal Wraps",
+      },
+      {
+        type: "Buckled Wraps",
+      },
+      {
+        type: "Secured Wraps",
       },
       {
         type: "Furtive Wraps",
+      },
+      {
+        type: "Utility Wraps",
       },
       {
         type: "Torn Gloves",
@@ -1206,34 +1501,43 @@ export const Items = [
         type: "Sombre Gloves",
       },
       {
-        type: "Advanced Sombre Gloves",
+        type: "Ominous Gloves",
       },
       {
-        type: "Expert Sombre Gloves",
+        type: "Grim Gloves",
       },
       {
         type: "Stitched Gloves",
       },
       {
-        type: "Advanced Stitched Gloves",
+        type: "Embellished Gloves",
       },
       {
         type: "Jewelled Gloves",
       },
       {
-        type: "Advanced Jewelled Gloves",
+        type: "Baroque Gloves",
       },
       {
-        type: "Expert Jewelled Gloves",
+        type: "Opulent Gloves",
       },
       {
         type: "Intricate Gloves",
       },
       {
-        type: "Advanced Intricate Gloves",
+        type: "Gold Gloves",
       },
       {
-        type: "Expert Intricate Gloves",
+        type: "Vaal Gloves",
+      },
+      {
+        type: "Pauascale Gloves",
+      },
+      {
+        type: "Sirenscale Gloves",
+      },
+      {
+        type: "Embroidered Gloves",
       },
       {
         type: "Stocky Mitts",
@@ -1242,64 +1546,82 @@ export const Items = [
         type: "Riveted Mitts",
       },
       {
-        type: "Advanced Riveted Mitts",
+        type: "Plated Mitts",
       },
       {
-        type: "Expert Riveted Mitts",
+        type: "Knightly Mitts",
       },
       {
         type: "Tempered Mitts",
       },
       {
-        type: "Advanced Tempered Mitts",
+        type: "Elegant Mitts",
       },
       {
         type: "Bolstered Mitts",
       },
       {
-        type: "Advanced Bolstered Mitts",
+        type: "Ancient Mitts",
       },
       {
-        type: "Expert Bolstered Mitts",
+        type: "Ornate Mitts",
       },
       {
         type: "Moulded Mitts",
       },
       {
-        type: "Advanced Moulded Mitts",
+        type: "Feathered Mitts",
       },
       {
-        type: "Expert Moulded Mitts",
+        type: "Vaal Mitts",
+      },
+      {
+        type: "Detailed Mitts",
+      },
+      {
+        type: "Massive Mitts",
+      },
+      {
+        type: "Titan Mitts",
       },
       {
         type: "Ringmail Gauntlets",
       },
       {
-        type: "Advanced Ringmail Gauntlets",
+        type: "Ironmail Gauntlets",
       },
       {
-        type: "Expert Ringmail Gauntlets",
+        type: "Steelmail Gauntlets",
       },
       {
         type: "Layered Gauntlets",
       },
       {
-        type: "Advanced Layered Gauntlets",
+        type: "Captain Gauntlets",
       },
       {
-        type: "Expert Layered Gauntlets",
+        type: "Commander Gauntlets",
       },
       {
         type: "Doubled Gauntlets",
       },
       {
-        type: "Advanced Doubled Gauntlets",
+        type: "Zealot Gauntlets",
       },
       {
-        type: "Expert Doubled Gauntlets",
+        type: "Cultist Gauntlets",
+      },
+      {
+        type: "Plate Gauntlets",
+      },
+      {
+        type: "Blacksteel Gauntlets",
       },
       {
         type: "Burnished Gauntlets",
+      },
+      {
+        type: "Ornate Gauntlets",
       },
       {
         type: "Grand Manchettes",
@@ -1308,28 +1630,37 @@ export const Items = [
         type: "Rope Cuffs",
       },
       {
-        type: "Advanced Rope Cuffs",
+        type: "Braided Cuffs",
       },
       {
-        type: "Expert Rope Cuffs",
+        type: "Bound Cuffs",
       },
       {
         type: "Aged Cuffs",
       },
       {
-        type: "Advanced Aged Cuffs",
+        type: "Heirloom Cuffs",
       },
       {
-        type: "Expert Aged Cuffs",
+        type: "Ancient Cuffs",
       },
       {
         type: "Goldcast Cuffs",
       },
       {
-        type: "Advanced Goldcast Cuffs",
+        type: "Ornate Cuffs",
       },
       {
-        type: "Expert Goldcast Cuffs",
+        type: "Gleaming Cuffs",
+      },
+      {
+        type: "Verisium Cuffs",
+      },
+      {
+        type: "Adherent Cuffs",
+      },
+      {
+        type: "Golden Visage",
       },
       {
         type: "Shabby Hood",
@@ -1341,211 +1672,256 @@ export const Items = [
         type: "Armoured Cap",
       },
       {
-        type: "Advanced Shabby Hood",
+        type: "Rotted Hood",
       },
       {
         type: "Felt Cap",
       },
       {
-        type: "Advanced Felt Cap",
+        type: "Wool Cap",
       },
       {
-        type: "Expert Felt Cap",
+        type: "Woven Cap",
       },
       {
         type: "Lace Hood",
       },
       {
-        type: "Advanced Lace Hood",
+        type: "Narrow Hood",
       },
       {
         type: "Swathed Cap",
       },
       {
-        type: "Advanced Swathed Cap",
+        type: "Wrapped Cap",
       },
       {
-        type: "Expert Swathed Cap",
+        type: "Desert Cap",
       },
       {
         type: "Hunter Hood",
       },
       {
-        type: "Advanced Hunter Hood",
+        type: "Deerstalker Hood",
       },
       {
-        type: "Expert Hunter Hood",
+        type: "Trapper Hood",
       },
       {
         type: "Viper Cap",
       },
       {
+        type: "Corsair Cap",
+      },
+      {
+        type: "Freebooter Cap",
+      },
+      {
+        type: "Leatherbound Hood",
+      },
+      {
+        type: "Velvet Cap",
+      },
+      {
         type: "Hewn Mask",
       },
       {
-        type: "Advanced Hewn Mask",
+        type: "Oak Mask",
       },
       {
         type: "Face Mask",
       },
       {
-        type: "Advanced Face Mask",
+        type: "Bandit Mask",
       },
       {
-        type: "Expert Face Mask",
+        type: "Brigand Mask",
       },
       {
         type: "Hooded Mask",
       },
       {
-        type: "Advanced Hooded Mask",
+        type: "Skulking Mask",
       },
       {
         type: "Veiled Mask",
       },
       {
-        type: "Advanced Veiled Mask",
+        type: "Pariah Mask",
       },
       {
-        type: "Expert Veiled Mask",
+        type: "Faridun Mask",
       },
       {
         type: "Tribal Mask",
       },
       {
-        type: "Advanced Tribal Mask",
+        type: "Avian Mask",
       },
       {
-        type: "Expert Tribal Mask",
+        type: "Soaring Mask",
       },
       {
         type: "Solid Mask",
       },
       {
+        type: "Grinning Mask",
+      },
+      {
+        type: "Death Mask",
+      },
+      {
         type: "Twig Circlet",
       },
       {
-        type: "Advanced Twig Circlet",
+        type: "Magus Tiara",
+      },
+      {
+        type: "Druidic Circlet",
       },
       {
         type: "Wicker Tiara",
       },
       {
-        type: "Advanced Wicker Tiara",
+        type: "Avian Tiara",
       },
       {
-        type: "Expert Wicker Tiara",
+        type: "Skycrown Tiara",
       },
       {
         type: "Beaded Circlet",
       },
       {
-        type: "Advanced Beaded Circlet",
+        type: "Desert Circlet",
       },
       {
         type: "Chain Tiara",
       },
       {
-        type: "Advanced Chain Tiara",
+        type: "Sandsworn Tiara",
       },
       {
-        type: "Expert Chain Tiara",
+        type: "Sorcerous Tiara",
       },
       {
         type: "Feathered Tiara",
       },
       {
-        type: "Advanced Feathered Tiara",
+        type: "Jungle Tiara",
       },
       {
-        type: "Expert Feathered Tiara",
+        type: "Kamasan Tiara",
       },
       {
         type: "Gold Circlet",
       },
       {
+        type: "Vermeil Circlet",
+      },
+      {
+        type: "Jade Tiara",
+      },
+      {
+        type: "Ancestral Tiara",
+      },
+      {
         type: "Rusted Greathelm",
       },
       {
-        type: "Advanced Rusted Greathelm",
+        type: "Corroded Greathelm",
       },
       {
         type: "Soldier Greathelm",
       },
       {
-        type: "Advanced Soldier Greathelm",
+        type: "Mercenary Greathelm",
       },
       {
-        type: "Expert Soldier Greathelm",
+        type: "Warmonger Greathelm",
       },
       {
         type: "Wrapped Greathelm",
       },
       {
-        type: "Advanced Wrapped Greathelm",
+        type: "Homeguard Greathelm",
       },
       {
         type: "Spired Greathelm",
       },
       {
-        type: "Advanced Spired Greathelm",
+        type: "Elegant Greathelm",
       },
       {
-        type: "Expert Spired Greathelm",
+        type: "Masked Greathelm",
       },
       {
         type: "Elite Greathelm",
       },
       {
-        type: "Advanced Elite Greathelm",
+        type: "Noble Greathelm",
       },
       {
-        type: "Expert Elite Greathelm",
+        type: "Paragon Greathelm",
       },
       {
         type: "Warrior Greathelm",
       },
       {
+        type: "Commander Greathelm",
+      },
+      {
+        type: "Imperial Greathelm",
+      },
+      {
+        type: "Fierce Greathelm",
+      },
+      {
         type: "Brimmed Helm",
       },
       {
-        type: "Advanced Brimmed Helm",
+        type: "Domed Helm",
       },
       {
         type: "Guarded Helm",
       },
       {
-        type: "Advanced Guarded Helm",
+        type: "Engraved Helm",
       },
       {
-        type: "Expert Guarded Helm",
+        type: "Warded Helm",
       },
       {
         type: "Visored Helm",
       },
       {
-        type: "Advanced Visored Helm",
+        type: "Soldier Helm",
       },
       {
         type: "Cowled Helm",
       },
       {
-        type: "Advanced Cowled Helm",
+        type: "Cabalist Helm",
       },
       {
-        type: "Expert Cowled Helm",
+        type: "Cryptic Helm",
       },
       {
         type: "Shielded Helm",
       },
       {
-        type: "Advanced Shielded Helm",
+        type: "Gladiatoral Helm",
       },
       {
-        type: "Expert Shielded Helm",
+        type: "Champion Helm",
       },
       {
         type: "Closed Helm",
+      },
+      {
+        type: "Gladiatorial Helm",
+      },
+      {
+        type: "Decorated Helm",
       },
       {
         type: "Grand Visage",
@@ -1554,61 +1930,136 @@ export const Items = [
         type: "Iron Crown",
       },
       {
-        type: "Advanced Iron Crown",
+        type: "Mailed Crown",
       },
       {
         type: "Horned Crown",
       },
       {
-        type: "Advanced Horned Crown",
+        type: "Forest Crown",
       },
       {
-        type: "Expert Horned Crown",
+        type: "Druidic Crown",
       },
       {
         type: "Cultist Crown",
       },
       {
-        type: "Advanced Cultist Crown",
+        type: "Zealot Crown",
       },
       {
         type: "Martyr Crown",
       },
       {
-        type: "Advanced Martyr Crown",
+        type: "Hallowed Crown",
       },
       {
-        type: "Expert Martyr Crown",
+        type: "Saintly Crown",
       },
       {
         type: "Heavy Crown",
       },
       {
-        type: "Advanced Heavy Crown",
+        type: "Inquisitor Crown",
       },
       {
-        type: "Expert Heavy Crown",
+        type: "Divine Crown",
       },
       {
         type: "Spiritbone Crown",
       },
       {
+        type: "Cryptic Crown",
+      },
+      {
+        type: "Leather Buckler",
+      },
+      {
+        type: "Pearl Buckler",
+      },
+      {
+        type: "Ornate Buckler",
+      },
+      {
+        type: "Array Buckler",
+      },
+      {
+        type: "Wooden Buckler",
+      },
+      {
+        type: "Oak Buckler",
+      },
+      {
+        type: "Plated Buckler",
+      },
+      {
+        type: "Painted Buckler",
+      },
+      {
+        type: "Iron Buckler",
+      },
+      {
+        type: "Ridged Buckler",
+      },
+      {
+        type: "Coiled Buckler",
+      },
+      {
+        type: "Spiked Buckler",
+      },
+      {
+        type: "Spikeward Buckler",
+      },
+      {
+        type: "Gutspike Buckler",
+      },
+      {
+        type: "Ringed Buckler",
+      },
+      {
+        type: "Jingling Buckler",
+      },
+      {
+        type: "Edged Buckler",
+      },
+      {
+        type: "Bladeguard Buckler",
+      },
+      {
+        type: "Ancient Buckler",
+      },
+      {
+        type: "Laminate Buckler",
+      },
+      {
+        type: "Desert Buckler",
+      },
+      {
         type: "Splintered Tower Shield",
+      },
+      {
+        type: "Ancestor Tower Shield",
+      },
+      {
+        type: "Tawhoan Tower Shield",
+      },
+      {
+        type: "Blacksteel Tower Shield",
       },
       {
         type: "Painted Tower Shield",
       },
       {
-        type: "Advanced Painted Tower Shield",
+        type: "Aged Tower Shield",
       },
       {
         type: "Braced Tower Shield",
       },
       {
-        type: "Advanced Braced Tower Shield",
+        type: "Metalworked Tower Shield",
       },
       {
-        type: "Expert Braced Tower Shield",
+        type: "Royal Tower Shield",
       },
       {
         type: "Barricade Tower Shield",
@@ -1617,31 +2068,31 @@ export const Items = [
         type: "Effigial Tower Shield",
       },
       {
-        type: "Advanced Effigial Tower Shield",
+        type: "Cultist Tower Shield",
       },
       {
         type: "Rampart Tower Shield",
       },
       {
-        type: "Advanced Rampart Tower Shield",
+        type: "Bulwark Tower Shield",
       },
       {
-        type: "Expert Rampart Tower Shield",
+        type: "Fortress Tower Shield",
       },
       {
         type: "Heraldric Tower Shield",
       },
       {
-        type: "Advanced Heraldric Tower Shield",
+        type: "Noble Tower Shield",
       },
       {
         type: "Stone Tower Shield",
       },
       {
-        type: "Advanced Stone Tower Shield",
+        type: "Goldworked Tower Shield",
       },
       {
-        type: "Expert Stone Tower Shield",
+        type: "Vaal Tower Shield",
       },
       {
         type: "Crucible Tower Shield",
@@ -1650,91 +2101,109 @@ export const Items = [
         type: "Hardwood Targe",
       },
       {
-        type: "Advanced Hardwood Targe",
+        type: "Golden Targe",
+      },
+      {
+        type: "Ironwood Targe",
       },
       {
         type: "Pelage Targe",
       },
       {
-        type: "Advanced Pelage Targe",
+        type: "Fur-lined Targe",
       },
       {
-        type: "Expert Pelage Targe",
+        type: "Mammoth Targe",
       },
       {
         type: "Studded Targe",
       },
       {
-        type: "Advanced Studded Targe",
+        type: "Mercenary Targe",
       },
       {
         type: "Crescent Targe",
       },
       {
-        type: "Advanced Crescent Targe",
+        type: "Polished Targe",
       },
       {
-        type: "Expert Crescent Targe",
+        type: "Baroque Targe",
       },
       {
         type: "Chiseled Targe",
       },
       {
-        type: "Advanced Chiseled Targe",
+        type: "Stone Targe",
       },
       {
         type: "Feathered Targe",
       },
       {
-        type: "Advanced Feathered Targe",
+        type: "Avian Targe",
       },
       {
-        type: "Expert Feathered Targe",
+        type: "Soaring Targe",
+      },
+      {
+        type: "Stratified Targe",
+      },
+      {
+        type: "Carved Targe",
       },
       {
         type: "Blazon Crest Shield",
       },
       {
-        type: "Advanced Blazon Crest Shield",
+        type: "Painted Crest Shield",
       },
       {
         type: "Sigil Crest Shield",
       },
       {
-        type: "Advanced Sigil Crest Shield",
+        type: "Engraved Crest Shield",
       },
       {
-        type: "Expert Sigil Crest Shield",
+        type: "Intricate Crest Shield",
       },
       {
         type: "Emblem Crest Shield",
       },
       {
-        type: "Advanced Emblem Crest Shield",
+        type: "Descry Crest Shield",
       },
       {
         type: "Jingling Crest Shield",
       },
       {
-        type: "Advanced Jingling Crest Shield",
+        type: "Dekharan Crest Shield",
       },
       {
-        type: "Expert Jingling Crest Shield",
+        type: "Sekheman Crest Shield",
       },
       {
         type: "Sectarian Crest Shield",
       },
       {
-        type: "Advanced Sectarian Crest Shield",
+        type: "Quartered Crest Shield",
       },
       {
         type: "Omen Crest Shield",
       },
       {
-        type: "Advanced Omen Crest Shield",
+        type: "Glowering Crest Shield",
       },
       {
-        type: "Expert Omen Crest Shield",
+        type: "Vaal Crest Shield",
+      },
+      {
+        type: "Wayward Crest Shield",
+      },
+      {
+        type: "Blacksteel Crest Shield",
+      },
+      {
+        type: "Seer Crest Shield",
       },
       {
         type: "Broadhead Quiver",
@@ -1797,6 +2266,14 @@ export const Items = [
         type: "Armoured Cap",
         text: "Alpha's Howl Armoured Cap",
         name: "Alpha's Howl",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Voodoo Focus",
+        text: "Apep's Supremacy Voodoo Focus",
+        name: "Apep's Supremacy",
         flags: {
           unique: true,
         },
@@ -1946,6 +2423,22 @@ export const Items = [
         },
       },
       {
+        type: "Iron Buckler",
+        text: "Bloodbarrier Iron Buckler",
+        name: "Bloodbarrier",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Fierce Greathelm",
+        text: "Blood Price Fierce Greathelm",
+        name: "Blood Price",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Goldcast Cuffs",
         text: "Blueflame Bracers Goldcast Cuffs",
         name: "Blueflame Bracers",
@@ -2010,6 +2503,22 @@ export const Items = [
         },
       },
       {
+        type: "Primed Quiver",
+        text: "Cadiro's Gambit Primed Quiver",
+        name: "Cadiro's Gambit",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Ornate Buckler",
+        text: "Calgyra's Arc Ornate Buckler",
+        name: "Calgyra's Arc",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Sombre Gloves",
         text: "Candlemaker Sombre Gloves",
         name: "Candlemaker",
@@ -2026,6 +2535,22 @@ export const Items = [
         },
       },
       {
+        type: "Blacksteel Tower Shield",
+        text: "Chernobog's Pillar Blacksteel Tower Shield",
+        name: "Chernobog's Pillar",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Havoc Raiment",
+        text: "Cloak of Defiance Havoc Raiment",
+        name: "Cloak of Defiance",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Silk Robe",
         text: "Cloak of Flame Silk Robe",
         name: "Cloak of Flame",
@@ -2037,6 +2562,14 @@ export const Items = [
         type: "Chain Mail",
         text: "Coat of Red Chain Mail",
         name: "Coat of Red",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Viper Cap",
+        text: "Constricting Command Viper Cap",
+        name: "Constricting Command",
         flags: {
           unique: true,
         },
@@ -2066,6 +2599,14 @@ export const Items = [
         },
       },
       {
+        type: "Assassin Garb",
+        text: "Cospri's Will Assassin Garb",
+        name: "Cospri's Will",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Gilded Vestments",
         text: "Couture of Crimson Gilded Vestments",
         name: "Couture of Crimson",
@@ -2077,6 +2618,14 @@ export const Items = [
         type: "Jingling Crest Shield",
         text: "Crest of Ardura Jingling Crest Shield",
         name: "Crest of Ardura",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Vermeil Circlet",
+        text: "Crown of Eyes Vermeil Circlet",
+        name: "Crown of Eyes",
         flags: {
           unique: true,
         },
@@ -2114,6 +2663,14 @@ export const Items = [
         },
       },
       {
+        type: "Ornate Gauntlets",
+        text: "Death Articulated Ornate Gauntlets",
+        name: "Death Articulated",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Doubled Gauntlets",
         text: "Deathblow Doubled Gauntlets",
         name: "Deathblow",
@@ -2133,6 +2690,14 @@ export const Items = [
         type: "Elite Greathelm",
         text: "Deidbell Elite Greathelm",
         name: "Deidbell",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Golden Visage",
+        text: "Demigod's Virtue Golden Visage",
+        name: "Demigod's Virtue",
         flags: {
           unique: true,
         },
@@ -2178,6 +2743,22 @@ export const Items = [
         },
       },
       {
+        type: "Bolstered Mitts",
+        text: "Dreadfist Bolstered Mitts",
+        name: "Dreadfist",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Leather Buckler",
+        text: "Dunkelhalt Leather Buckler",
+        name: "Dunkelhalt",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Studded Vest",
         text: "Dustbloom Studded Vest",
         name: "Dustbloom",
@@ -2194,9 +2775,25 @@ export const Items = [
         },
       },
       {
+        type: "Antler Focus",
+        text: "Effigy of Cruelty Antler Focus",
+        name: "Effigy of Cruelty",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Hunter Hood",
         text: "Elevore Hunter Hood",
         name: "Elevore",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Titan Mitts",
+        text: "Empire's Grasp Titan Mitts",
+        name: "Empire's Grasp",
         flags: {
           unique: true,
         },
@@ -2213,6 +2810,14 @@ export const Items = [
         type: "Guarded Helm",
         text: "Erian's Cobble Guarded Helm",
         name: "Erian's Cobble",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Furtive Wraps",
+        text: "Essentia Sanguis Furtive Wraps",
+        name: "Essentia Sanguis",
         flags: {
           unique: true,
         },
@@ -2282,6 +2887,14 @@ export const Items = [
         },
       },
       {
+        type: "Elementalist Robe",
+        text: "Gloamgown Elementalist Robe",
+        name: "Gloamgown",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Waxed Jacket",
         text: "Gloomform Waxed Jacket",
         name: "Gloomform",
@@ -2338,9 +2951,25 @@ export const Items = [
         },
       },
       {
+        type: "Spiral Wraps",
+        text: "Hand of Wisdom and Action Spiral Wraps",
+        name: "Hand of Wisdom and Action",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Moulded Mitts",
         text: "Hateforge Moulded Mitts",
         name: "Hateforge",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Velvet Cap",
+        text: "Heatshiver Velvet Cap",
+        name: "Heatshiver",
         flags: {
           unique: true,
         },
@@ -2362,6 +2991,14 @@ export const Items = [
         },
       },
       {
+        type: "Armoured Vest",
+        text: "Hyrri's Ire Armoured Vest",
+        name: "Hyrri's Ire",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Mail Vestments",
         text: "Icetomb Mail Vestments",
         name: "Icetomb",
@@ -2373,6 +3010,14 @@ export const Items = [
         type: "Sectioned Bracers",
         text: "Idle Hands Sectioned Bracers",
         name: "Idle Hands",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Magus Tiara",
+        text: "Indigon Magus Tiara",
+        name: "Indigon",
         flags: {
           unique: true,
         },
@@ -2405,6 +3050,14 @@ export const Items = [
         type: "Ringmail Gauntlets",
         text: "Jarngreipr Ringmail Gauntlets",
         name: "Jarngreipr",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Ridged Buckler",
+        text: "Kaltenhalt Ridged Buckler",
+        name: "Kaltenhalt",
         flags: {
           unique: true,
         },
@@ -2461,6 +3114,22 @@ export const Items = [
         type: "Rough Greaves",
         text: "Legionstride Rough Greaves",
         name: "Legionstride",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Embroidered Gloves",
+        text: "Leopold's Applause Embroidered Gloves",
+        name: "Leopold's Applause",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Ancestral Mail",
+        text: "Lightning Coil Ancestral Mail",
+        name: "Lightning Coil",
         flags: {
           unique: true,
         },
@@ -2530,9 +3199,25 @@ export const Items = [
         },
       },
       {
+        type: "Death Mask",
+        text: "Mind of the Council Death Mask",
+        name: "Mind of the Council",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Grand Regalia",
         text: "Morior Invictus Grand Regalia",
         name: "Morior Invictus",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Toxic Quiver",
+        text: "Murkshaft Toxic Quiver",
+        name: "Murkshaft",
         flags: {
           unique: true,
         },
@@ -2549,6 +3234,22 @@ export const Items = [
         type: "Bone Raiment",
         text: "Necromantle Bone Raiment",
         name: "Necromantle",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Pauascale Gloves",
+        text: "Nightscale Pauascale Gloves",
+        name: "Nightscale",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Wooden Buckler",
+        text: "Nocturne Wooden Buckler",
+        name: "Nocturne",
         flags: {
           unique: true,
         },
@@ -2634,6 +3335,14 @@ export const Items = [
         },
       },
       {
+        type: "Intricate Crest Shield",
+        text: "Prism Guardian Intricate Crest Shield",
+        name: "Prism Guardian",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Serpentscale Coat",
         text: "Quatl's Molt Serpentscale Coat",
         name: "Quatl's Molt",
@@ -2658,6 +3367,30 @@ export const Items = [
         },
       },
       {
+        type: "Sacred Focus",
+        text: "Rathpith Globe Sacred Focus",
+        name: "Rathpith Globe",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Blunt Quiver",
+        text: "Rearguard Blunt Quiver",
+        name: "Rearguard",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Heraldric Tower Shield",
+        text: "Redblade Banner Heraldric Tower Shield",
+        name: "Redblade Banner",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Anchorite Garb",
         text: "Redflare Conduit Anchorite Garb",
         name: "Redflare Conduit",
@@ -2674,6 +3407,22 @@ export const Items = [
         },
       },
       {
+        type: "Plated Buckler",
+        text: "Rondel de Ezo Plated Buckler",
+        name: "Rondel de Ezo",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Corvus Mantle",
+        text: "Sacrosanctum Corvus Mantle",
+        name: "Sacrosanctum",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Emblem Crest Shield",
         text: "Saffell's Frame Emblem Crest Shield",
         name: "Saffell's Frame",
@@ -2682,9 +3431,25 @@ export const Items = [
         },
       },
       {
+        type: "Shrouded Vest",
+        text: "Sands of Silk Shrouded Vest",
+        name: "Sands of Silk",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Chain Tiara",
         text: "Sandstorm Visage Chain Tiara",
         name: "Sandstorm Visage",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Jade Tiara",
+        text: "Scold's Bridle Jade Tiara",
+        name: "Scold's Bridle",
         flags: {
           unique: true,
         },
@@ -2706,9 +3471,33 @@ export const Items = [
         },
       },
       {
+        type: "Covered Sabatons",
+        text: "Shankgonne Covered Sabatons",
+        name: "Shankgonne",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Marabout Garb",
         text: "Sierran Inheritance Marabout Garb",
         name: "Sierran Inheritance",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Enlightened Robe",
+        text: "Silks of Veneration Enlightened Robe",
+        name: "Silks of Veneration",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Spiked Buckler",
+        text: "Silverthorne Spiked Buckler",
+        name: "Silverthorne",
         flags: {
           unique: true,
         },
@@ -2746,9 +3535,41 @@ export const Items = [
         },
       },
       {
+        type: "Sacrificial Mantle",
+        text: "Soul Mantle Sacrificial Mantle",
+        name: "Soul Mantle",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Leatherbound Hood",
+        text: "Starkonja's Head Leatherbound Hood",
+        name: "Starkonja's Head",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Array Buckler",
+        text: "Sunsplinter Array Buckler",
+        name: "Sunsplinter",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Crucible Tower Shield",
         text: "Svalinn Crucible Tower Shield",
         name: "Svalinn",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Garment",
+        text: "Tabula Rasa Garment",
+        name: "Tabula Rasa",
         flags: {
           unique: true,
         },
@@ -2786,9 +3607,33 @@ export const Items = [
         },
       },
       {
+        type: "Corsair Cap",
+        text: "The Black Insignia Corsair Cap",
+        name: "The Black Insignia",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Champion Cuirass",
         text: "The Brass Dome Champion Cuirass",
         name: "The Brass Dome",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Decorated Helm",
+        text: "The Bringer of Rain Decorated Helm",
+        name: "The Bringer of Rain",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Heroic Armour",
+        text: "The Coming Calamity Heroic Armour",
+        name: "The Coming Calamity",
         flags: {
           unique: true,
         },
@@ -2810,6 +3655,14 @@ export const Items = [
         },
       },
       {
+        type: "Spiritbone Crown",
+        text: "The Deepest Tower Spiritbone Crown",
+        name: "The Deepest Tower",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Wicker Tiara",
         text: "The Devouring Diadem Wicker Tiara",
         name: "The Devouring Diadem",
@@ -2821,6 +3674,14 @@ export const Items = [
         type: "Crystal Focus",
         text: "The Eternal Spark Crystal Focus",
         name: "The Eternal Spark",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Lamellar Mail",
+        text: "The Fallen Formation Lamellar Mail",
+        name: "The Fallen Formation",
         flags: {
           unique: true,
         },
@@ -2853,6 +3714,30 @@ export const Items = [
         type: "Mail Sabatons",
         text: "The Knight-errant Mail Sabatons",
         name: "The Knight-errant",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Sacral Quiver",
+        text: "The Lethal Draw Sacral Quiver",
+        name: "The Lethal Draw",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Cleric Vestments",
+        text: "The Mutable Star Cleric Vestments",
+        name: "The Mutable Star",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Verisium Cuffs",
+        text: "The Prisoner's Manacles Verisium Cuffs",
+        name: "The Prisoner's Manacles",
         flags: {
           unique: true,
         },
@@ -2930,6 +3815,14 @@ export const Items = [
         },
       },
       {
+        type: "Utility Wraps",
+        text: "Thunderfist Utility Wraps",
+        name: "Thunderfist",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Steeltoe Boots",
         text: "Thunderstep Steeltoe Boots",
         name: "Thunderstep",
@@ -2962,6 +3855,14 @@ export const Items = [
         },
       },
       {
+        type: "Plate Gauntlets",
+        text: "Valako's Vice Plate Gauntlets",
+        name: "Valako's Vice",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Martyr Crown",
         text: "Veil of the Night Martyr Crown",
         name: "Veil of the Night",
@@ -2973,6 +3874,14 @@ export const Items = [
         type: "Beaded Circlet",
         text: "Visage of Ayah Beaded Circlet",
         name: "Visage of Ayah",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Plated Raiment",
+        text: "Vis Mortis Plated Raiment",
+        name: "Vis Mortis",
         flags: {
           unique: true,
         },
@@ -3010,6 +3919,30 @@ export const Items = [
         },
       },
       {
+        type: "Tideseer Mantle",
+        text: "Waveshaper Tideseer Mantle",
+        name: "Waveshaper",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Knight Armour",
+        text: "Widow's Reign Knight Armour",
+        name: "Widow's Reign",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Barricade Tower Shield",
+        text: "Window to Paradise Barricade Tower Shield",
+        name: "Window to Paradise",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Feathered Sandals",
         text: "Windscream Feathered Sandals",
         name: "Windscream",
@@ -3041,12 +3974,61 @@ export const Items = [
           unique: true,
         },
       },
+      {
+        type: "Strider Vest",
+        text: "Yriel's Fostering Strider Vest",
+        name: "Yriel's Fostering",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Scalper's Jacket",
+        text: "Zerphi's Serape Scalper's Jacket",
+        name: "Zerphi's Serape",
+        flags: {
+          unique: true,
+        },
+      },
     ],
   },
   {
     id: "currency",
     label: "Currency",
     entries: [
+      {
+        type: "Preserved Rib",
+      },
+      {
+        type: "Ancient Rib",
+      },
+      {
+        type: "Gnawed Rib",
+      },
+      {
+        type: "Preserved Cranium",
+      },
+      {
+        type: "Preserved Collarbone",
+      },
+      {
+        type: "Ancient Collarbone",
+      },
+      {
+        type: "Gnawed Collarbone",
+      },
+      {
+        type: "Preserved Vertebrae",
+      },
+      {
+        type: "Preserved Jawbone",
+      },
+      {
+        type: "Ancient Jawbone",
+      },
+      {
+        type: "Gnawed Jawbone",
+      },
       {
         type: "Artificer's Orb",
       },
@@ -3057,7 +4039,19 @@ export const Items = [
         type: "Orb of Augmentation",
       },
       {
+        type: "Greater Orb of Augmentation",
+      },
+      {
+        type: "Perfect Orb of Augmentation",
+      },
+      {
         type: "Exalted Orb",
+      },
+      {
+        type: "Greater Exalted Orb",
+      },
+      {
+        type: "Perfect Exalted Orb",
       },
       {
         type: "Lesser Jeweller's Orb",
@@ -3081,7 +4075,25 @@ export const Items = [
         type: "Vaal Orb",
       },
       {
+        type: "Essence of the Abyss",
+      },
+      {
+        type: "Essence of Delirium",
+      },
+      {
+        type: "Essence of Horror",
+      },
+      {
+        type: "Essence of Hysteria",
+      },
+      {
+        type: "Essence of Insanity",
+      },
+      {
         type: "Mirror of Kalandra",
+      },
+      {
+        type: "Essence of Command",
       },
       {
         type: "Essence of Battle",
@@ -3099,10 +4111,19 @@ export const Items = [
         type: "Essence of Ice",
       },
       {
+        type: "Essence of Thawing",
+      },
+      {
+        type: "Essence of Seeking",
+      },
+      {
         type: "Essence of Enhancement",
       },
       {
         type: "Essence of Flames",
+      },
+      {
+        type: "Essence of Insulation",
       },
       {
         type: "Essence of the Body",
@@ -3111,19 +4132,37 @@ export const Items = [
         type: "Essence of Electricity",
       },
       {
+        type: "Essence of Grounding",
+      },
+      {
         type: "Essence of the Mind",
       },
       {
-        type: "Essence of Torment",
+        type: "Essence of Abrasion",
+      },
+      {
+        type: "Essence of Opulence",
       },
       {
         type: "Essence of Haste",
       },
       {
+        type: "Essence of Alacrity",
+      },
+      {
+        type: "Runic Splinter",
+      },
+      {
         type: "Glassblower's Bauble",
       },
       {
+        type: "Fracturing Orb",
+      },
+      {
         type: "Gemcutter's Prism",
+      },
+      {
+        type: "Greater Essence of Command",
       },
       {
         type: "Greater Essence of Battle",
@@ -3141,10 +4180,19 @@ export const Items = [
         type: "Greater Essence of Ice",
       },
       {
+        type: "Greater Essence of Thawing",
+      },
+      {
+        type: "Greater Essence of Seeking",
+      },
+      {
         type: "Greater Essence of Enhancement",
       },
       {
         type: "Greater Essence of Flames",
+      },
+      {
+        type: "Greater Essence of Insulation",
       },
       {
         type: "Greater Essence of the Body",
@@ -3153,13 +4201,25 @@ export const Items = [
         type: "Greater Essence of Electricity",
       },
       {
+        type: "Greater Essence of Grounding",
+      },
+      {
         type: "Greater Essence of the Mind",
       },
       {
-        type: "Greater Essence of Torment",
+        type: "Greater Essence of Abrasion",
+      },
+      {
+        type: "Greater Essence of Opulence",
       },
       {
         type: "Greater Essence of Haste",
+      },
+      {
+        type: "Greater Essence of Alacrity",
+      },
+      {
+        type: "Hinekora's Lock",
       },
       {
         type: "Scroll of Wisdom",
@@ -3201,10 +4261,124 @@ export const Items = [
         type: "Skittering Catalyst",
       },
       {
+        type: "Lesser Essence of Command",
+      },
+      {
+        type: "Lesser Essence of Battle",
+      },
+      {
+        type: "Lesser Essence of the Infinite",
+      },
+      {
+        type: "Lesser Essence of Sorcery",
+      },
+      {
+        type: "Lesser Essence of Ruin",
+      },
+      {
+        type: "Lesser Essence of Ice",
+      },
+      {
+        type: "Lesser Essence of Thawing",
+      },
+      {
+        type: "Lesser Essence of Seeking",
+      },
+      {
+        type: "Lesser Essence of Enhancement",
+      },
+      {
+        type: "Lesser Essence of Flames",
+      },
+      {
+        type: "Lesser Essence of Insulation",
+      },
+      {
+        type: "Lesser Essence of the Body",
+      },
+      {
+        type: "Lesser Essence of Electricity",
+      },
+      {
+        type: "Lesser Essence of Grounding",
+      },
+      {
+        type: "Lesser Essence of the Mind",
+      },
+      {
+        type: "Lesser Essence of Abrasion",
+      },
+      {
+        type: "Lesser Essence of Opulence",
+      },
+      {
+        type: "Lesser Essence of Haste",
+      },
+      {
+        type: "Lesser Essence of Alacrity",
+      },
+      {
         type: "Arcanist's Etcher",
       },
       {
         type: "Divine Orb",
+      },
+      {
+        type: "Perfect Essence of Command",
+      },
+      {
+        type: "Perfect Essence of Battle",
+      },
+      {
+        type: "Perfect Essence of the Infinite",
+      },
+      {
+        type: "Perfect Essence of Sorcery",
+      },
+      {
+        type: "Perfect Essence of Ruin",
+      },
+      {
+        type: "Perfect Essence of Ice",
+      },
+      {
+        type: "Perfect Essence of Thawing",
+      },
+      {
+        type: "Perfect Essence of Seeking",
+      },
+      {
+        type: "Perfect Essence of Enhancement",
+      },
+      {
+        type: "Perfect Essence of Flames",
+      },
+      {
+        type: "Perfect Essence of Insulation",
+      },
+      {
+        type: "Perfect Essence of the Body",
+      },
+      {
+        type: "Perfect Essence of Electricity",
+      },
+      {
+        type: "Perfect Essence of Grounding",
+      },
+      {
+        type: "Perfect Essence of the Mind",
+      },
+      {
+        type: "Perfect Essence of Abrasion",
+      },
+      {
+        type: "Perfect Essence of Opulence",
+      },
+      {
+        type: "Perfect Essence of Haste",
+      },
+      {
+        type: "Perfect Essence of Alacrity",
       },
       {
         type: "Exotic Coinage",
@@ -3216,10 +4390,25 @@ export const Items = [
         type: "Chaos Orb",
       },
       {
+        type: "Greater Chaos Orb",
+      },
+      {
+        type: "Perfect Chaos Orb",
+      },
+      {
         type: "Albino Rhoa Feather",
       },
       {
+        type: "Petition Splinter",
+      },
+      {
         type: "Regal Orb",
+      },
+      {
+        type: "Greater Regal Orb",
+      },
+      {
+        type: "Perfect Regal Orb",
       },
       {
         type: "Regal Shard",
@@ -3234,6 +4423,12 @@ export const Items = [
         type: "Orb of Transmutation",
       },
       {
+        type: "Greater Orb of Transmutation",
+      },
+      {
+        type: "Perfect Orb of Transmutation",
+      },
+      {
         type: "Transmutation Shard",
       },
       {
@@ -3243,40 +4438,67 @@ export const Items = [
         type: "Blacksmith's Whetstone",
       },
       {
-        type: "Distilled Ire",
+        type: "Diluted Liquid Ire",
       },
       {
-        type: "Distilled Isolation",
+        type: "Concentrated Liquid Isolation",
       },
       {
-        type: "Distilled Guilt",
+        type: "Diluted Liquid Guilt",
       },
       {
-        type: "Distilled Greed",
+        type: "Diluted Liquid Greed",
       },
       {
-        type: "Distilled Paranoia",
+        type: "Liquid Paranoia",
       },
       {
-        type: "Distilled Envy",
+        type: "Liquid Envy",
       },
       {
-        type: "Distilled Disgust",
+        type: "Liquid Disgust",
       },
       {
-        type: "Distilled Despair",
+        type: "Liquid Despair",
       },
       {
-        type: "Distilled Fear",
+        type: "Concentrated Liquid Fear",
       },
       {
-        type: "Distilled Suffering",
+        type: "Concentrated Liquid Suffering",
+      },
+      {
+        type: "Omen of Gambling",
+      },
+      {
+        type: "Omen of Sinistral Necromancy",
+      },
+      {
+        type: "Omen of Dextral Necromancy",
+      },
+      {
+        type: "Omen of the Sovereign",
+      },
+      {
+        type: "Omen of the Liege",
+      },
+      {
+        type: "Omen of the Blackblooded",
+      },
+      {
+        type: "Omen of Abyssal Echoes",
+      },
+      {
+        type: "Omen of Putrefaction",
       },
       {
         type: "Omen of Sinistral Alchemy",
       },
       {
         type: "Omen of Dextral Alchemy",
+      },
+      {
+        type: "Omen of Light",
       },
       {
         type: "Omen of Sinistral Annulment",
@@ -3288,7 +4510,22 @@ export const Items = [
         type: "Omen of Greater Annulment",
       },
       {
+        type: "Omen of the Ancients",
+      },
+      {
+        type: "Omen of Chance",
+      },
+      {
         type: "Omen of Whittling",
+      },
+      {
+        type: "Omen of Chaotic Rarity",
+      },
+      {
+        type: "Omen of Chaotic Monsters",
+      },
+      {
+        type: "Omen of Chaotic Quantity",
       },
       {
         type: "Omen of Sinistral Erasure",
@@ -3300,6 +4537,15 @@ export const Items = [
         type: "Omen of Amelioration",
       },
       {
+        type: "Omen of the Blessed",
+      },
+      {
+        type: "Omen of Sanctification",
+      },
+      {
+        type: "Omen of Homogenising Exaltation",
+      },
+      {
         type: "Omen of Sinistral Exaltation",
       },
       {
@@ -3309,10 +4555,22 @@ export const Items = [
         type: "Omen of Greater Exaltation",
       },
       {
+        type: "Omen of Catalysing Exaltation",
+      },
+      {
         type: "Omen of Resurgence",
       },
       {
         type: "Omen of Refreshment",
+      },
+      {
+        type: "Omen of Sinistral Crystallisation",
+      },
+      {
+        type: "Omen of Dextral Crystallisation",
+      },
+      {
+        type: "Omen of Homogenising Coronation",
       },
       {
         type: "Omen of Sinistral Coronation",
@@ -3322,6 +4580,24 @@ export const Items = [
       },
       {
         type: "Omen of Corruption",
+      },
+      {
+        type: "Omen of Recombination",
+      },
+      {
+        type: "Omen of Reinforcements",
+      },
+      {
+        type: "Omen of Bartering",
+      },
+      {
+        type: "Omen of Answered Prayers",
+      },
+      {
+        type: "Omen of Secret Compartments",
+      },
+      {
+        type: "Omen of the Hunt",
       },
       {
         type: "Broken Circle Artifact",
@@ -3336,34 +4612,232 @@ export const Items = [
         type: "Sun Artifact",
       },
       {
+        type: "Azmeri Reliquary Key",
+      },
+      {
+        type: "Xesht's Reliquary Key",
+      },
+      {
+        type: "Tangmazu's Reliquary Key",
+      },
+      {
+        type: "Olroth's Reliquary Key",
+      },
+      {
+        type: "The Arbiter's Reliquary Key",
+      },
+      {
+        type: "Ritualistic Reliquary Key",
+      },
+      {
+        type: "Zarokh's Reliquary Key: Against the Darkness",
+      },
+      {
+        type: "Zarokh's Reliquary Key: Temporalis",
+      },
+      {
+        type: "The Trialmaster's Reliquary Key",
+      },
+      {
+        type: "Twilight Reliquary Key",
+      },
+      {
+        type: "Amanamu's Gaze",
+      },
+      {
+        type: "Kurgal's Gaze",
+      },
+      {
         type: "Vision Rune",
+      },
+      {
+        type: "Greater Vision Rune",
+      },
+      {
+        type: "Lesser Vision Rune",
       },
       {
         type: "Glacial Rune",
       },
       {
+        type: "Greater Glacial Rune",
+      },
+      {
+        type: "Lesser Glacial Rune",
+      },
+      {
+        type: "Adept Rune",
+      },
+      {
+        type: "Greater Adept Rune",
+      },
+      {
+        type: "Lesser Adept Rune",
+      },
+      {
         type: "Iron Rune",
+      },
+      {
+        type: "Greater Iron Rune",
+      },
+      {
+        type: "Lesser Iron Rune",
       },
       {
         type: "Desert Rune",
       },
       {
+        type: "Greater Desert Rune",
+      },
+      {
+        type: "Lesser Desert Rune",
+      },
+      {
+        type: "Resolve Rune",
+      },
+      {
+        type: "Greater Resolve Rune",
+      },
+      {
+        type: "Lesser Resolve Rune",
+      },
+      {
         type: "Body Rune",
+      },
+      {
+        type: "Greater Body Rune",
+      },
+      {
+        type: "Lesser Body Rune",
       },
       {
         type: "Rebirth Rune",
       },
       {
+        type: "Greater Rebirth Rune",
+      },
+      {
+        type: "Lesser Rebirth Rune",
+      },
+      {
         type: "Storm Rune",
+      },
+      {
+        type: "Greater Storm Rune",
+      },
+      {
+        type: "Lesser Storm Rune",
       },
       {
         type: "Mind Rune",
       },
       {
+        type: "Greater Mind Rune",
+      },
+      {
+        type: "Lesser Mind Rune",
+      },
+      {
         type: "Inspiration Rune",
       },
       {
+        type: "Greater Inspiration Rune",
+      },
+      {
+        type: "Lesser Inspiration Rune",
+      },
+      {
+        type: "Greater Rune of Leadership",
+      },
+      {
+        type: "Craiceann's Rune of Warding",
+      },
+      {
+        type: "Saqawal's Rune of Memory",
+      },
+      {
+        type: "Saqawal's Rune of Erosion",
+      },
+      {
+        type: "Farrul's Rune of the Hunt",
+      },
+      {
+        type: "Craiceann's Rune of Recovery",
+      },
+      {
+        type: "Courtesan Mannan's Rune of Cruelty",
+      },
+      {
+        type: "Thane Grannell's Rune of Mastery",
+      },
+      {
+        type: "Fenumus' Rune of Spinning",
+      },
+      {
+        type: "Countess Seske's Rune of Archery",
+      },
+      {
+        type: "Thane Girt's Rune of Wildness",
+      },
+      {
+        type: "Greater Rune of Tithing",
+      },
+      {
+        type: "Fenumus' Rune of Draining",
+      },
+      {
+        type: "Thane Myrk's Rune of Summer",
+      },
+      {
+        type: "Lady Hestra's Rune of Winter",
+      },
+      {
+        type: "Thane Leld's Rune of Spring",
+      },
+      {
+        type: "The Greatwolf's Rune of Claws",
+      },
+      {
+        type: "The Greatwolf's Rune of Willpower",
+      },
+      {
+        type: "Greater Rune of Alacrity",
+      },
+      {
+        type: "Greater Rune of Nobility",
+      },
+      {
+        type: "Hedgewitch Assandra's Rune of Wisdom",
+      },
+      {
+        type: "Saqawal's Rune of the Sky",
+      },
+      {
+        type: "Fenumus' Rune of Agony",
+      },
+      {
+        type: "Farrul's Rune of Grace",
+      },
+      {
+        type: "Farrul's Rune of the Chase",
+      },
+      {
+        type: "Robust Rune",
+      },
+      {
+        type: "Greater Robust Rune",
+      },
+      {
+        type: "Lesser Robust Rune",
+      },
+      {
         type: "Stone Rune",
+      },
+      {
+        type: "Greater Stone Rune",
+      },
+      {
+        type: "Lesser Stone Rune",
       },
       {
         type: "Soul Core of Opiloti",
@@ -3405,10 +4879,115 @@ export const Items = [
         type: "Soul Core of Xopec",
       },
       {
+        type: "Hayoxi's Soul Core of Heatproofing",
+      },
+      {
+        type: "Xopec's Soul Core of Power",
+      },
+      {
+        type: "Estazunti's Soul Core of Convalescence",
+      },
+      {
+        type: "Tacati's Soul Core of Affliction",
+      },
+      {
+        type: "Cholotl's Soul Core of War",
+      },
+      {
+        type: "Citaqualotl's Soul Core of Foulness",
+      },
+      {
+        type: "Xipocado's Soul Core of Dominion",
+      },
+      {
+        type: "Zalatl's Soul Core of Insulation",
+      },
+      {
+        type: "Topotante's Soul Core of Dampening",
+      },
+      {
+        type: "Atmohua's Soul Core of Retreat",
+      },
+      {
+        type: "Quipolatl's Soul Core of Flow",
+      },
+      {
+        type: "Tzamoto's Soul Core of Ferocity",
+      },
+      {
+        type: "Uromoti's Soul Core of Attenuation",
+      },
+      {
+        type: "Opiloti's Soul Core of Assault",
+      },
+      {
+        type: "Guatelitzi's Soul Core of Endurance",
+      },
+      {
         type: "Soul Core of Quipolatl",
       },
       {
         type: "Soul Core of Atmohua",
+      },
+      {
+        type: "Bear Talisman",
+      },
+      {
+        type: "Boar Talisman",
+      },
+      {
+        type: "Cat Talisman",
+      },
+      {
+        type: "Fox Talisman",
+      },
+      {
+        type: "Primate Talisman",
+      },
+      {
+        type: "Owl Talisman",
+      },
+      {
+        type: "Ox Talisman",
+      },
+      {
+        type: "Rabbit Talisman",
+      },
+      {
+        type: "Serpent Talisman",
+      },
+      {
+        type: "Talisman of Sirrius",
+      },
+      {
+        type: "Talisman of Thruldana",
+      },
+      {
+        type: "Talisman of Grold",
+      },
+      {
+        type: "Talisman of Eeshta",
+      },
+      {
+        type: "Talisman of Egrin",
+      },
+      {
+        type: "Talisman of Maxarius",
+      },
+      {
+        type: "Talisman of Ralakesh",
+      },
+      {
+        type: "Stag Talisman",
+      },
+      {
+        type: "Wolf Talisman",
+      },
+      {
+        type: "Tecrod's Gaze",
+      },
+      {
+        type: "Ulaman's Gaze",
       },
     ],
   },
@@ -3507,9 +5086,73 @@ export const Items = [
         type: "Ultimate Mana Flask",
       },
       {
+        type: "Antidote Charm",
+        text: "Arakaali's Gift Antidote Charm",
+        name: "Arakaali's Gift",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Dousing Charm",
+        text: "Beira's Anguish Dousing Charm",
+        name: "Beira's Anguish",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Gargantuan Life Flask",
+        text: "Blood of the Warrior Gargantuan Life Flask",
+        name: "Blood of the Warrior",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Sapphire Charm",
+        text: "Breath of the Mountains Sapphire Charm",
+        name: "Breath of the Mountains",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Amethyst Charm",
+        text: "Forsaken Bangle Amethyst Charm",
+        name: "Forsaken Bangle",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Stone Charm",
+        text: "For Utopia Stone Charm",
+        name: "For Utopia",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Ultimate Mana Flask",
         text: "Melting Maelstrom Ultimate Mana Flask",
         name: "Melting Maelstrom",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Thawing Charm",
+        text: "Nascent Hope Thawing Charm",
+        name: "Nascent Hope",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Ruby Charm",
+        text: "Ngamahu's Chosen Ruby Charm",
+        name: "Ngamahu's Chosen",
         flags: {
           unique: true,
         },
@@ -3522,6 +5165,46 @@ export const Items = [
           unique: true,
         },
       },
+      {
+        type: "Golden Charm",
+        text: "Rite of Passage Golden Charm",
+        name: "Rite of Passage",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Staunching Charm",
+        text: "Sanguis Heroum Staunching Charm",
+        name: "Sanguis Heroum",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Grounding Charm",
+        text: "The Black Cat Grounding Charm",
+        name: "The Black Cat",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Silver Charm",
+        text: "The Fall of the Axe Silver Charm",
+        name: "The Fall of the Axe",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Topaz Charm",
+        text: "Valako's Roar Topaz Charm",
+        name: "Valako's Roar",
+        flags: {
+          unique: true,
+        },
+      },
     ],
   },
   {
@@ -3530,6 +5213,9 @@ export const Items = [
     entries: [
       {
         type: "Alchemist's Boon",
+      },
+      {
+        type: "Ancestral Cry",
       },
       {
         type: "Archmage",
@@ -3547,22 +5233,31 @@ export const Items = [
         type: "Blink",
       },
       {
+        type: "Bloodhound's Mark",
+      },
+      {
         type: "Bone Cage",
       },
       {
         type: "Bonestorm",
       },
       {
-        type: "Charge Infusion",
+        type: "Charge Regulation",
       },
       {
         type: "Cluster Grenade",
       },
       {
-        type: "Cold Snap",
+        type: "Snap",
       },
       {
         type: "Combat Frenzy",
+      },
+      {
+        type: "Convalescence",
+      },
+      {
+        type: "Cull The Weak",
       },
       {
         type: "Dark Effigy",
@@ -3586,6 +5281,12 @@ export const Items = [
         type: "Elemental Invocation",
       },
       {
+        type: "Elemental Sundering",
+      },
+      {
+        type: "Elemental Weakness",
+      },
+      {
         type: "Emergency Reload",
       },
       {
@@ -3595,10 +5296,22 @@ export const Items = [
         type: "Explosive Shot",
       },
       {
+        type: "Explosive Spear",
+      },
+      {
+        type: "Fangs of Frost",
+      },
+      {
         type: "Fireball",
       },
       {
         type: "Flash Grenade",
+      },
+      {
+        type: "Forge Hammer",
+      },
+      {
+        type: "Fortifying Cry",
       },
       {
         type: "Fragmentation Rounds",
@@ -3608,6 +5321,9 @@ export const Items = [
       },
       {
         type: "Freezing Salvo",
+      },
+      {
+        type: "Frost Darts",
       },
       {
         type: "Frozen Locus",
@@ -3640,6 +5356,9 @@ export const Items = [
         type: "Hand of Chayula",
       },
       {
+        type: "Herald of Blood",
+      },
+      {
         type: "Herald of Plague",
       },
       {
@@ -3652,10 +5371,19 @@ export const Items = [
         type: "Ice Shot",
       },
       {
+        type: "Ice-Tipped Arrows",
+      },
+      {
         type: "Incendiary Shot",
       },
       {
+        type: "Iron Ward",
+      },
+      {
         type: "Lightning Rod",
+      },
+      {
+        type: "Living Bomb",
       },
       {
         type: "Magma Barrier",
@@ -3670,7 +5398,13 @@ export const Items = [
         type: "Mantra of Destruction",
       },
       {
+        type: "Mirage Archer",
+      },
+      {
         type: "Molten Blast",
+      },
+      {
+        type: "Mortar Cannon",
       },
       {
         type: "Oil Grenade",
@@ -3691,13 +5425,22 @@ export const Items = [
         type: "Poisonburst Arrow",
       },
       {
+        type: "Primal Strikes",
+      },
+      {
         type: "Profane Ritual",
       },
       {
         type: "Raging Spirits",
       },
       {
+        type: "Rake",
+      },
+      {
         type: "Rapid Shot",
+      },
+      {
+        type: "Ravenous Swarm",
       },
       {
         type: "Reaper's Invocation",
@@ -3727,6 +5470,9 @@ export const Items = [
         type: "Siege Cascade",
       },
       {
+        type: "Siphon Elements",
+      },
+      {
         type: "Siphoning Strike",
       },
       {
@@ -3739,6 +5485,9 @@ export const Items = [
         type: "Soul Offering",
       },
       {
+        type: "Spear of Solaris",
+      },
+      {
         type: "Stampede",
       },
       {
@@ -3748,10 +5497,19 @@ export const Items = [
         type: "Stormcaller Arrow",
       },
       {
+        type: "Storm Lance",
+      },
+      {
         type: "Storm Wave",
       },
       {
+        type: "Tame Beast",
+      },
+      {
         type: "Tempest Bell",
+      },
+      {
+        type: "Thunderous Leap",
       },
       {
         type: "Time of Need",
@@ -3760,7 +5518,16 @@ export const Items = [
         type: "Tornado Shot",
       },
       {
+        type: "Toxic Domain",
+      },
+      {
         type: "Toxic Growth",
+      },
+      {
+        type: "Trinity",
+      },
+      {
+        type: "Twister",
       },
       {
         type: "Unearth",
@@ -3778,13 +5545,70 @@ export const Items = [
         type: "War Banner",
       },
       {
+        type: "Whirlwind Lance",
+      },
+      {
         type: "Wind Dancer",
+      },
+      {
+        type: "Wind Serpent's Fury",
       },
       {
         type: "Withering Presence",
       },
       {
         type: "Uncut Spirit Gem",
+      },
+      {
+        type: "Uncut Spirit Gem (Level 10)",
+      },
+      {
+        type: "Uncut Spirit Gem (Level 11)",
+      },
+      {
+        type: "Uncut Spirit Gem (Level 12)",
+      },
+      {
+        type: "Uncut Spirit Gem (Level 13)",
+      },
+      {
+        type: "Uncut Spirit Gem (Level 14)",
+      },
+      {
+        type: "Uncut Spirit Gem (Level 15)",
+      },
+      {
+        type: "Uncut Spirit Gem (Level 16)",
+      },
+      {
+        type: "Uncut Spirit Gem (Level 17)",
+      },
+      {
+        type: "Uncut Spirit Gem (Level 18)",
+      },
+      {
+        type: "Uncut Spirit Gem (Level 19)",
+      },
+      {
+        type: "Uncut Spirit Gem (Level 20)",
+      },
+      {
+        type: "Uncut Spirit Gem (Level 4)",
+      },
+      {
+        type: "Uncut Spirit Gem (Level 5)",
+      },
+      {
+        type: "Uncut Spirit Gem (Level 6)",
+      },
+      {
+        type: "Uncut Spirit Gem (Level 7)",
+      },
+      {
+        type: "Uncut Spirit Gem (Level 8)",
+      },
+      {
+        type: "Uncut Spirit Gem (Level 9)",
       },
       {
         type: "Ancestral Warrior Totem",
@@ -3799,7 +5623,7 @@ export const Items = [
         type: "Armour Breaker",
       },
       {
-        type: "Artillery Ballista",
+        type: "Siege Ballista",
       },
       {
         type: "Ball Lightning",
@@ -3811,7 +5635,13 @@ export const Items = [
         type: "Barrier Invocation",
       },
       {
+        type: "Bind Spectre",
+      },
+      {
         type: "Blasphemy",
+      },
+      {
+        type: "Blood Hunt",
       },
       {
         type: "Bone Offering",
@@ -3824,6 +5654,9 @@ export const Items = [
       },
       {
         type: "Cast on Dodge",
+      },
+      {
+        type: "Cast on Elemental Ailment",
       },
       {
         type: "Cast on Freeze",
@@ -3854,6 +5687,9 @@ export const Items = [
       },
       {
         type: "Detonate Dead",
+      },
+      {
+        type: "Disengage",
       },
       {
         type: "Earthquake",
@@ -3910,6 +5746,9 @@ export const Items = [
         type: "Glacial Cascade",
       },
       {
+        type: "Glacial Lance",
+      },
+      {
         type: "Herald of Ash",
       },
       {
@@ -3949,6 +5788,9 @@ export const Items = [
         type: "Lightning Conduit",
       },
       {
+        type: "Lightning Spear",
+      },
+      {
         type: "Lightning Warp",
       },
       {
@@ -3973,7 +5815,13 @@ export const Items = [
         type: "Raise Zombie",
       },
       {
-        type: "Ripwire Ballista",
+        type: "Rapid Assault",
+      },
+      {
+        type: "Rhoa Mount",
+      },
+      {
+        type: "Artillery Ballista",
       },
       {
         type: "Rolling Slam",
@@ -4012,13 +5860,13 @@ export const Items = [
         type: "Skeletal Storm Mage",
       },
       {
-        type: "Skeletal Warrior",
-      },
-      {
         type: "Sniper's Mark",
       },
       {
         type: "Spark",
+      },
+      {
+        type: "Spearfield",
       },
       {
         type: "Spiral Volley",
@@ -4039,7 +5887,70 @@ export const Items = [
         type: "Temporal Chains",
       },
       {
+        type: "Trail of Caltrops",
+      },
+      {
         type: "Uncut Skill Gem",
+      },
+      {
+        type: "Uncut Skill Gem (Level 1)",
+      },
+      {
+        type: "Uncut Skill Gem (Level 10)",
+      },
+      {
+        type: "Uncut Skill Gem (Level 11)",
+      },
+      {
+        type: "Uncut Skill Gem (Level 12)",
+      },
+      {
+        type: "Uncut Skill Gem (Level 13)",
+      },
+      {
+        type: "Uncut Skill Gem (Level 14)",
+      },
+      {
+        type: "Uncut Skill Gem (Level 15)",
+      },
+      {
+        type: "Uncut Skill Gem (Level 16)",
+      },
+      {
+        type: "Uncut Skill Gem (Level 17)",
+      },
+      {
+        type: "Uncut Skill Gem (Level 18)",
+      },
+      {
+        type: "Uncut Skill Gem (Level 19)",
+      },
+      {
+        type: "Uncut Skill Gem (Level 2)",
+      },
+      {
+        type: "Uncut Skill Gem (Level 20)",
+      },
+      {
+        type: "Uncut Skill Gem (Level 3)",
+      },
+      {
+        type: "Uncut Skill Gem (Level 4)",
+      },
+      {
+        type: "Uncut Skill Gem (Level 5)",
+      },
+      {
+        type: "Uncut Skill Gem (Level 6)",
+      },
+      {
+        type: "Uncut Skill Gem (Level 7)",
+      },
+      {
+        type: "Uncut Skill Gem (Level 8)",
+      },
+      {
+        type: "Uncut Skill Gem (Level 9)",
       },
       {
         type: "Volcanic Fissure",
@@ -4057,13 +5968,31 @@ export const Items = [
         type: "Whirling Assault",
       },
       {
+        type: "Whirling Slash",
+      },
+      {
         type: "Wind Blast",
       },
       {
-        type: "Acceleration",
+        type: "Projectile Acceleration I",
       },
       {
-        type: "Aftershock",
+        type: "Projectile Acceleration III",
+      },
+      {
+        type: "Projectile Acceleration II",
+      },
+      {
+        type: "Aftershock I",
+      },
+      {
+        type: "Aftershock II",
+      },
+      {
+        type: "Ahn's Citadel",
+      },
+      {
+        type: "Ailith's Chimes",
       },
       {
         type: "Ambush",
@@ -4072,31 +6001,64 @@ export const Items = [
         type: "Arcane Surge",
       },
       {
-        type: "Arcane Tempo",
+        type: "Rapid Casting I",
       },
       {
-        type: "Behead",
+        type: "Rapid Casting III",
+      },
+      {
+        type: "Rapid Casting II",
+      },
+      {
+        type: "Atalui's Bloodletting",
+      },
+      {
+        type: "Behead I",
+      },
+      {
+        type: "Behead II",
       },
       {
         type: "Biting Frost",
       },
       {
-        type: "Blind",
+        type: "Blind I",
+      },
+      {
+        type: "Blind II",
       },
       {
         type: "Bloodlust",
       },
       {
-        type: "Bludgeon",
+        type: "Knockback",
+      },
+      {
+        type: "Bounty I",
+      },
+      {
+        type: "Bounty II",
       },
       {
         type: "Break Posture",
       },
       {
-        type: "Brutality",
+        type: "Brutality I",
       },
       {
-        type: "Bullseye",
+        type: "Brutality III",
+      },
+      {
+        type: "Brutality II",
+      },
+      {
+        type: "Brutus' Brain",
+      },
+      {
+        type: "Heightened Accuracy I",
+      },
+      {
+        type: "Heightened Accuracy II",
       },
       {
         type: "Burning Inscription",
@@ -4105,28 +6067,43 @@ export const Items = [
         type: "Bursting Plague",
       },
       {
-        type: "Cannibalism",
+        type: "Cannibalism I",
       },
       {
-        type: "Chain",
+        type: "Cannibalism II",
       },
       {
-        type: "Chaos Infusion",
+        type: "Chain I",
+      },
+      {
+        type: "Chain III",
+      },
+      {
+        type: "Chain II",
+      },
+      {
+        type: "Chaos Attunement",
       },
       {
         type: "Chaos Mastery",
       },
       {
-        type: "Clarity",
+        type: "Clarity I",
       },
       {
-        type: "Close Combat",
+        type: "Clarity II",
+      },
+      {
+        type: "Close Combat I",
+      },
+      {
+        type: "Close Combat II",
       },
       {
         type: "Cold Exposure",
       },
       {
-        type: "Cold Infusion",
+        type: "Cold Attunement",
       },
       {
         type: "Cold Mastery",
@@ -4135,16 +6112,19 @@ export const Items = [
         type: "Cold Penetration",
       },
       {
-        type: "Combo Finisher",
+        type: "Combo Finisher I",
       },
       {
-        type: "Comorbidity",
+        type: "Combo Finisher II",
       },
       {
-        type: "Concentrated Effect",
+        type: "Escalating Poison",
       },
       {
-        type: "Conduction",
+        type: "Concentrated Area",
+      },
+      {
+        type: "Shock",
       },
       {
         type: "Controlled Destruction",
@@ -4153,40 +6133,70 @@ export const Items = [
         type: "Corrosion",
       },
       {
-        type: "Corrupting Cry",
+        type: "Corrupting Cry I",
       },
       {
-        type: "Coursing Current",
+        type: "Paquate's Pact",
       },
       {
-        type: "Crescendo",
+        type: "Corrupting Cry II",
       },
       {
-        type: "Deadly Poison",
+        type: "Shock Conduction",
       },
       {
-        type: "Deceleration",
+        type: "Crescendo I",
       },
       {
-        type: "Deep Cuts",
+        type: "Crescendo III",
+      },
+      {
+        type: "Crescendo II",
+      },
+      {
+        type: "Deadly Herald",
+      },
+      {
+        type: "Deadly Poison I",
+      },
+      {
+        type: "Deadly Poison II",
+      },
+      {
+        type: "Projectile Deceleration I",
+      },
+      {
+        type: "Projectile Deceleration II",
+      },
+      {
+        type: "Deep Cuts I",
+      },
+      {
+        type: "Deep Cuts II",
       },
       {
         type: "Deep Freeze",
       },
       {
-        type: "Demolisher",
+        type: "Armour Demolisher I",
       },
       {
-        type: "Despoiler",
+        type: "Armour Demolisher II",
+      },
+      {
+        type: "Lasting Ground",
       },
       {
         type: "Devastate",
       },
       {
-        type: "Discombobulate",
+        type: "Daze",
       },
       {
         type: "Drain Ailments",
+      },
+      {
+        type: "Einhar's Beastrite",
       },
       {
         type: "Electrocute",
@@ -4201,31 +6211,61 @@ export const Items = [
         type: "Elemental Focus",
       },
       {
-        type: "Encumbrance",
+        type: "Slow Potency",
       },
       {
         type: "Energy Barrier",
       },
       {
-        type: "Enraged Warcry",
+        type: "Enraged Warcry I",
       },
       {
-        type: "Envenom",
+        type: "Enraged Warcry II",
       },
       {
-        type: "Eternal Flame",
+        type: "Poison I",
       },
       {
-        type: "Execute",
+        type: "Poison III",
+      },
+      {
+        type: "Poison II",
+      },
+      {
+        type: "Essence Harvest",
+      },
+      {
+        type: "Eternal Flame I",
+      },
+      {
+        type: "Eternal Flame III",
+      },
+      {
+        type: "Eternal Flame II",
+      },
+      {
+        type: "Execute I",
+      },
+      {
+        type: "Execute III",
+      },
+      {
+        type: "Execute II",
       },
       {
         type: "Exploit Weakness",
       },
       {
-        type: "Fast Forward",
+        type: "Compressed Duration I",
       },
       {
-        type: "Feeding Frenzy",
+        type: "Compressed Duration II",
+      },
+      {
+        type: "Feeding Frenzy I",
+      },
+      {
+        type: "Feeding Frenzy II",
       },
       {
         type: "Fiery Death",
@@ -4234,16 +6274,25 @@ export const Items = [
         type: "Fire Exposure",
       },
       {
-        type: "Fire Infusion",
+        type: "Fire Attunement",
       },
       {
         type: "Fire Mastery",
       },
       {
-        type: "Fire Penetration",
+        type: "Fire Penetration I",
       },
       {
-        type: "Fist of War",
+        type: "Fire Penetration II",
+      },
+      {
+        type: "Fist of War I",
+      },
+      {
+        type: "Fist of War III",
+      },
+      {
+        type: "Fist of War II",
       },
       {
         type: "Font of Blood",
@@ -4258,7 +6307,10 @@ export const Items = [
         type: "Fork",
       },
       {
-        type: "Fortress",
+        type: "Fortress I",
+      },
+      {
+        type: "Fortress II",
       },
       {
         type: "Frostfire",
@@ -4267,7 +6319,7 @@ export const Items = [
         type: "Frost Nexus",
       },
       {
-        type: "Glaciation",
+        type: "Freeze",
       },
       {
         type: "Heavy Swing",
@@ -4276,7 +6328,10 @@ export const Items = [
         type: "Heightened Curse",
       },
       {
-        type: "Herbalism",
+        type: "Herbalism I",
+      },
+      {
+        type: "Herbalism II",
       },
       {
         type: "Hex Bloom",
@@ -4288,7 +6343,13 @@ export const Items = [
         type: "Ice Bite",
       },
       {
-        type: "Ignition",
+        type: "Ignite I",
+      },
+      {
+        type: "Ignite III",
+      },
+      {
+        type: "Ignite II",
       },
       {
         type: "Immolate",
@@ -4303,19 +6364,43 @@ export const Items = [
         type: "Inevitable Critical",
       },
       {
-        type: "Infernal Legion",
+        type: "Infernal Legion I",
       },
       {
-        type: "Ingenuity",
+        type: "Infernal Legion III",
       },
       {
-        type: "Inspiration",
+        type: "Infernal Legion II",
       },
       {
-        type: "Jagged Ground",
+        type: "Cooldown Recovery I",
       },
       {
-        type: "Lacerate",
+        type: "Cooldown Recovery II",
+      },
+      {
+        type: "Efficiency I",
+      },
+      {
+        type: "Efficiency II",
+      },
+      {
+        type: "Jagged Ground I",
+      },
+      {
+        type: "Jagged Ground II",
+      },
+      {
+        type: "Bleed I",
+      },
+      {
+        type: "Bleed IV",
+      },
+      {
+        type: "Bleed III",
+      },
+      {
+        type: "Bleed II",
       },
       {
         type: "Lasting Shock",
@@ -4330,13 +6415,19 @@ export const Items = [
         type: "Lifetap",
       },
       {
-        type: "Life Thief",
+        type: "Life Leech I",
+      },
+      {
+        type: "Life Leech III",
+      },
+      {
+        type: "Life Leech II",
       },
       {
         type: "Lightning Exposure",
       },
       {
-        type: "Lightning Infusion",
+        type: "Lightning Attunement",
       },
       {
         type: "Lightning Mastery",
@@ -4348,10 +6439,16 @@ export const Items = [
         type: "Lockdown",
       },
       {
-        type: "Longshot",
+        type: "Longshot I",
       },
       {
-        type: "Magnified Effect",
+        type: "Longshot II",
+      },
+      {
+        type: "Magnified Area I",
+      },
+      {
+        type: "Magnified Area II",
       },
       {
         type: "Maim",
@@ -4363,10 +6460,19 @@ export const Items = [
         type: "Mana Flare",
       },
       {
-        type: "Martial Tempo",
+        type: "Rapid Attacks I",
       },
       {
-        type: "Meat Shield",
+        type: "Rapid Attacks III",
+      },
+      {
+        type: "Rapid Attacks II",
+      },
+      {
+        type: "Meat Shield I",
+      },
+      {
+        type: "Meat Shield II",
       },
       {
         type: "Minion Mastery",
@@ -4384,43 +6490,91 @@ export const Items = [
         type: "Neural Overload",
       },
       {
-        type: "Overabundance",
+        type: "Nova Projectiles",
+      },
+      {
+        type: "Overabundance I",
+      },
+      {
+        type: "Overabundance II",
       },
       {
         type: "Overcharge",
       },
       {
-        type: "Overpower",
+        type: "Stun I",
+      },
+      {
+        type: "Stun III",
+      },
+      {
+        type: "Stun II",
       },
       {
         type: "Perpetual Charge",
       },
       {
-        type: "Persistence",
+        type: "Prolonged Duration I",
+      },
+      {
+        type: "Prolonged Duration II",
       },
       {
         type: "Physical Mastery",
       },
       {
-        type: "Pierce",
+        type: "Pierce I",
       },
       {
-        type: "Pin",
+        type: "Pierce III",
       },
       {
-        type: "Precision",
+        type: "Pierce II",
+      },
+      {
+        type: "Pin I",
+      },
+      {
+        type: "Pinpoint Critical",
+      },
+      {
+        type: "Pin III",
+      },
+      {
+        type: "Pin II",
+      },
+      {
+        type: "Precision I",
+      },
+      {
+        type: "Precision II",
       },
       {
         type: "Premeditation",
       },
       {
-        type: "Primal Armament",
+        type: "Elemental Armament I",
       },
       {
-        type: "Profusion",
+        type: "Elemental Armament III",
       },
       {
-        type: "Rage",
+        type: "Elemental Armament II",
+      },
+      {
+        type: "Charge Profusion I",
+      },
+      {
+        type: "Charge Profusion II",
+      },
+      {
+        type: "Rage I",
+      },
+      {
+        type: "Rage III",
+      },
+      {
+        type: "Rage II",
       },
       {
         type: "Rising Tempest",
@@ -4429,13 +6583,25 @@ export const Items = [
         type: "Ruthless",
       },
       {
-        type: "Scattershot",
+        type: "Multishot I",
       },
       {
-        type: "Searing Flame",
+        type: "Multishot II",
       },
       {
-        type: "Second Wind",
+        type: "Searing Flame I",
+      },
+      {
+        type: "Searing Flame II",
+      },
+      {
+        type: "Second Wind I",
+      },
+      {
+        type: "Second Wind III",
+      },
+      {
+        type: "Second Wind II",
       },
       {
         type: "Shock Siphon",
@@ -4444,13 +6610,19 @@ export const Items = [
         type: "Soul Drain",
       },
       {
-        type: "Soul Thief",
+        type: "Mana Leech",
       },
       {
         type: "Spell Echo",
       },
       {
-        type: "Splinter",
+        type: "Armour Break I",
+      },
+      {
+        type: "Armour Break III",
+      },
+      {
+        type: "Armour Break II",
       },
       {
         type: "Stormfire",
@@ -4465,16 +6637,43 @@ export const Items = [
         type: "Uncut Support Gem",
       },
       {
+        type: "Uncut Support Gem (Level 1)",
+      },
+      {
+        type: "Uncut Support Gem (Level 2)",
+      },
+      {
+        type: "Uncut Support Gem (Level 3)",
+      },
+      {
+        type: "Uncut Support Gem (Level 4)",
+      },
+      {
+        type: "Uncut Support Gem (Level 5)",
+      },
+      {
         type: "Unleash",
       },
       {
-        type: "Vitality",
+        type: "Uruk's Smelting",
+      },
+      {
+        type: "Vilenta's Propulsion",
+      },
+      {
+        type: "Vitality I",
+      },
+      {
+        type: "Vitality II",
       },
       {
         type: "Wildfire",
       },
       {
-        type: "Window of Opportunity",
+        type: "Window of Opportunity I",
+      },
+      {
+        type: "Window of Opportunity II",
       },
       {
         type: "Wind Wave",
@@ -4483,46 +6682,214 @@ export const Items = [
         type: "Withering Touch",
       },
       {
-        type: "Ablation",
+        type: "Abiding Hex",
       },
       {
-        type: "Ammo Conservation",
+        type: "Sacrificial Offering",
       },
       {
-        type: "Ancestral Urgency",
+        type: "Acrimony",
+      },
+      {
+        type: "Adhesive Grenades I",
+      },
+      {
+        type: "Adhesive Grenades II",
+      },
+      {
+        type: "Admixture",
+      },
+      {
+        type: "Alignment I",
+      },
+      {
+        type: "Alignment III",
+      },
+      {
+        type: "Alignment II",
+      },
+      {
+        type: "Ambrosia",
+      },
+      {
+        type: "Ammo Conservation I",
+      },
+      {
+        type: "Arjun's Medal",
+      },
+      {
+        type: "Ammo Conservation III",
+      },
+      {
+        type: "Ammo Conservation II",
+      },
+      {
+        type: "Ancestral Aid",
+      },
+      {
+        type: "Ancestral Call I",
+      },
+      {
+        type: "Ancestral Call II",
+      },
+      {
+        type: "Urgent Totems I",
+      },
+      {
+        type: "Urgent Totems III",
+      },
+      {
+        type: "Urgent Totems II",
+      },
+      {
+        type: "Arakaali's Lust",
+      },
+      {
+        type: "Arbiter's Ignition",
       },
       {
         type: "Armour Explosion",
       },
       {
+        type: "Arms Length",
+      },
+      {
         type: "Astral Projection",
+      },
+      {
+        type: "Atziri's Allure",
       },
       {
         type: "Auto Reload",
       },
       {
-        type: "Bidding",
+        type: "Barbs I",
+      },
+      {
+        type: "Barbs III",
+      },
+      {
+        type: "Barbs II",
+      },
+      {
+        type: "Battershout",
+      },
+      {
+        type: "Bidding I",
+      },
+      {
+        type: "Bidding III",
+      },
+      {
+        type: "Bidding II",
+      },
+      {
+        type: "Blindside",
+      },
+      {
+        type: "Hobble",
+      },
+      {
+        type: "Bone Shrapnel",
+      },
+      {
+        type: "Brambleslam",
+      },
+      {
+        type: "Branching Fissures I",
+      },
+      {
+        type: "Branching Fissures II",
       },
       {
         type: "Break Endurance",
       },
       {
-        type: "Capacitor",
+        type: "Brink I",
+      },
+      {
+        type: "Brink II",
+      },
+      {
+        type: "Burgeon I",
+      },
+      {
+        type: "Burgeon II",
+      },
+      {
+        type: "Cadence",
+      },
+      {
+        type: "Caltrops",
+      },
+      {
+        type: "Energy Capacitor",
+      },
+      {
+        type: "Catharsis",
       },
       {
         type: "Chaotic Freeze",
       },
       {
+        type: "Charged Shots I",
+      },
+      {
+        type: "Charged Shots II",
+      },
+      {
+        type: "Charm Bounty",
+      },
+      {
+        type: "Clash",
+      },
+      {
+        type: "Ratha's Assault",
+      },
+      {
+        type: "Commandment",
+      },
+      {
+        type: "Commiserate",
+      },
+      {
+        type: "Concoct I",
+      },
+      {
+        type: "Concoct II",
+      },
+      {
         type: "Considered Casting",
+      },
+      {
+        type: "Cool Headed",
       },
       {
         type: "Corpse Conservation",
       },
       {
-        type: "Culling Strike",
+        type: "Crackling Barrier",
       },
       {
-        type: "Culmination",
+        type: "Crater",
+      },
+      {
+        type: "Crazed Minions",
+      },
+      {
+        type: "Crystalline Shards",
+      },
+      {
+        type: "Culling Strike I",
+      },
+      {
+        type: "Culling Strike II",
+      },
+      {
+        type: "Culmination I",
+      },
+      {
+        type: "Culmination II",
       },
       {
         type: "Cursed Ground",
@@ -4531,19 +6898,106 @@ export const Items = [
         type: "Danse Macabre",
       },
       {
+        type: "Daresso's Passion",
+      },
+      {
+        type: "Dauntless",
+      },
+      {
         type: "Dazing Cry",
+      },
+      {
+        type: "Dazzle",
+      },
+      {
+        type: "Deathmarch",
       },
       {
         type: "Decaying Hex",
       },
       {
-        type: "Double Barrel",
+        type: "Defy I",
+      },
+      {
+        type: "Defy II",
+      },
+      {
+        type: "Delayed Gratification",
+      },
+      {
+        type: "Delayed Reaction",
+      },
+      {
+        type: "Deliberation",
+      },
+      {
+        type: "Derange",
+      },
+      {
+        type: "Desperation",
+      },
+      {
+        type: "Dialla's Desire",
+      },
+      {
+        type: "Direstrike I",
+      },
+      {
+        type: "Direstrike II",
+      },
+      {
+        type: "Harmonic Remnants I",
+      },
+      {
+        type: "Harmonic Remnants II",
+      },
+      {
+        type: "Doedre's Undoing",
+      },
+      {
+        type: "Persistent Ground I",
+      },
+      {
+        type: "Persistent Ground III",
+      },
+      {
+        type: "Persistent Ground II",
+      },
+      {
+        type: "Double Barrel I",
+      },
+      {
+        type: "Double Barrel III",
+      },
+      {
+        type: "Double Barrel II",
+      },
+      {
+        type: "Durability",
+      },
+      {
+        type: "Embitter",
+      },
+      {
+        type: "Enduring Impact I",
+      },
+      {
+        type: "Enduring Impact II",
       },
       {
         type: "Energy Retention",
       },
       {
+        type: "Hulking Minions",
+      },
+      {
+        type: "Esh's Radiance",
+      },
+      {
         type: "Excise",
+      },
+      {
+        type: "Excoriate",
       },
       {
         type: "Execrate",
@@ -4552,19 +7006,76 @@ export const Items = [
         type: "Expanse",
       },
       {
+        type: "Short Fuse I",
+      },
+      {
+        type: "Short Fuse II",
+      },
+      {
         type: "Extraction",
       },
       {
         type: "Ferocity",
       },
       {
+        type: "Selfless Remnants",
+      },
+      {
+        type: "First Blood",
+      },
+      {
+        type: "Flamepierce",
+      },
+      {
+        type: "Flow",
+      },
+      {
+        type: "Fluke",
+      },
+      {
+        type: "Ixchel's Torment",
+      },
+      {
         type: "Focused Curse",
       },
       {
-        type: "Fresh Clip",
+        type: "Freezefork",
+      },
+      {
+        type: "Fresh Clip I",
+      },
+      {
+        type: "Fresh Clip II",
+      },
+      {
+        type: "Frozen Spite",
+      },
+      {
+        type: "Gambleshot",
+      },
+      {
+        type: "Garukhan's Resolve",
       },
       {
         type: "Glacier",
+      },
+      {
+        type: "Greatwood I",
+      },
+      {
+        type: "Greatwood II",
+      },
+      {
+        type: "Haemocrystals",
+      },
+      {
+        type: "Hardy Totems I",
+      },
+      {
+        type: "Tawhoa's Tending",
+      },
+      {
+        type: "Hardy Totems II",
       },
       {
         type: "Heft",
@@ -4573,13 +7084,28 @@ export const Items = [
         type: "Hinder",
       },
       {
+        type: "Hit and Run",
+      },
+      {
         type: "Holy Descent",
       },
       {
         type: "Icicle",
       },
       {
-        type: "Impetus",
+        type: "Impale",
+      },
+      {
+        type: "Boundless Energy I",
+      },
+      {
+        type: "Boundless Energy II",
+      },
+      {
+        type: "Incision",
+      },
+      {
+        type: "Inhibitor",
       },
       {
         type: "Innervate",
@@ -4588,7 +7114,31 @@ export const Items = [
         type: "Intense Agony",
       },
       {
-        type: "Ironwood",
+        type: "Remnant Potency I",
+      },
+      {
+        type: "Remnant Potency III",
+      },
+      {
+        type: "Remnant Potency II",
+      },
+      {
+        type: "Reinforced Totems I",
+      },
+      {
+        type: "Reinforced Totems II",
+      },
+      {
+        type: "Kalisa's Crescendo",
+      },
+      {
+        type: "Kaom's Madness",
+      },
+      {
+        type: "Kulemak's Dominion",
+      },
+      {
+        type: "Kurgal's Leash",
       },
       {
         type: "Last Gasp",
@@ -4597,19 +7147,64 @@ export const Items = [
         type: "Leverage",
       },
       {
-        type: "Long Fuse",
+        type: "Living Lightning",
+      },
+      {
+        type: "Living Lightning II",
+      },
+      {
+        type: "Long Fuse I",
+      },
+      {
+        type: "Long Fuse II",
+      },
+      {
+        type: "Loyalty",
+      },
+      {
+        type: "Magnetic Remnants",
+      },
+      {
+        type: "Malady",
       },
       {
         type: "Minion Instability",
       },
       {
-        type: "Minion Pact",
+        type: "Minion Pact I",
+      },
+      {
+        type: "Minion Pact II",
+      },
+      {
+        type: "Muster",
+      },
+      {
+        type: "Mysticism I",
+      },
+      {
+        type: "Mysticism II",
       },
       {
         type: "Nimble Reload",
       },
       {
+        type: "Outmaneuver",
+      },
+      {
+        type: "Overextend",
+      },
+      {
         type: "Payload",
+      },
+      {
+        type: "Perfected Endurance",
+      },
+      {
+        type: "Perfection",
+      },
+      {
+        type: "Piety's Mercy",
       },
       {
         type: "Potential",
@@ -4618,40 +7213,304 @@ export const Items = [
         type: "Practiced Combo",
       },
       {
-        type: "Rageforged",
+        type: "Profanity I",
+      },
+      {
+        type: "Profanity II",
+      },
+      {
+        type: "Punch Through",
+      },
+      {
+        type: "Pursuit I",
+      },
+      {
+        type: "Pursuit III",
+      },
+      {
+        type: "Pursuit II",
+      },
+      {
+        type: "Quill Burst",
+      },
+      {
+        type: "Rageforged I",
+      },
+      {
+        type: "Rageforged II",
       },
       {
         type: "Raging Cry",
       },
       {
-        type: "Ricochet",
+        type: "Rakiata's Flow",
+      },
+      {
+        type: "Rally",
+      },
+      {
+        type: "Overreach",
+      },
+      {
+        type: "Rearm I",
+      },
+      {
+        type: "Rearm II",
+      },
+      {
+        type: "Refraction I",
+      },
+      {
+        type: "Refraction III",
+      },
+      {
+        type: "Refraction II",
+      },
+      {
+        type: "Retaliate I",
+      },
+      {
+        type: "Retaliate II",
+      },
+      {
+        type: "Frenzied Riposte",
+      },
+      {
+        type: "Retreat I",
+      },
+      {
+        type: "Retreat III",
+      },
+      {
+        type: "Retreat II",
+      },
+      {
+        type: "Reverberate",
+      },
+      {
+        type: "Ricochet I",
+      },
+      {
+        type: "Ricochet III",
+      },
+      {
+        type: "Ricochet II",
+      },
+      {
+        type: "Rigwald's Ferocity",
+      },
+      {
+        type: "Rime",
+      },
+      {
+        type: "Rip",
       },
       {
         type: "Ritualistic Curse",
       },
       {
+        type: "Romira's Requital",
+      },
+      {
         type: "Rupture",
+      },
+      {
+        type: "Rusted Spikes",
+      },
+      {
+        type: "Sacrificial Lamb I",
+      },
+      {
+        type: "Sacrificial Lamb II",
+      },
+      {
+        type: "Salvo",
+      },
+      {
+        type: "See Red",
+      },
+      {
+        type: "Shocking Leap",
+      },
+      {
+        type: "Mark for Death",
+      },
+      {
+        type: "Skittering Stone I",
+      },
+      {
+        type: "Skittering Stone II",
+      },
+      {
+        type: "Spar",
+      },
+      {
+        type: "Spectral Volley",
       },
       {
         type: "Spell Cascade",
       },
       {
+        type: "Steadfast I",
+      },
+      {
+        type: "Steadfast II",
+      },
+      {
+        type: "Stoicism I",
+      },
+      {
+        type: "Stoicism II",
+      },
+      {
         type: "Stomping Ground",
       },
       {
-        type: "Strip Away",
+        type: "Stormchain",
       },
       {
-        type: "Swift Affliction",
+        type: "Streamlined Rounds",
+      },
+      {
+        type: "Potent Exposure",
+      },
+      {
+        type: "Strong Hearted",
+      },
+      {
+        type: "Encroaching Ground",
+      },
+      {
+        type: "Swift Affliction I",
+      },
+      {
+        type: "Swift Affliction III",
+      },
+      {
+        type: "Swift Affliction II",
+      },
+      {
+        type: "Syzygy",
+      },
+      {
+        type: "Tacati's Ire",
+      },
+      {
+        type: "Tear",
+      },
+      {
+        type: "Tecrod's Revenge",
+      },
+      {
+        type: "Thornskin I",
+      },
+      {
+        type: "Thornskin II",
+      },
+      {
+        type: "Tireless",
       },
       {
         type: "Tremors",
       },
       {
-        type: "Upheaval",
+        type: "Tul's Stillness",
       },
       {
-        type: "Wildshards",
+        type: "Tumult",
+      },
+      {
+        type: "Heightened Charges",
+      },
+      {
+        type: "Uhtred's Augury",
+      },
+      {
+        type: "Uhtred's Exodus",
+      },
+      {
+        type: "Uhtred's Omen",
+      },
+      {
+        type: "Unabating",
+      },
+      {
+        type: "Unbending",
+      },
+      {
+        type: "Unerring Power",
+      },
+      {
+        type: "Unsteady Tempo",
+      },
+      {
+        type: "Untouchable",
+      },
+      {
+        type: "Unyielding",
+      },
+      {
+        type: "Upheaval I",
+      },
+      {
+        type: "Upheaval II",
+      },
+      {
+        type: "Upwelling I",
+      },
+      {
+        type: "Upwelling II",
+      },
+      {
+        type: "Uul-Netol's Embrace",
+      },
+      {
+        type: "Vanguard I",
+      },
+      {
+        type: "Vanguard II",
+      },
+      {
+        type: "Varashta's Blessing",
+      },
+      {
+        type: "Verglas",
+      },
+      {
+        type: "Volatile Power",
+      },
+      {
+        type: "Volatility",
+      },
+      {
+        type: "Volcanic Eruption",
+      },
+      {
+        type: "Volt",
+      },
+      {
+        type: "Warm Blooded",
+      },
+      {
+        type: "Wildshards I",
+      },
+      {
+        type: "Sione's Temper",
+      },
+      {
+        type: "Wildshards II",
+      },
+      {
+        type: "Xoph's Pyre",
+      },
+      {
+        type: "Zarokh's Refrain",
+      },
+      {
+        type: "Zenith I",
+      },
+      {
+        type: "Zenith II",
       },
     ],
   },
@@ -4735,6 +7594,14 @@ export const Items = [
         },
       },
       {
+        type: "Diamond",
+        text: "Heart of the Well Diamond",
+        name: "Heart of the Well",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Timeless Jewel",
         text: "Heroic Tragedy Timeless Jewel",
         name: "Heroic Tragedy",
@@ -4766,12 +7633,26 @@ export const Items = [
           unique: true,
         },
       },
+      {
+        type: "Timeless Jewel",
+        text: "Undying Hate Timeless Jewel",
+        name: "Undying Hate",
+        flags: {
+          unique: true,
+        },
+      },
     ],
   },
   {
     id: "map",
     label: "Maps",
     entries: [
+      {
+        type: "Kulemak's Invitation",
+      },
+      {
+        type: "Idol of Estazunti",
+      },
       {
         type: "Expedition Logbook",
       },
@@ -4842,6 +7723,15 @@ export const Items = [
         type: "Weathered Crisis Fragment",
       },
       {
+        type: "Primary Calamity Fragment",
+      },
+      {
+        type: "Secondary Calamity Fragment",
+      },
+      {
+        type: "Tertiary Calamity Fragment",
+      },
+      {
         type: "Test of Strength Barya",
       },
       {
@@ -4886,6 +7776,70 @@ export const Items = [
       {
         type: "Victorious Fate",
       },
+      {
+        type: "Delirium Precursor Tablet",
+        text: "Clear Skies Delirium Precursor Tablet",
+        name: "Clear Skies",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Overseer Precursor Tablet",
+        text: "Cruel Hegemony Overseer Precursor Tablet",
+        name: "Cruel Hegemony",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Expedition Precursor Tablet",
+        text: "Forgotten By Time Expedition Precursor Tablet",
+        name: "Forgotten By Time",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Ritual Precursor Tablet",
+        text: "Freedom of Faith Ritual Precursor Tablet",
+        name: "Freedom of Faith",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Overseer Precursor Tablet",
+        text: "Season of the Hunt Overseer Precursor Tablet",
+        name: "Season of the Hunt",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Precursor Tablet",
+        text: "The Grand Project Precursor Tablet",
+        name: "The Grand Project",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Precursor Tablet",
+        text: "Visions of Paradise Precursor Tablet",
+        name: "Visions of Paradise",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Breach Precursor Tablet",
+        text: "Wraeclast Besieged Breach Precursor Tablet",
+        name: "Wraeclast Besieged",
+        flags: {
+          unique: true,
+        },
+      },
     ],
   },
   {
@@ -4894,6 +7848,18 @@ export const Items = [
     entries: [
       {
         type: "Glass Shank",
+      },
+      {
+        type: "Kris Knife",
+      },
+      {
+        type: "Parrying Dagger",
+      },
+      {
+        type: "Arcane Dirk",
+      },
+      {
+        type: "Cinquedea",
       },
       {
         type: "Crone Knife",
@@ -4914,7 +7880,25 @@ export const Items = [
         type: "Obsidian Dagger",
       },
       {
+        type: "Bloodletting Dagger",
+      },
+      {
+        type: "Mail Breaker",
+      },
+      {
         type: "Splintered Flail",
+      },
+      {
+        type: "Icicle Flail",
+      },
+      {
+        type: "Tearing Flail",
+      },
+      {
+        type: "Great Flail",
+      },
+      {
+        type: "Abyssal Flail",
       },
       {
         type: "Chain Flail",
@@ -4932,7 +7916,28 @@ export const Items = [
         type: "Slender Flail",
       },
       {
+        type: "Stone Flail",
+      },
+      {
+        type: "Ring Flail",
+      },
+      {
+        type: "Guarded Flail",
+      },
+      {
         type: "Dull Hatchet",
+      },
+      {
+        type: "Fury Cleaver",
+      },
+      {
+        type: "Battle Axe",
+      },
+      {
+        type: "Profane Cleaver",
+      },
+      {
+        type: "Dread Hatchet",
       },
       {
         type: "Hook Axe",
@@ -4950,7 +7955,25 @@ export const Items = [
         type: "Crescent Axe",
       },
       {
+        type: "Carving Hatchet",
+      },
+      {
+        type: "Sacrificial Axe",
+      },
+      {
+        type: "Boarding Hatchet",
+      },
+      {
         type: "Wooden Club",
+      },
+      {
+        type: "Jade Club",
+      },
+      {
+        type: "Akoyan Club",
+      },
+      {
+        type: "Execratus Hammer",
       },
       {
         type: "Torment Club",
@@ -4959,19 +7982,19 @@ export const Items = [
         type: "Smithing Hammer",
       },
       {
-        type: "Advanced Smithing Hammer",
+        type: "Calescent Hammer",
       },
       {
-        type: "Expert Smithing Hammer",
+        type: "Molten Hammer",
       },
       {
         type: "Slim Mace",
       },
       {
-        type: "Advanced Slim Mace",
+        type: "Flared Mace",
       },
       {
-        type: "Expert Slim Mace",
+        type: "Flanged Mace",
       },
       {
         type: "Spiked Club",
@@ -4980,46 +8003,76 @@ export const Items = [
         type: "Warpick",
       },
       {
-        type: "Advanced Warpick",
+        type: "Battle Pick",
       },
       {
-        type: "Expert Warpick",
+        type: "Strife Pick",
       },
       {
         type: "Plated Mace",
       },
       {
-        type: "Advanced Plated Mace",
+        type: "Marching Mace",
       },
       {
-        type: "Expert Plated Mace",
+        type: "Crown Mace",
       },
       {
         type: "Brigand Mace",
       },
       {
-        type: "Advanced Brigand Mace",
+        type: "Bandit Mace",
       },
       {
-        type: "Expert Brigand Mace",
+        type: "Marauding Mace",
       },
       {
         type: "Construct Hammer",
       },
       {
-        type: "Advanced Construct Hammer",
+        type: "Structured Hammer",
       },
       {
-        type: "Expert Construct Hammer",
+        type: "Fortified Hammer",
+      },
+      {
+        type: "Morning Star",
       },
       {
         type: "Hardwood Spear",
       },
       {
+        type: "Seaglass Spear",
+      },
+      {
+        type: "Akoyan Spear",
+      },
+      {
+        type: "Sword Spear",
+      },
+      {
+        type: "Striking Spear",
+      },
+      {
+        type: "Helix Spear",
+      },
+      {
         type: "Ironhead Spear",
       },
       {
+        type: "Steelhead Spear",
+      },
+      {
+        type: "Orichalcum Spear",
+      },
+      {
         type: "Hunting Spear",
+      },
+      {
+        type: "Coursing Spear",
+      },
+      {
+        type: "Stalking Spear",
       },
       {
         type: "Winged Spear",
@@ -5028,10 +8081,55 @@ export const Items = [
         type: "War Spear",
       },
       {
+        type: "Swift Spear",
+      },
+      {
+        type: "Flying Spear",
+      },
+      {
         type: "Forked Spear",
       },
       {
+        type: "Branched Spear",
+      },
+      {
+        type: "Pronged Spear",
+      },
+      {
+        type: "Barbed Spear",
+      },
+      {
+        type: "Jagged Spear",
+      },
+      {
+        type: "Spiked Spear",
+      },
+      {
+        type: "Broad Spear",
+      },
+      {
+        type: "Massive Spear",
+      },
+      {
+        type: "Grand Spear",
+      },
+      {
+        type: "Crossblade Spear",
+      },
+      {
         type: "Shortsword",
+      },
+      {
+        type: "Runic Shortsword",
+      },
+      {
+        type: "Messer",
+      },
+      {
+        type: "Commander Sword",
+      },
+      {
+        type: "Dark Blade",
       },
       {
         type: "Broadsword",
@@ -5046,7 +8144,22 @@ export const Items = [
         type: "Charred Shortsword",
       },
       {
+        type: "Sickle Sword",
+      },
+      {
+        type: "Falchion",
+      },
+      {
+        type: "Treasured Blade",
+      },
+      {
+        type: "Cutlass",
+      },
+      {
         type: "Rattling Sceptre",
+      },
+      {
+        type: "Wrath Sceptre",
       },
       {
         type: "Stoic Sceptre",
@@ -5061,6 +8174,9 @@ export const Items = [
         type: "Withered Wand",
       },
       {
+        type: "Dueling Wand",
+      },
+      {
         type: "Bone Wand",
       },
       {
@@ -5073,25 +8189,37 @@ export const Items = [
         type: "Volatile Wand",
       },
       {
+        type: "Galvanic Wand",
+      },
+      {
+        type: "Acrid Wand",
+      },
+      {
         type: "Crude Bow",
+      },
+      {
+        type: "Tribal Bow",
+      },
+      {
+        type: "Heavy Bow",
       },
       {
         type: "Shortbow",
       },
       {
-        type: "Advanced Shortbow",
+        type: "Snakewood Shortbow",
       },
       {
-        type: "Expert Shortbow",
+        type: "Ironwood Shortbow",
       },
       {
         type: "Warden Bow",
       },
       {
-        type: "Advanced Warden Bow",
+        type: "Protector Bow",
       },
       {
-        type: "Expert Warden Bow",
+        type: "Guardian Bow",
       },
       {
         type: "Recurve Bow",
@@ -5100,76 +8228,88 @@ export const Items = [
         type: "Composite Bow",
       },
       {
-        type: "Advanced Composite Bow",
+        type: "Rider Bow",
       },
       {
-        type: "Expert Composite Bow",
+        type: "Cavalry Bow",
       },
       {
         type: "Dualstring Bow",
       },
       {
-        type: "Advanced Dualstring Bow",
+        type: "Twin Bow",
       },
       {
-        type: "Expert Dualstring Bow",
+        type: "Gemini Bow",
       },
       {
         type: "Cultist Bow",
       },
       {
-        type: "Advanced Cultist Bow",
+        type: "Adherent Bow",
       },
       {
-        type: "Expert Cultist Bow",
+        type: "Fanatic Bow",
       },
       {
         type: "Zealot Bow",
       },
       {
-        type: "Advanced Zealot Bow",
+        type: "Militant Bow",
       },
       {
-        type: "Expert Zealot Bow",
+        type: "Warmonger Bow",
+      },
+      {
+        type: "Artillery Bow",
+      },
+      {
+        type: "Obliterator Bow",
       },
       {
         type: "Makeshift Crossbow",
       },
       {
+        type: "Piercing Crossbow",
+      },
+      {
+        type: "Elegant Crossbow",
+      },
+      {
         type: "Tense Crossbow",
       },
       {
-        type: "Advanced Tense Crossbow",
+        type: "Taut Crossbow",
       },
       {
-        type: "Expert Tense Crossbow",
+        type: "Flexed Crossbow",
       },
       {
         type: "Sturdy Crossbow",
       },
       {
-        type: "Advanced Sturdy Crossbow",
+        type: "Robust Crossbow",
       },
       {
-        type: "Expert Sturdy Crossbow",
+        type: "Stout Crossbow",
       },
       {
         type: "Varnished Crossbow",
       },
       {
-        type: "Advanced Varnished Crossbow",
+        type: "Painted Crossbow",
       },
       {
-        type: "Expert Varnished Crossbow",
+        type: "Engraved Crossbow",
       },
       {
         type: "Dyad Crossbow",
       },
       {
-        type: "Advanced Dyad Crossbow",
+        type: "Twin Crossbow",
       },
       {
-        type: "Expert Dyad Crossbow",
+        type: "Gemini Crossbow",
       },
       {
         type: "Alloy Crossbow",
@@ -5178,22 +8318,31 @@ export const Items = [
         type: "Bombard Crossbow",
       },
       {
-        type: "Advanced Bombard Crossbow",
+        type: "Cannonade Crossbow",
       },
       {
-        type: "Expert Bombard Crossbow",
+        type: "Siege Crossbow",
       },
       {
         type: "Construct Crossbow",
       },
       {
-        type: "Advanced Forlorn Crossbow",
+        type: "Bleak Crossbow",
       },
       {
-        type: "Expert Forlorn Crossbow",
+        type: "Desolate Crossbow",
+      },
+      {
+        type: "Blackfire Crossbow",
       },
       {
         type: "Wrapped Quarterstaff",
+      },
+      {
+        type: "Smooth Quarterstaff",
+      },
+      {
+        type: "Dreaming Quarterstaff",
       },
       {
         type: "Wyrm Quarterstaff",
@@ -5202,37 +8351,37 @@ export const Items = [
         type: "Long Quarterstaff",
       },
       {
-        type: "Advanced Long Quarterstaff",
+        type: "Reaching Quarterstaff",
       },
       {
-        type: "Expert Long Quarterstaff",
+        type: "Striking Quarterstaff",
       },
       {
         type: "Gothic Quarterstaff",
       },
       {
-        type: "Advanced Gothic Quarterstaff",
+        type: "Barbarous Quarterstaff",
       },
       {
-        type: "Expert Gothic Quarterstaff",
+        type: "Sinister Quarterstaff",
       },
       {
         type: "Crackling Quarterstaff",
       },
       {
-        type: "Advanced Crackling Quarterstaff",
+        type: "Arcing Quarterstaff",
       },
       {
-        type: "Expert Crackling Quarterstaff",
+        type: "Bolting Quarterstaff",
       },
       {
         type: "Crescent Quarterstaff",
       },
       {
-        type: "Advanced Crescent Quarterstaff",
+        type: "Waxing Quarterstaff",
       },
       {
-        type: "Expert Crescent Quarterstaff",
+        type: "Lunar Quarterstaff",
       },
       {
         type: "Steelpoint Quarterstaff",
@@ -5241,22 +8390,37 @@ export const Items = [
         type: "Slicing Quarterstaff",
       },
       {
-        type: "Advanced Slicing Quarterstaff",
+        type: "Bladed Quarterstaff",
       },
       {
-        type: "Expert Slicing Quarterstaff",
+        type: "Razor Quarterstaff",
       },
       {
         type: "Barrier Quarterstaff",
       },
       {
-        type: "Advanced Barrier Quarterstaff",
+        type: "Guardian Quarterstaff",
       },
       {
-        type: "Expert Barrier Quarterstaff",
+        type: "Aegis Quarterstaff",
+      },
+      {
+        type: "Hefty Quarterstaff",
       },
       {
         type: "Ashen Staff",
+      },
+      {
+        type: "Roaring Staff",
+      },
+      {
+        type: "Paralysing Staff",
+      },
+      {
+        type: "Sanctified Staff",
+      },
+      {
+        type: "Ravenous Staff",
       },
       {
         type: "Gelid Staff",
@@ -5271,7 +8435,25 @@ export const Items = [
         type: "Chiming Staff",
       },
       {
+        type: "Reaping Staff",
+      },
+      {
+        type: "Permafrost Staff",
+      },
+      {
         type: "Splitting Greataxe",
+      },
+      {
+        type: "Ember Greataxe",
+      },
+      {
+        type: "Ceremonial Halberd",
+      },
+      {
+        type: "Monument Greataxe",
+      },
+      {
+        type: "Vile Greataxe",
       },
       {
         type: "Light Halberd",
@@ -5292,25 +8474,40 @@ export const Items = [
         type: "Rending Halberd",
       },
       {
+        type: "Jagged Greataxe",
+      },
+      {
+        type: "Reaver Glaive",
+      },
+      {
         type: "Felled Greatclub",
+      },
+      {
+        type: "Totemic Greatclub",
+      },
+      {
+        type: "Tawhoan Greatclub",
+      },
+      {
+        type: "Giant Maul",
       },
       {
         type: "Oak Greathammer",
       },
       {
-        type: "Advanced Oak Greathammer",
+        type: "Snakewood Greathammer",
       },
       {
-        type: "Expert Oak Greathammer",
+        type: "Ironwood Greathammer",
       },
       {
         type: "Forge Maul",
       },
       {
-        type: "Advanced Forge Maul",
+        type: "Blacksmith Maul",
       },
       {
-        type: "Expert Forge Maul",
+        type: "Anvil Maul",
       },
       {
         type: "Studded Greatclub",
@@ -5319,40 +8516,55 @@ export const Items = [
         type: "Cultist Greathammer",
       },
       {
-        type: "Advanced Cultist Greathammer",
+        type: "Zealot Greathammer",
       },
       {
-        type: "Expert Cultist Greathammer",
+        type: "Fanatic Greathammer",
       },
       {
         type: "Temple Maul",
       },
       {
-        type: "Advanced Temple Maul",
+        type: "Solemn Maul",
       },
       {
-        type: "Expert Temple Maul",
+        type: "Sacred Maul",
       },
       {
         type: "Leaden Greathammer",
       },
       {
-        type: "Advanced Leaden Greathammer",
+        type: "Heavy Greathammer",
       },
       {
-        type: "Expert Leaden Greathammer",
+        type: "Massive Greathammer",
       },
       {
         type: "Crumbling Maul",
       },
       {
-        type: "Advanced Crumbling Maul",
+        type: "Disintegrating Maul",
       },
       {
-        type: "Expert Crumbling Maul",
+        type: "Ruination Maul",
+      },
+      {
+        type: "Pointed Maul",
       },
       {
         type: "Corroded Longsword",
+      },
+      {
+        type: "Ancient Greatblade",
+      },
+      {
+        type: "Flanged Greatblade",
+      },
+      {
+        type: "Regalia Longsword",
+      },
+      {
+        type: "Ultra Greatsword",
       },
       {
         type: "Iron Greatsword",
@@ -5368,6 +8580,23 @@ export const Items = [
       },
       {
         type: "Arced Longsword",
+      },
+      {
+        type: "Stone Greatsword",
+      },
+      {
+        type: "Obsidian Greatsword",
+      },
+      {
+        type: "Keen Greatsword",
+      },
+      {
+        type: "Siphoning Wand",
+        text: "Adonia's Ego Siphoning Wand",
+        name: "Adonia's Ego",
+        flags: {
+          unique: true,
+        },
       },
       {
         type: "Shortsword",
@@ -5394,6 +8623,14 @@ export const Items = [
         },
       },
       {
+        type: "Hunting Spear",
+        text: "Chainsting Hunting Spear",
+        name: "Chainsting",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Leaden Greathammer",
         text: "Chober Chaber Leaden Greathammer",
         name: "Chober Chaber",
@@ -5410,9 +8647,41 @@ export const Items = [
         },
       },
       {
+        type: "Acrid Wand",
+        text: "Cursecarver Acrid Wand",
+        name: "Cursecarver",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "War Spear",
+        text: "Daevata's Wind War Spear",
+        name: "Daevata's Wind",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Dualstring Bow",
         text: "Death's Harp Dualstring Bow",
         name: "Death's Harp",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Composite Bow",
+        text: "Doomfletch Composite Bow",
+        name: "Doomfletch",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Dyad Crossbow",
+        text: "Double Vision Dyad Crossbow",
+        name: "Double Vision",
         flags: {
           unique: true,
         },
@@ -5442,6 +8711,14 @@ export const Items = [
         },
       },
       {
+        type: "Artillery Bow",
+        text: "Fairgraves' Curse Artillery Bow",
+        name: "Fairgraves' Curse",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Omen Sceptre",
         text: "Font of Power Omen Sceptre",
         name: "Font of Power",
@@ -5466,6 +8743,30 @@ export const Items = [
         },
       },
       {
+        type: "Shrine Sceptre",
+        text: "Guiding Palm of the Eye Shrine Sceptre",
+        name: "Guiding Palm of the Eye",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Shrine Sceptre",
+        text: "Guiding Palm of the Heart Shrine Sceptre",
+        name: "Guiding Palm of the Heart",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Shrine Sceptre",
+        text: "Guiding Palm of the Mind Shrine Sceptre",
+        name: "Guiding Palm of the Mind",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Felled Greatclub",
         text: "Hoghunt Felled Greatclub",
         name: "Hoghunt",
@@ -5477,14 +8778,6 @@ export const Items = [
         type: "Oak Greathammer",
         text: "Hrimnor's Hymn Oak Greathammer",
         name: "Hrimnor's Hymn",
-        flags: {
-          unique: true,
-        },
-      },
-      {
-        type: "Ironhead Spear",
-        text: "INCOMPLETE Ironhead Spear",
-        name: "INCOMPLETE",
         flags: {
           unique: true,
         },
@@ -5506,40 +8799,8 @@ export const Items = [
         },
       },
       {
-        type: "Executioner Greataxe",
-        text: "INCOMPLETE Executioner Greataxe",
-        name: "INCOMPLETE",
-        flags: {
-          unique: true,
-        },
-      },
-      {
-        type: "Broadsword",
-        text: "INCOMPLETE Broadsword",
-        name: "INCOMPLETE",
-        flags: {
-          unique: true,
-        },
-      },
-      {
-        type: "Charred Shortsword",
-        text: "INCOMPLETE Charred Shortsword",
-        name: "INCOMPLETE",
-        flags: {
-          unique: true,
-        },
-      },
-      {
-        type: "Splitting Greataxe",
-        text: "INCOMPLETE Splitting Greataxe",
-        name: "INCOMPLETE",
-        flags: {
-          unique: true,
-        },
-      },
-      {
-        type: "Crone Knife",
-        text: "INCOMPLETE Crone Knife",
+        type: "Ironhead Spear",
+        text: "INCOMPLETE Ironhead Spear",
         name: "INCOMPLETE",
         flags: {
           unique: true,
@@ -5554,8 +8815,8 @@ export const Items = [
         },
       },
       {
-        type: "Holy Flail",
-        text: "INCOMPLETE Holy Flail",
+        type: "Charred Shortsword",
+        text: "INCOMPLETE Charred Shortsword",
         name: "INCOMPLETE",
         flags: {
           unique: true,
@@ -5594,8 +8855,16 @@ export const Items = [
         },
       },
       {
-        type: "Bearded Axe",
-        text: "INCOMPLETE Bearded Axe",
+        type: "Broadsword",
+        text: "INCOMPLETE Broadsword",
+        name: "INCOMPLETE",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Executioner Greataxe",
+        text: "INCOMPLETE Executioner Greataxe",
         name: "INCOMPLETE",
         flags: {
           unique: true,
@@ -5618,8 +8887,40 @@ export const Items = [
         },
       },
       {
+        type: "Bearded Axe",
+        text: "INCOMPLETE Bearded Axe",
+        name: "INCOMPLETE",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Splitting Greataxe",
+        text: "INCOMPLETE Splitting Greataxe",
+        name: "INCOMPLETE",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Crone Knife",
+        text: "INCOMPLETE Crone Knife",
+        name: "INCOMPLETE",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Moon Dagger",
         text: "INCOMPLETE Moon Dagger",
+        name: "INCOMPLETE",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Holy Flail",
+        text: "INCOMPLETE Holy Flail",
         name: "INCOMPLETE",
         flags: {
           unique: true,
@@ -5706,6 +9007,22 @@ export const Items = [
         },
       },
       {
+        type: "Heavy Bow",
+        text: "Lioneye's Glare Heavy Bow",
+        name: "Lioneye's Glare",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Totemic Greatclub",
+        text: "Marohi Erqi Totemic Greatclub",
+        name: "Marohi Erqi",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Crescent Quarterstaff",
         text: "Matsya Crescent Quarterstaff",
         name: "Matsya",
@@ -5722,6 +9039,14 @@ export const Items = [
         },
       },
       {
+        type: "Torment Club",
+        text: "Mjölner Torment Club",
+        name: "Mjölner",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Steelpoint Quarterstaff",
         text: "Nazir's Judgement Steelpoint Quarterstaff",
         name: "Nazir's Judgement",
@@ -5730,9 +9055,25 @@ export const Items = [
         },
       },
       {
+        type: "Execratus Hammer",
+        text: "Nebuloch Execratus Hammer",
+        name: "Nebuloch",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Torment Club",
         text: "Olrovasara Torment Club",
         name: "Olrovasara",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Shrine Sceptre",
+        text: "Palm of the Dreamer Shrine Sceptre",
+        name: "Palm of the Dreamer",
         flags: {
           unique: true,
         },
@@ -5786,9 +9127,25 @@ export const Items = [
         },
       },
       {
+        type: "Barbed Spear",
+        text: "Saitha's Spear Barbed Spear",
+        name: "Saitha's Spear",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Bone Wand",
         text: "Sanguine Diviner Bone Wand",
         name: "Sanguine Diviner",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Warpick",
+        text: "Sculpted Suffering Warpick",
+        name: "Sculpted Suffering",
         flags: {
           unique: true,
         },
@@ -5802,6 +9159,22 @@ export const Items = [
         },
       },
       {
+        type: "Temple Maul",
+        text: "Shyaba Temple Maul",
+        name: "Shyaba",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Chiming Staff",
+        text: "Sire of Shards Chiming Staff",
+        name: "Sire of Shards",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Winged Spear",
         text: "Skysliver Winged Spear",
         name: "Skysliver",
@@ -5810,9 +9183,17 @@ export const Items = [
         },
       },
       {
-        type: "Forked Spear",
-        text: "Solar Lance Forked Spear",
-        name: "Solar Lance",
+        type: "Zealot Bow",
+        text: "Slivertongue Zealot Bow",
+        name: "Slivertongue",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Helix Spear",
+        text: "Spire of Ire Helix Spear",
+        name: "Spire of Ire",
         flags: {
           unique: true,
         },
@@ -5827,8 +9208,16 @@ export const Items = [
       },
       {
         type: "Hardwood Spear",
-        text: "Splinter of Loratta Hardwood Spear",
-        name: "Splinter of Loratta",
+        text: "Splinter of Lorrata Hardwood Spear",
+        name: "Splinter of Lorrata",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Forked Spear",
+        text: "Tangletongue Forked Spear",
+        name: "Tangletongue",
         flags: {
           unique: true,
         },
@@ -5874,6 +9263,30 @@ export const Items = [
         },
       },
       {
+        type: "Cultist Greathammer",
+        text: "The Empty Roar Cultist Greathammer",
+        name: "The Empty Roar",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Giant Maul",
+        text: "The Hammer of Faith Giant Maul",
+        name: "The Hammer of Faith",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Desolate Crossbow",
+        text: "The Last Lament Desolate Crossbow",
+        name: "The Last Lament",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Pyrophyte Staff",
         text: "The Searing Touch Pyrophyte Staff",
         name: "The Searing Touch",
@@ -5890,6 +9303,38 @@ export const Items = [
         },
       },
       {
+        type: "Ravenous Staff",
+        text: "The Unborn Lich Ravenous Staff",
+        name: "The Unborn Lich",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Permafrost Staff",
+        text: "The Whispering Ice Permafrost Staff",
+        name: "The Whispering Ice",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Withered Wand",
+        text: "The Wicked Quill Withered Wand",
+        name: "The Wicked Quill",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Pointed Maul",
+        text: "Tidebreaker Pointed Maul",
+        name: "Tidebreaker",
+        flags: {
+          unique: true,
+        },
+      },
+      {
         type: "Spiked Club",
         text: "Trenchtimbre Spiked Club",
         name: "Trenchtimbre",
@@ -5901,6 +9346,22 @@ export const Items = [
         type: "Forge Maul",
         text: "Trephina Forge Maul",
         name: "Trephina",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Ironhead Spear",
+        text: "Tyranny's Grip Ironhead Spear",
+        name: "Tyranny's Grip",
+        flags: {
+          unique: true,
+        },
+      },
+      {
+        type: "Fanatic Bow",
+        text: "Voltaxic Rift Fanatic Bow",
+        name: "Voltaxic Rift",
         flags: {
           unique: true,
         },

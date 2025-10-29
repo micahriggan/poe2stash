@@ -6,7 +6,7 @@ import LiveMonitor from "./LiveMonitor";
 import { JobQueue } from "./JobQueue";
 import { Leagues, League } from "../data/leagues";
 
-const MainPageContent: React.FC = () => {
+const MainPage: React.FC = () => {
   const {
     accountName,
     setAccountName,
@@ -161,10 +161,6 @@ const MainPageContent: React.FC = () => {
       ))}
     </div>
   );
-};
-
-const MainPage: React.FC = () => {
-  return <MainPageContent />;
 };
 
 export default MainPage;
