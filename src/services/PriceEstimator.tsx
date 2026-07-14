@@ -158,6 +158,18 @@ class PriceEstimator {
     return data;
   }
 
+  // Best-effort value of an estimate expressed in `iWant` (default exalted),
+  // used to compare/sort items of differing currencies. Relies on exchange
+  // rates cached during price checking; returns 0 when the estimate is missing.
+  estimateValueIn(estimate: Estimate | undefined, iWant = "exalted"): number {
+    const price = estimate?.price;
+    if (!price || !price.amount || isNaN(price.amount)) return 0;
+    if (price.currency === iWant) return price.amount;
+    const rate = this.getCachedExchangeRates(iWant, price.currency);
+    if (rate && !isNaN(rate)) return price.amount * rate;
+    return price.amount; // no cached rate: fall back to raw amount
+  }
+
   cachePriceEstimate(itemId: string, estimate: Estimate) {
     const cacheKey = `price_estimates`;
     const data = Cache.getJson<Record<string, Estimate>>(cacheKey) || {};

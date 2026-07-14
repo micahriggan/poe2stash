@@ -16,6 +16,8 @@ import { Job } from "../jobs/Job";
 import { handleJob } from "../components/JobQueue";
 import { Leagues, League } from "../data/leagues";
 
+export type SortMode = "default" | "value-desc";
+
 interface AppContextType {
   accountName: string;
   setAccountName: Dispatch<SetStateAction<string>>;
@@ -30,6 +32,8 @@ interface AppContextType {
   setSelectedStash: Dispatch<SetStateAction<string>>;
   searchTerm: string;
   setSearchTerm: Dispatch<SetStateAction<string>>;
+  sortMode: SortMode;
+  setSortMode: Dispatch<SetStateAction<SortMode>>;
   isLiveMonitoring: boolean;
   setIsLiveMonitoring: Dispatch<SetStateAction<boolean>>;
   isPriceChecking: boolean;
@@ -69,6 +73,7 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({
   const [stashTabs, setStashTabs] = useState<string[]>([]);
   const [selectedStash, setSelectedStash] = useState<string>("All");
   const [searchTerm, setSearchTerm] = useState<string>("");
+  const [sortMode, setSortMode] = useState<SortMode>("default");
   const [isLiveMonitoring, setIsLiveMonitoring] = useState<boolean>(false);
   const [isPriceChecking, setIsPriceChecking] = useState<boolean>(false);
   const [priceEstimates, setPriceEstimates] = useState<
@@ -152,7 +157,20 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({
       });
   };
 
-  const filteredItems = filterItems(items, selectedStash, searchTerm);
+  const sortItems = (itemsToSort: Poe2Item[]) => {
+    if (sortMode !== "value-desc") return itemsToSort;
+    // Sort a copy by estimated value (normalized to exalted) descending, so the
+    // most valuable items surface first. Items without an estimate sort to 0.
+    return [...itemsToSort].sort(
+      (a, b) =>
+        PriceChecker.estimateValueIn(priceEstimates[b.id]) -
+        PriceChecker.estimateValueIn(priceEstimates[a.id]),
+    );
+  };
+
+  const filteredItems = sortItems(
+    filterItems(items, selectedStash, searchTerm),
+  );
 
   useEffect(() => {
     const getCachedItems = async (name: string) => {
@@ -192,6 +210,8 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({
     setSelectedStash,
     searchTerm,
     setSearchTerm,
+    sortMode,
+    setSortMode,
     isLiveMonitoring,
     setIsLiveMonitoring,
     isPriceChecking,

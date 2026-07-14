@@ -5,6 +5,7 @@ import { LiveMonitorButton } from "./LiveMonitorButton";
 import LiveMonitor from "./LiveMonitor";
 import { JobQueue } from "./JobQueue";
 import { Leagues, League } from "../data/leagues";
+import { SortMode } from "../contexts/AppContext";
 
 const MainPage: React.FC = () => {
   const {
@@ -20,6 +21,8 @@ const MainPage: React.FC = () => {
     selectedStash,
     searchTerm,
     setSearchTerm,
+    sortMode,
+    setSortMode,
     isLiveMonitoring,
     setIsLiveMonitoring,
     isPriceChecking,
@@ -98,6 +101,18 @@ const MainPage: React.FC = () => {
             placeholder="Search items..."
             className="border p-2"
           />
+          <label htmlFor="sort-select" className="mr-2">
+            Sort by:
+          </label>
+          <select
+            id="sort-select"
+            className="border p-2"
+            value={sortMode}
+            onChange={(e) => setSortMode(e.target.value as SortMode)}
+          >
+            <option value="default">Default</option>
+            <option value="value-desc">Estimated Value (High → Low)</option>
+          </select>
           <button
             onClick={refreshAllItems}
             className="bg-green-500 text-white p-2 rounded disabled:bg-gray-400"
