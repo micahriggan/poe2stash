@@ -147,12 +147,14 @@ export interface Poe2Item {
     identified: boolean;
     properties: ItemProperty[];
     requirements: ItemRequirement[];
-    implicitMods?: string[];
-    explicitMods?: string[];
-    enchantMods?: string[];
+    implicitMods?: ItemMod[];
+    explicitMods?: ItemMod[];
+    enchantMods?: ItemMod[];
     frameType: number;
     extended: {
-      mods: {
+      // The trade API stopped sending `extended.mods` when mods became structured
+      // objects; the same tier/level data now lives on each mod itself.
+      mods?: {
         explicit: ExtendedMod[];
         implicit?: ExtendedMod[];
         enchant?: ExtendedMod[];
@@ -177,6 +179,23 @@ export interface ItemRequirement {
   values: Array<[string, number]>;
   displayMode: number;
   type: number;
+}
+
+/**
+ * A mod as the trade API returns it. `description` carries the rolled values, while each
+ * entry in `mods` describes the affix that produced them (its tier and possible range).
+ */
+export interface ItemMod {
+  description: string;
+  domain: string;
+  /** Prefixed stat id, e.g. `stat.explicit.stat_53045048`. */
+  hash: string;
+  mods: Array<{
+    name: string;
+    tier: string;
+    level: number;
+    magnitudes: Array<{ min: string; max: string }>;
+  }>;
 }
 
 export interface ExtendedMod {

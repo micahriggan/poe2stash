@@ -1,4 +1,12 @@
-import { ipcRenderer, contextBridge } from 'electron'
+import { ipcRenderer, contextBridge, webUtils } from 'electron'
+
+// `File.path` was removed in Electron 32; the path of a file picked in the Renderer can
+// only be resolved here, in the preload.
+contextBridge.exposeInMainWorld('electronFile', {
+  getPathForFile(file: File) {
+    return webUtils.getPathForFile(file)
+  },
+})
 
 // --------- Expose some API to the Renderer process ---------
 contextBridge.exposeInMainWorld('ipcRenderer', {

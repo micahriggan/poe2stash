@@ -35,6 +35,15 @@ export class Poe2TradeClient {
     return response.data as Poe2TradeSearch;
   }
 
+  async getLeagues() {
+    const url = `${this.apiUrl}/data/leagues`;
+    const response = await axios.get(url);
+    const result = response.data?.result as
+      | { id: string; realm: string; text: string }[]
+      | undefined;
+    return (result || []).map((league) => league.id);
+  }
+
   range(min?: number | undefined, max?: number | undefined) {
     const params = {
       ...(min && { min: min }),

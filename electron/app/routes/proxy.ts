@@ -50,7 +50,7 @@ export const proxy = async (req: Request, res: Response) => {
         "user-agent": app.userAgentFallback + "(contact: micahriggan@gmail.com)",
       },
       useSessionCookies: true,
-      referrerPolicy: "no-referrer-when-downgrade",
+      referrerPolicy: "no-referrer-when-downgrade" as const,
     };
     console.log(params);
 

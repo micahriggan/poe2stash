@@ -1,16 +1,14 @@
-<p align="center">
-  <img src="assets/icon.png" alt="Path of Exile 2 Trade Assistant Icon" width="200">
-</p>
-
-
 # POE2Stash
+
+![Path of Exile 2 Trade Assistant Icon](assets/icon.png)
+
 Analyze your stash tabs in poe2. Price checks and live monitoring of dump tabs
 This project is in active development, and I intend to build out some more community oriented features in the future.
 
 ## Releases
+
 You can download the latest release from the [releases page](https://github.com/micahriggan/poe2stash/releases).
 There should be a windows portable and a MacOS dmg available on each release
-
 
 ## Features
 
@@ -64,8 +62,6 @@ Show item details of purchase offers if you have them in the item database
 - Search chat offers for patterns in sales
 - Price check items as you receive offers
 
-
-
 ## Devs Getting Started
 
 1. Clone the repository
@@ -74,4 +70,5 @@ Show item details of purchase offers if you have them in the item database
 4. Enter your Path of Exile 2 account name to begin syncing your items
 
 ## Contributing
+
 Contributions are welcome! Please feel free to submit a Pull Request.

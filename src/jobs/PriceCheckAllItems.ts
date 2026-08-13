@@ -2,7 +2,8 @@ import { Job } from "./Job";
 import { Estimate, PriceChecker } from "../services/PriceEstimator";
 import { Poe2Item } from "../services/types";
 
-export class PriceCheckAllItems extends Job<Estimate> {
+// `null` when an item had no comparable listings to estimate from.
+export class PriceCheckAllItems extends Job<Estimate | null> {
   constructor(
     private filteredItems: Poe2Item[],
     private skipAlreadyChecked = true,
