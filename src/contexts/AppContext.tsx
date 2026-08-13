@@ -3,22 +3,25 @@ import React, {
   useState,
   useContext,
   useEffect,
+  useMemo,
   Dispatch,
   SetStateAction,
 } from "react";
 import { Poe2Trade } from "../services/poe2trade";
 import { PriceChecker, Estimate } from "../services/PriceEstimator";
-import { Poe2Item } from "../services/types";
+import { Poe2Item, Price } from "../services/types";
 import { SyncAccount } from "../jobs/SyncAccount";
 import { RefreshAllItems } from "../jobs/RefreshAllItems";
 import { PriceCheckAllItems } from "../jobs/PriceCheckAllItems";
 import { Job } from "../jobs/Job";
 import { handleJob } from "../components/JobQueue";
 import { Leagues, League } from "../data/leagues";
+import { Poe2Client } from "../services/Poe2TradeClient";
 
 interface AppContextType {
   accountName: string;
   setAccountName: Dispatch<SetStateAction<string>>;
+  leagues: League[];
   selectedLeague: League;
   setSelectedLeague: Dispatch<SetStateAction<League>>;
   items: Poe2Item[];
@@ -43,9 +46,20 @@ interface AppContextType {
   priceCheckItem: (item: Poe2Item) => Promise<void>;
   refreshItem: (item: Poe2Item) => Promise<void>;
   refreshAllItems: () => Promise<void>;
-  priceCheckAllItems: () => Promise<void>;
+  priceCheckAllItems: (force?: boolean) => Promise<void>;
   filteredItems: Poe2Item[];
+  stashTotals: StashTotals;
 }
+
+export type StashTotals = {
+  /** What the items are currently listed for. */
+  listed: Price;
+  /** What the price checker thinks they are worth. */
+  estimated: Price;
+  /** How many of the items have an estimate, out of how many are shown. */
+  estimatedCount: number;
+  itemCount: number;
+};
 
 const AppContext = createContext<AppContextType | undefined>(
   undefined,
@@ -63,6 +77,7 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [accountName, setAccountName] = useState("");
+  const [leagues, setLeagues] = useState<League[]>([...Leagues]);
   const [selectedLeague, setSelectedLeague] = useState<League>(Leagues[0]);
   const [items, setItems] = useState<Poe2Item[]>([]);
   const [liveSearchItems, setLiveSearchItems] = useState<Poe2Item[]>([]);
@@ -75,6 +90,12 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({
     Record<string, Estimate>
   >({});
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [stashTotals, setStashTotals] = useState<StashTotals>({
+    listed: { amount: 0, currency: "exalted" },
+    estimated: { amount: 0, currency: "exalted" },
+    estimatedCount: 0,
+    itemCount: 0,
+  });
   const [jobs, setJobs] = useState<Job<any>[]>([]);
 
   const updateStashTabs = (items: Poe2Item[]) => {
@@ -124,9 +145,15 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({
     await handleJob(refresh, setJobs, setErrorMessage);
   };
 
-  const priceCheckAllItems = async () => {
+  // `force` re-checks items that already have a cached estimate, for when the estimates
+  // themselves are stale rather than missing.
+  const priceCheckAllItems = async (force = false) => {
     setIsPriceChecking(true);
-    const priceCheck = new PriceCheckAllItems(filteredItems, true, selectedLeague);
+    const priceCheck = new PriceCheckAllItems(
+      filteredItems,
+      !force,
+      selectedLeague,
+    );
 
     priceCheck.onStep = async (progress) => {
       console.log("price check", progress);
@@ -152,7 +179,43 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({
       });
   };
 
-  const filteredItems = filterItems(items, selectedStash, searchTerm);
+  // Memoized so effects can depend on it without re-running on every render.
+  const filteredItems = useMemo(
+    () => filterItems(items, selectedStash, searchTerm),
+    [items, selectedStash, searchTerm],
+  );
+
+  // Roll the currently visible items up into a single value, so the stash (or a single
+  // tab, when one is selected) can be valued as a whole.
+  useEffect(() => {
+    let cancelled = false;
+
+    const calculateTotals = async () => {
+      const estimates = filteredItems
+        .map((item) => priceEstimates[item.id]?.price)
+        .filter(Boolean) as Price[];
+
+      const [listed, estimated] = await Promise.all([
+        PriceChecker.totalValue(filteredItems.map((item) => item.listing.price)),
+        PriceChecker.totalValue(estimates),
+      ]);
+
+      if (cancelled) return;
+
+      setStashTotals({
+        listed,
+        estimated,
+        estimatedCount: estimates.length,
+        itemCount: filteredItems.length,
+      });
+    };
+
+    calculateTotals();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [filteredItems, priceEstimates]);
 
   useEffect(() => {
     const getCachedItems = async (name: string) => {
@@ -166,6 +229,26 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({
       getCachedItems(accountName);
     }
   }, [accountName]);
+
+  // The hardcoded list in `data/leagues` goes stale every league rotation, so take the
+  // authoritative ids from the trade API and keep the static list only as a fallback.
+  useEffect(() => {
+    const loadLeagues = async () => {
+      try {
+        const apiLeagues = await Poe2Client.getLeagues();
+        if (!apiLeagues.length) return;
+
+        setLeagues(apiLeagues);
+        setSelectedLeague((current) =>
+          apiLeagues.includes(current) ? current : apiLeagues[0]
+        );
+      } catch (error) {
+        console.error("Could not load leagues from the trade API", error);
+      }
+    };
+
+    loadLeagues();
+  }, []);
 
   useEffect(() => {
     const savedAccountName = localStorage.getItem("accountName");
@@ -181,6 +264,7 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({
   const value: AppContextType = {
     accountName,
     setAccountName,
+    leagues,
     selectedLeague,
     setSelectedLeague,
     items,
@@ -207,6 +291,7 @@ export const AppContextProvider: React.FC<{ children: React.ReactNode }> = ({
     refreshAllItems,
     priceCheckAllItems,
     filteredItems,
+    stashTotals,
   };
 
   return (

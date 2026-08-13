@@ -4,12 +4,22 @@ import { PoeListItem } from "./PoeListItem";
 import { LiveMonitorButton } from "./LiveMonitorButton";
 import LiveMonitor from "./LiveMonitor";
 import { JobQueue } from "./JobQueue";
-import { Leagues, League } from "../data/leagues";
+import { League } from "../data/leagues";
+import { Price } from "../services/types";
+
+// Divine totals are small numbers where the decimals matter; exalted totals are not.
+const formatPrice = (price: Price) =>
+  `${
+    price.currency === "divine"
+      ? Math.round(price.amount * 10) / 10
+      : Math.round(price.amount)
+  } ${price.currency}`;
 
 const MainPage: React.FC = () => {
   const {
     accountName,
     setAccountName,
+    leagues,
     selectedLeague,
     setSelectedLeague,
     items,
@@ -35,6 +45,7 @@ const MainPage: React.FC = () => {
     refreshAllItems,
     priceCheckAllItems,
     filteredItems,
+    stashTotals,
   } = useAppContext();
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -64,7 +75,7 @@ const MainPage: React.FC = () => {
             onChange={(e) => setSelectedLeague(e.target.value as League)}
             className="border p-2"
           >
-            {Leagues.map((league) => (
+            {leagues.map((league) => (
               <option key={league} value={league}>{league}</option>
             ))}
           </select>
@@ -106,10 +117,20 @@ const MainPage: React.FC = () => {
           </button>
 
           <button
-            onClick={priceCheckAllItems}
+            onClick={() => priceCheckAllItems()}
+            disabled={isPriceChecking}
             className="bg-green-500 text-white p-2 rounded disabled:bg-gray-400"
           >
             {isPriceChecking ? "Checking Prices..." : "Price Check All"}
+          </button>
+
+          <button
+            onClick={() => priceCheckAllItems(true)}
+            disabled={isPriceChecking}
+            title="Re-estimate every item, ignoring cached estimates"
+            className="bg-green-700 text-white p-2 rounded disabled:bg-gray-400"
+          >
+            Recheck All
           </button>
           <LiveMonitorButton
             accountName={accountName}
@@ -124,6 +145,31 @@ const MainPage: React.FC = () => {
           />
           <div className="flex-grow text-right">
             {filteredItems.length} items found
+          </div>
+        </div>
+      )}
+
+      {items.length > 0 && (
+        <div className="mb-4 flex flex-wrap gap-8 border-y border-gray-700 py-3">
+          <div>
+            <div className="text-xs uppercase text-gray-400">
+              Listed value{selectedStash !== "All" && ` (${selectedStash})`}
+            </div>
+            <div className="text-lg font-semibold text-green-600">
+              {formatPrice(stashTotals.listed)}
+            </div>
+          </div>
+          <div>
+            <div className="text-xs uppercase text-gray-400">
+              Estimated value
+            </div>
+            <div className="text-lg font-semibold text-orange-600">
+              {formatPrice(stashTotals.estimated)}
+            </div>
+            <div className="text-xs text-gray-400">
+              {stashTotals.estimatedCount} of {stashTotals.itemCount} price
+              checked
+            </div>
           </div>
         </div>
       )}

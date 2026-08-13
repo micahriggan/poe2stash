@@ -1,6 +1,7 @@
 import { Poe2Item } from "../services/types";
 import { useState } from "react";
 import { PriceChecker } from "../services/PriceEstimator";
+import { formatModText } from "../services/mods";
 
 const ItemNameWithRarity: React.FC<{ item: Poe2Item }> = ({ item }) => {
   const getRarityColor = (rarity: string = "magic") => {
@@ -101,7 +102,7 @@ export function PoeListItem(props: {
               <ul className="list-none text-sm text-left space-y-1">
                 {item.item.implicitMods?.map((mod, index) => (
                   <li key={index} className="text-blue-200">
-                    {mod}
+                    {formatModText(mod.description)}
                   </li>
                 ))}
               </ul>
@@ -116,7 +117,7 @@ export function PoeListItem(props: {
               <ul className="list-none text-sm text-left space-y-1">
                 {item.item.enchantMods?.map((mod, index) => (
                   <li key={index} className="text-purple-200">
-                    {mod}
+                    {formatModText(mod.description)}
                   </li>
                 ))}
               </ul>
@@ -128,7 +129,12 @@ export function PoeListItem(props: {
             <ul className="list-none text-sm text-left space-y-1">
               {item.item.explicitMods?.map((mod, index) => (
                 <li key={index} className="text-gray-200">
-                  {mod}
+                  {formatModText(mod.description)}
+                  {mod.mods?.[0]?.tier && (
+                    <span className="text-gray-500 ml-2 text-xs">
+                      {mod.mods[0].tier}
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>

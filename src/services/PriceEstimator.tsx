@@ -1,70 +1,49 @@
 import { Price, Poe2Item } from "./types";
 import { Poe2Trade } from "./poe2trade";
 import { Cache } from "./Cache";
-import { Stats } from "../data/stats";
+import { ParsedMod, parseMod } from "./mods";
 
-export type Stat = (typeof Stats)[0]["entries"][0];
-export type Explicit = Poe2Item["item"]["extended"]["mods"]["explicit"][0];
 export type Estimate = { price: Price; stdDev: Price };
 
 class PriceEstimator {
   async findMatchingItem(item: Poe2Item, league?: string) {
-    const parsedMods = this.parseItemMods(item);
-    const topMods = await this.getHighTierMods(
-      item,
-      parsedMods.explicits?.length || 0,
-    );
-
-    const topStats = topMods
-      .map((s) => s.magnitudes)
-      .flat()
-      .map((mag) => mag.hash)
-      .map((hash) => parsedMods?.explicits?.find((p) => p.hash === hash))
-      .filter((p) => p);
+    const explicits = this.parseItemMods(item).explicits;
+    const topMods = this.getHighTierMods(explicits, explicits.length);
 
     const topMatch = await Poe2Trade.getItemByAttributes({
       rarity: item.item.rarity,
       baseType: item.item.baseType,
-      explicit: topStats.map((s) => ({
-        id: s!.hash,
-        ...Poe2Trade.range(s!.value1),
-      })),
+      explicit: this.toSearchFilters(topMods),
       status: "securable",
     }, league);
 
     return topMatch;
   }
 
+  /** Turns parsed mods into trade search filters, keeping the item's rolled value as the floor. */
+  toSearchFilters(mods: ParsedMod[]) {
+    return mods.map((mod) => ({
+      id: mod.hash,
+      ...Poe2Trade.range(mod.value1),
+    }));
+  }
+
   async estimateItemPrice(item: Poe2Item, league?: string) {
-    const parsedMods = this.parseItemMods(item);
+    const explicits = this.parseItemMods(item).explicits;
     console.log("Estimating price for item in league:", league);
 
     const allPrices: Price[] = [];
     const currency = "exalted";
 
     // loop until we have 10 prices or we have no more mods to search
-    for (
-      let i = parsedMods?.explicits?.length || 0;
-      i >= 1 && allPrices.length < 10;
-      i--
-    ) {
-      const topMods = await this.getHighTierMods(item, i);
-
-      const topStats = topMods
-        .map((s) => s.magnitudes)
-        .flat()
-        .map((mag) => mag.hash)
-        .map((hash) => parsedMods?.explicits?.find((p) => p.hash === hash))
-        .filter((p) => p);
+    for (let i = explicits.length; i >= 1 && allPrices.length < 10; i--) {
+      const topMods = this.getHighTierMods(explicits, i);
 
       const topMatch = await Poe2Trade.getItemByAttributes({
         status: "securable",
         rarity: item.item.rarity,
         baseType: item.item.baseType,
-        explicit: topStats.map((s) => ({
-          id: s!.hash,
-          ...Poe2Trade.range(s!.value1),
-        })),
+        explicit: this.toSearchFilters(topMods),
       }, league);
       //await wait(1000);
 
@@ -96,6 +75,13 @@ class PriceEstimator {
       allPrices.map((p) => p.currency),
     );
     const estimate = this.priceEstimate(allPrices);
+
+    if (!estimate) {
+      // No comparable listings were found (or none had a usable exchange rate), so there
+      // is nothing to average. Caching a NaN here would show as `~NaN` for a day.
+      console.log("No comparable listings found for", item.item.baseType);
+      return null;
+    }
 
     estimate.price = await this.upscalePrice(estimate.price);
     estimate.stdDev = await this.upscalePrice(estimate.stdDev);
@@ -143,6 +129,9 @@ class PriceEstimator {
 
   async upscalePrice(price: Price) {
     const divineRate = await this.exchangeRate("exalted", "divine");
+    if (!Number.isFinite(divineRate) || divineRate <= 0) {
+      return price;
+    }
     if (price.amount > divineRate) {
       // convert from exalted to divine if large enough
       price.amount = price.amount / divineRate;
@@ -155,7 +144,33 @@ class PriceEstimator {
   getCachedEstimates() {
     const cacheKey = `price_estimates`;
     const data = Cache.getJson<Record<string, Estimate>>(cacheKey) || {};
-    return data;
+
+    // Estimates cached before the NaN guard below could hold `{ amount: NaN }`, which
+    // JSON stores as `null`. Drop them so they get re-checked rather than rendered.
+    return Object.fromEntries(
+      Object.entries(data).filter(([, estimate]) =>
+        Number.isFinite(estimate?.price?.amount),
+      ),
+    ) as Record<string, Estimate>;
+  }
+
+  /**
+   * Sums a set of prices into a single figure, converting every entry into `currency`
+   * first and then upscaling to divine once the total is large enough.
+   */
+  async totalValue(prices: Price[], currency = "exalted") {
+    const usable = prices.filter((p) => p && Number.isFinite(p.amount));
+
+    await this.fetchManyExchangeRates(
+      currency,
+      usable.map((p) => p.currency),
+    );
+
+    const equivalent = this.toEquivalentPrices(currency, usable).filter((p) =>
+      Number.isFinite(p.amount),
+    );
+
+    return this.upscalePrice(this.sumPrice(equivalent));
   }
 
   cachePriceEstimate(itemId: string, estimate: Estimate) {
@@ -166,6 +181,14 @@ class PriceEstimator {
   }
 
   priceEstimate(prices: Price[]) {
+    // A missing exchange rate turns a converted price into NaN, and averaging an empty
+    // list gives NaN as well, so drop anything that isn't a real number first.
+    prices = prices.filter((p) => Number.isFinite(p.amount));
+
+    if (!prices.length) {
+      return null;
+    }
+
     // check to make sure currency is the same
 
     const currencies = Poe2Trade.toUniqueItems(prices.map((p) => p.currency));
@@ -275,6 +298,13 @@ class PriceEstimator {
     console.log({ iWant, iHave, amounts, weights });
     const mean = this.weightedAvg(prices, weights);
 
+    if (!Number.isFinite(mean)) {
+      // No offers came back, so there is no rate to cache. Caching NaN would poison
+      // every conversion through this pair for the next hour.
+      console.log("No exchange rate available for", iWant, "/", iHave);
+      return mean;
+    }
+
     await this.cacheExchangeRates(iWant, iHave, mean);
     return mean;
   }
@@ -317,83 +347,12 @@ class PriceEstimator {
     return Math.sqrt(this.variance(values));
   }
 
-  extractMod(mod: string) {
-    // This regex captures a number (integer or decimal) at the beginning of the string
-    const numberCapture = /^.*?([-+]?\d+(?:\.\d+)?)(.*)$/;
-
-    // First, replace bracketed alternatives:
-    // This handles patterns with a pipe, e.g. "[Foo|Bar]"
-    const bracketCapture = /\[([^|\]]+)\|([^\]]+)\]/g;
-    const withoutPipeBrackets = mod.replace(bracketCapture, "$2");
-
-    // Next, replace any remaining single brackets (without a pipe)
-    const singleBracketCapture = /\[([^\]]+)\]/g;
-    const withoutBrackets = withoutPipeBrackets.replace(
-      singleBracketCapture,
-      "$1",
-    );
-
-    // Finally, replace all numbers globally with "#"
-    const output = withoutBrackets.replace(/[-+]?\d+(?:\.\d+)?/g, "#"); // Replace the number with a '#' and capture the rest of the string in group 2.
-
-    // To capture the numbers that were replaced:
-    const match = mod.match(numberCapture);
-
-    // Look for generalized match, or exact match
-    const statEntry = this.getStatEntryForMod(output, withoutBrackets);
-
-    if (!statEntry) {
-      console.log(`No stat entry found for mod: ${mod}, ${output}`);
-      throw new Error(`No stat entry found for mod: ${mod}, ${output}`);
-    }
-
-    let value1 = match ? Number(match[1]) : undefined;
-    let value2 = match && match[2] ? Number(match[2]) : undefined;
-
-    const inverted =
-      (statEntry.text.includes("increased") && output.includes("reduced")) ||
-      (statEntry.text.includes("reduced") && output.includes("increased"));
-
-    if (statEntry.text !== output && inverted) {
-      // we had to invert to find the stat entry
-      if (value1) value1 = -value1;
-      if (value2) value2 = -value2;
-    }
-
-    return {
-      mod: mod,
-      parsed: output,
-      value1,
-      value2,
-      hash: statEntry.id,
-    };
-  }
-
-  getStatEntryForMod(mod: string, original?: string) {
-    const stats = Stats.map((statGroup) =>
-      statGroup.entries.filter(
-        (entry) =>
-          entry.text === mod ||
-          entry.text === mod.replace("increased", "reduced") ||
-          entry.text === mod.replace("reduced", "increased") ||
-          entry.text === mod.replace("in your Maps", "in Area") ||
-          entry.text === mod.replace("in your Maps", "in this Area") ||
-          (original && entry.text === original),
-      ),
-    ).flat();
-    return stats.length > 0 ? stats[0] : null;
-  }
-
+  // The trade API now returns each mod with its stat id and tier attached, so mods no
+  // longer have to be matched back to the stat table by their text.
   parseItemMods(item: Poe2Item) {
-    const explicits = item.item.explicitMods?.map((mod) => {
-      return this.extractMod(mod);
-    });
-    const implicits = item.item.implicitMods?.map((mod) => {
-      return this.extractMod(mod);
-    });
-    const enchants = item.item.enchantMods?.map((mod) => {
-      return this.extractMod(mod);
-    });
+    const explicits = (item.item.explicitMods || []).map(parseMod);
+    const implicits = (item.item.implicitMods || []).map(parseMod);
+    const enchants = (item.item.enchantMods || []).map(parseMod);
 
     console.log({ explicits, implicits, enchants });
 
@@ -404,29 +363,13 @@ class PriceEstimator {
     };
   }
 
-  getStatEntry(mod: Explicit) {
-    return mod.magnitudes
-      .map((magnitude) => {
-        return Stats.map((statGroup) =>
-          statGroup.entries.filter((entry) => entry.id === magnitude.hash),
-        );
-      })
-      .flat();
-  }
-
-  async getHighTierMods(item: Poe2Item, topN: number) {
-    return item.item.extended.mods.explicit
-      .map((mod) => {
-        return {
-          mod: mod.name,
-          tier: mod.tier,
-          level: mod.level,
-          tierNum: Number(mod.tier.replace("S", "").replace("P", "")),
-          magnitudes: mod.magnitudes,
-        };
-      })
-      .sort((a, b) => b.tierNum - a.tierNum)
-      .slice(0, topN);
+  /**
+   * The `topN` best mods on the item. Tier 1 is the best tier, so this sorts ascending;
+   * mods whose tier is unknown sort last rather than being treated as top rolls.
+   */
+  getHighTierMods(mods: ParsedMod[], topN: number) {
+    const rank = (mod: ParsedMod) => mod.tierNum ?? Number.MAX_SAFE_INTEGER;
+    return [...mods].sort((a, b) => rank(a) - rank(b)).slice(0, topN);
   }
 }
 

@@ -68,7 +68,7 @@ const MessagesPage: React.FC = () => {
       return;
     }
     try {
-      await chatService.setChatFilePath(file.path);
+      await chatService.setChatFilePath(window.electronFile.getPathForFile(file));
       await fetchOffers();
       setupWebSocket(); // Reconnect WebSocket after setting new chat file
     } catch (error) {
