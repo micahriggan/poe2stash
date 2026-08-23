@@ -2,6 +2,21 @@ import { Poe2Item } from "../services/types";
 import { useState } from "react";
 import { PriceChecker } from "../services/PriceEstimator";
 
+// Some PoE2 mods come back from the trade API as plain strings, but newer
+// item/league data can return structured objects like { description, hash, mods }.
+// Coerce anything to display text so React never receives a raw object as a child.
+function modToText(mod: unknown): string {
+  if (typeof mod === "string") return mod;
+  if (mod && typeof mod === "object") {
+    const m = mod as { description?: string; name?: string; mods?: unknown[] };
+    if (m.description) return m.description;
+    if (Array.isArray(m.mods) && m.mods.length) return m.mods.map(modToText).join(", ");
+    if (m.name) return m.name;
+    return JSON.stringify(mod);
+  }
+  return String(mod);
+}
+
 const ItemNameWithRarity: React.FC<{ item: Poe2Item }> = ({ item }) => {
   const getRarityColor = (rarity: string = "magic") => {
     switch (rarity.toLowerCase()) {
@@ -101,7 +116,7 @@ export function PoeListItem(props: {
               <ul className="list-none text-sm text-left space-y-1">
                 {item.item.implicitMods?.map((mod, index) => (
                   <li key={index} className="text-blue-200">
-                    {mod}
+                    {modToText(mod)}
                   </li>
                 ))}
               </ul>
@@ -116,7 +131,7 @@ export function PoeListItem(props: {
               <ul className="list-none text-sm text-left space-y-1">
                 {item.item.enchantMods?.map((mod, index) => (
                   <li key={index} className="text-purple-200">
-                    {mod}
+                    {modToText(mod)}
                   </li>
                 ))}
               </ul>
@@ -128,7 +143,7 @@ export function PoeListItem(props: {
             <ul className="list-none text-sm text-left space-y-1">
               {item.item.explicitMods?.map((mod, index) => (
                 <li key={index} className="text-gray-200">
-                  {mod}
+                  {modToText(mod)}
                 </li>
               ))}
             </ul>

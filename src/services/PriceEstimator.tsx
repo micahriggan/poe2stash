@@ -102,7 +102,9 @@ class PriceEstimator {
 
     console.log({ allPrices, estimate, item });
 
-    this.cachePriceEstimate(item.item.id, estimate);
+    // Key by the listing id (item.id), which is what the UI and the
+    // "skip already checked" logic read by. (item.item.id is a different value.)
+    this.cachePriceEstimate(item.id, estimate);
     return estimate as Estimate;
     // perform some searches based off the explicits to see if we can find comparable items
     // but we also want to learn about which mods are valuable for rares
@@ -384,16 +386,40 @@ class PriceEstimator {
     return stats.length > 0 ? stats[0] : null;
   }
 
+  // Some PoE2 mods arrive as plain strings, others (newer/league data) as
+  // objects like { description, hash, mods }. Coerce to text before parsing.
+  modToText(mod: unknown): string {
+    if (typeof mod === "string") return mod;
+    if (mod && typeof mod === "object") {
+      const m = mod as { description?: string; name?: string; mods?: unknown[] };
+      if (m.description) return m.description;
+      if (Array.isArray(m.mods) && m.mods.length)
+        return m.mods.map((x) => this.modToText(x)).join(", ");
+      if (m.name) return m.name;
+    }
+    return String(mod);
+  }
+
+  // Parse a mod but never let one unrecognized/unusual mod abort the whole
+  // price check — extractMod throws when a stat isn't in the local table.
+  safeExtractMod(mod: unknown) {
+    try {
+      return this.extractMod(this.modToText(mod));
+    } catch {
+      return null;
+    }
+  }
+
   parseItemMods(item: Poe2Item) {
-    const explicits = item.item.explicitMods?.map((mod) => {
-      return this.extractMod(mod);
-    });
-    const implicits = item.item.implicitMods?.map((mod) => {
-      return this.extractMod(mod);
-    });
-    const enchants = item.item.enchantMods?.map((mod) => {
-      return this.extractMod(mod);
-    });
+    const explicits = item.item.explicitMods
+      ?.map((mod) => this.safeExtractMod(mod))
+      .filter((m) => m !== null);
+    const implicits = item.item.implicitMods
+      ?.map((mod) => this.safeExtractMod(mod))
+      .filter((m) => m !== null);
+    const enchants = item.item.enchantMods
+      ?.map((mod) => this.safeExtractMod(mod))
+      .filter((m) => m !== null);
 
     console.log({ explicits, implicits, enchants });
 
@@ -415,14 +441,18 @@ class PriceEstimator {
   }
 
   async getHighTierMods(item: Poe2Item, topN: number) {
-    return item.item.extended.mods.explicit
+    // Not every item ships the structured extended.mods.explicit tier data
+    // (e.g. items with no rolled explicits, or trimmed fetch payloads).
+    const explicitMods = item.item.extended?.mods?.explicit;
+    if (!explicitMods) return [];
+    return explicitMods
       .map((mod) => {
         return {
           mod: mod.name,
           tier: mod.tier,
           level: mod.level,
-          tierNum: Number(mod.tier.replace("S", "").replace("P", "")),
-          magnitudes: mod.magnitudes,
+          tierNum: Number(String(mod.tier ?? "").replace("S", "").replace("P", "")),
+          magnitudes: mod.magnitudes ?? [],
         };
       })
       .sort((a, b) => b.tierNum - a.tierNum)

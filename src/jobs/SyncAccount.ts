@@ -26,7 +26,7 @@ export class SyncAccount extends Job<string[]> {
       while (!done) {
         count++;
 
-        if (count > 20) {
+        if (count > 300) {
           console.log("Too many iterations");
           break;
         }

@@ -1,6 +1,6 @@
 export const Leagues = [
-  'Rise of the Abyssal',
-  'HC Rise of the Abyssal',
+  'Runes of Aldur',
+  'HC Runes of Aldur',
   'Standard',
   'Hardcore'
 ] as const;
